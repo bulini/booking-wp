@@ -119,6 +119,20 @@ function service_list($lang)
 }
 
 */
+
+//navbar hack
+add_filter('body_class', 'mbe_body_class');
+
+function mbe_body_class($classes){
+    if(is_user_logged_in()){
+        $classes[] = 'body-logged-in';
+    } else{
+        $classes[] = 'body-logged-out';
+    }
+    return $classes;
+}
+
+
 function get_accommodations(){
 	return query_posts( array ( 'post_type' => 'accommodations', 'posts_per_page' => -1,'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )) );
 }

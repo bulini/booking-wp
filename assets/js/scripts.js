@@ -438,15 +438,15 @@ $(document).ready(function () {
   $("#location-map").gmap3({
     marker: {
       values: [{
-        latLng: [44.28952958093682, 6.152559438984804],
+        latLng: [41.88783, 12.5109413,17],
         options: {
-            icon: "img/marker.png"
+            icon: "http://www.google.com/mapfiles/marker.png"
         }
     }, ],
     },
     map:{
       options:{
-        zoom:6,
+        zoom:16,
         mapTypeControl: true,
         mapTypeControlOptions: {
           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU

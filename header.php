@@ -35,18 +35,19 @@
 	        <div class="row">
 	          <div class="col-lg-5 col-md-5 col-sm-12">
 	            <ul class="contact-info custom-list list-inline">
-	              <li><i class="fa fa-phone"></i><span>+1 (123) 456-7890</span></li>
-	              <li><i class="fa fa-envelope"></i><span>example@example.com</span></li>
+	              <li><i class="fa fa-phone"></i><span><?php echo mytheme_get_option('phone'); ?></span></li>
+	              <li><i class="fa fa-envelope"></i><span><?php echo mytheme_get_option('email'); ?></span></li>
 	            </ul>
 	          </div>
 	          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 text-right pull-right">
 	            <div class="contact-right">
 	              <ul class="social custom-list list-inline">
-	                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-	                <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-	                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+	                <li><a href="<?php echo mytheme_get_option('facebook_url');?>"><i class="fa fa-facebook-square"></i></a></li>
+	                <li><a href="<?php echo mytheme_get_option('twitter_url');?>"><i class="fa fa-twitter-square"></i></a></li>
+	                <!--<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>-->
 	              </ul>
-	              <div class="header-login">
+								<!--
+								<div class="header-login">
 	                <button class="login-toggle header-btn"><i class="fa fa-power-off"></i> Login</button>
 	                <div class="header-form">
 	                  <form action="index.html" class="default-form">
@@ -69,6 +70,7 @@
 	                  </form>
 	                </div>
 	              </div>
+							-->
 	              <div class="header-language">
 	                <button class="header-btn"><i class="fa fa-globe"></i>EN</button>
 	                <nav class="header-nav">
