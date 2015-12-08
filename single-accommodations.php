@@ -155,10 +155,11 @@
                 <div id="images" class="tab-pane fade">
                   <div class="images-gallery">
                     <div class="row">
-                    <?php foreach($attachments as $attachment) { $img=wp_get_attachment_image_src($attachment->ID, 'thumbnail', false); ?>
-                      <div class="img-single col-md-3">
-                        <img src="<?php echo $img[0]; ?>" class="img-responsive img-thumbnail">
-                      </div>
+                    <?php foreach($attachments as $attachment) {
+                      $img=wp_get_attachment_image_src($attachment->ID, 'thumbnail', false);
+                      $big_img=wp_get_attachment_image_src($attachment->ID, 'medium', false);
+                    ?>
+                        <a href="<?php echo $big_img[0]; ?>" data-rel="prettyPhoto[gallery1]"><img src="<?php echo $img[0]; ?>" class="img-responsive img-thumbnail"></a>
                     <?php } ?>
                     </div>
                   </div>

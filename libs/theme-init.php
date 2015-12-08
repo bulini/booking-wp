@@ -29,7 +29,7 @@ if ( function_exists( 'add_image_size' ) ) {
 		//wp_enqueue_style( 'animate', get_template_directory_uri().'/assets/css/animate.css');
 		wp_enqueue_style( 'carousel', get_template_directory_uri().'/assets/css/owl.carousel.css');
 		//wp_enqueue_style( 'owl-theme', get_template_directory_uri().'/assets/css/owl.theme.css');
-		//wp_enqueue_style( 'prettyphoto', get_template_directory_uri().'/assets/css/prettyPhoto.css');
+		wp_enqueue_style( 'prettyphoto', get_template_directory_uri().'/assets/css/prettyPhoto.css');
 		//wp_enqueue_style( 'jquery-ui', get_template_directory_uri().'/assets/css/smoothness/jquery-ui-1.10.4.custom.min.css');
 		//wp_enqueue_style( 'rs-plugin', get_template_directory_uri().'/assets/rs-plugin/css/settings.css');
 		//wp_enqueue_style( 'theme', get_template_directory_uri().'/assets/css/theme.css');
@@ -42,7 +42,10 @@ if ( function_exists( 'add_image_size' ) ) {
 
 		//js
 		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.4.min.js', array(), '2.1.4', true );
+		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js', array(), '1.11.0', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '2.1.4', true );
+		wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.1.4', true );
+
 		wp_enqueue_script( 'sensor', "http://maps.googleapis.com/maps/api/js?sensor=false", array(), '2.1.4', true );
 		wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/assets/js/gmap3.min.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '2.1.4', true );
