@@ -19,11 +19,10 @@
                 <i class="fa fa-calendar"></i>
               </span>
               <span class="adults select-box">
-                <select name="people" data-placeholder="People">
+                <select name="people" data-placeholder="Camera">
                   <option>Room</option>
-                  <option value="1">1 (single use)</option>
-                  <option value="2">2 (double)</option>
-
+                  <option value="1">1 people (single use)</option>
+                  <option value="2">2 people (double)</option>
                 </select>
               </span>
               <span class="room_number select-box">

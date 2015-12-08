@@ -26,9 +26,9 @@
                     <?php the_title(); ?>
                   </h5>
                   <ul class="tags pt-0 custom-list list-inline pull-left">
-                    <li><a href="#">1 Bed</a></li>
-                    <li><a href="#">2 People</a></li>
-                    <li><a href="#">San Giovanni</a></li>
+                    <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
+                    <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> Roma</a></li>
                   </ul>
                 </div>
                 <div class="pull-right">
@@ -107,9 +107,6 @@
 
                   		foreach ($allotments as $allotment): ?>
                   	   <h5><?php echo $allotment->post_title; ?></h5>
-                  	   <p class="lead"><?php _e('Prices','wpbooking'); ?></p>
-
-
 
                   	   <?php
                   		   $html='<table class="table table-striped table-bordered">
@@ -221,9 +218,9 @@
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                           </h5>
                           <ul class="tags custom-list list-inline">
-                            <li><a href="#">1 Bed</a></li>
-                            <li><a href="#">2 People</a></li>
-                            <li><a href="#">Roma centro</a></li>
+                            <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
+                            <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i> Roma</a></li>
                           </ul>
                         </header>
                       </div>
