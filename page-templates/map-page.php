@@ -56,7 +56,7 @@ get_header(); ?>
                 </h3>
                 <h5 class="sub-title">Office</h5>
                 <div class="row">
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-12 col-md-6">
 										<?php the_content(); ?>
 		              </div>
                 </div>
@@ -71,7 +71,7 @@ get_header(); ?>
                 </h3>
                 <h5 class="sub-title">Office</h5>
                 <div class="row">
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-6 col-md-12">
                     <ul class="location-details custom-list">
                       <li><?php echo mytheme_get_option('place_address'); ?></li>
                       <li><?php echo mytheme_get_option('cuty'); ?></li>
