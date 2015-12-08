@@ -33,7 +33,25 @@
                 </div>
                 <div class="pull-right">
                   <span class="price">
-                    from $99/day
+                    <?php
+                     //procedurizzare
+                     $range_id = get_post_meta($post->ID,'type',true);
+                     $term = get_term( $range_id[0], 'types');
+                     $checkin = (isset($_GET['checkin'])) ? $_GET['checkin'] : date('d/m/Y');
+                     $checkout = (isset($_GET['checkout'])) ? $_GET['checkout'] : date('d/m/Y');
+                     $people = (isset($_GET['people'])) ? $_GET['people'] : 2;
+                     $room_number = (isset($_GET['room_number'])) ? $_GET['room_number'] : 1;
+
+                     $people = ($people>2) ? ($people/$room_number) : $people;
+
+                     $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->slug,$people);
+
+
+
+                   if ( ! is_wp_error( $term ) ) { ?>
+                    &euro; <?php echo check_price($checkin, $checkout,$allotment,$room_number);
+                     } ?>
+                  </span>
                   </span>
                 </div>
               </header>
