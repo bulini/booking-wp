@@ -31,21 +31,13 @@
                   <h5 class="title">
                     <?php the_title(); ?>
                   </h5>
-                  <ul class="tags pt-0 custom-list list-inline pull-left">
-                    <li><a href="#">1 Bed</a></li>
-                    <li><a href="#">2 People</a></li>
-                    <li><a href="#">Sea View</a></li>
-                  </ul>
                 </div>
                 <div class="pull-right">
-                  <span class="price">
-                    from $99/day
-                  </span>
+
                 </div>
               </header>
             </div>
             <div class="room-about">
-              <h5 class="title-section">About this offer</h5>
               <?php the_content(); ?>
             </div>
           </div>

@@ -57,7 +57,7 @@
               </header>
             </div>
             <div class="room-about">
-              <h5 class="title-section">About this offer</h5>
+              <h5 class="title-section">Dettagli</h5>
               <?php the_content(); ?>
             </div>
             <div class="room-tabs">
