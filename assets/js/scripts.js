@@ -353,11 +353,11 @@ $(document).ready(function () {
     // INIT SLIDER
     if ($.fn.owlCarousel) {
       self.owlCarousel({
-        autoplay:true,
+        autoPlay:3000,
         slideSpeed: 300,
         pagination: true,
         navigation: true,
-        paginationSpeed: 400,
+        paginationSpeed: 800,
         singleItem: true,
         navigationText: [
 	      "<i class='fa fa-angle-left'></i>",
@@ -414,7 +414,8 @@ $(document).ready(function () {
   $("#map").gmap3({
     marker: {
       values: [{
-        latLng: [41.88783, 12.5109413,17],
+        address: "Viale Carlo Felice, 103, 00185 Roma RM",
+        //latLng: [41.88783, 12.5109413,17],
         options: {
             icon: "http://www.google.com/mapfiles/marker.png"
         }
@@ -548,6 +549,7 @@ $(document).ready(function () {
 
   // HEADER BG SLIDER
   $(".background-slider").owlCarousel({
+    autoPlay: 3000,
     slideSpeed: 300,
     paginationSpeed: 400,
     singleItem: true,

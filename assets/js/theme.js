@@ -58,7 +58,7 @@ jQuery('.button').addClass('btn btn-success');
  jQuery(document).ready(function(){
 	 //PrettyPhoto
     if (jQuery().prettyPhoto) {
-			
+
         jQuery('a[data-rel]').each(function () {
             jQuery(this).attr('rel', jQuery(this).data('rel'));
         });

@@ -28,7 +28,7 @@
                   <ul class="tags pt-0 custom-list list-inline pull-left">
                     <li><a href="#">1 Bed</a></li>
                     <li><a href="#">2 People</a></li>
-                    <li><a href="#">Sea View</a></li>
+                    <li><a href="#">San Giovanni</a></li>
                   </ul>
                 </div>
                 <div class="pull-right">
@@ -74,12 +74,12 @@
                     <div class="row">
                       <div class="col-md-4 col-sm-4">
                         <ul class="facilities-list custom-list">
-                         <?php $product_terms = wp_get_object_terms( get_the_ID(),  'amenities' );
-                          if ( ! empty( $product_terms ) ) {
+                         <?php $amenities = wp_get_object_terms( get_the_ID(),  'amenities' );
+                          if ( ! empty( $amenities ) ) {
                            $counter=1;
-                           if ( ! is_wp_error( $product_terms ) ) {
+                           if ( ! is_wp_error( $amenities ) ) {
 
-                               foreach( $product_terms as $term ) {
+                               foreach( $amenities as $term ) {
                                  $idt=$term->term_id;
                                  $icon = get_option("taxonomy_term_".$idt,true);
                                  echo '<li><i class="fa '.$icon['fa-icon'].'"></i><span>' . esc_html( $term->name ) . '</span></li>';
@@ -106,7 +106,7 @@
                       $allotments = get_posts( array ('post_type' => 'properties', 'post_parent' => 0, 'posts_per_page' => -1, 'order' => 'ASC', 'types' => $term->slug));
 
                   		foreach ($allotments as $allotment): ?>
-                  	   <h3><?php echo $allotment->post_title; ?></h3>
+                  	   <h5><?php echo $allotment->post_title; ?></h5>
                   	   <p class="lead"><?php _e('Prices','wpbooking'); ?></p>
 
 
@@ -157,9 +157,11 @@
                     <div class="row">
                     <?php foreach($attachments as $attachment) {
                       $img=wp_get_attachment_image_src($attachment->ID, 'thumbnail', false);
-                      $big_img=wp_get_attachment_image_src($attachment->ID, 'medium', false);
+                      $big_img=wp_get_attachment_image_src($attachment->ID, 'full', false);
                     ?>
+                      <div class="img-single col-md-3">
                         <a href="<?php echo $big_img[0]; ?>" data-rel="prettyPhoto[gallery1]"><img src="<?php echo $img[0]; ?>" class="img-responsive img-thumbnail"></a>
+                      </div>
                     <?php } ?>
                     </div>
                   </div>
@@ -169,7 +171,7 @@
                   <ul class="reviews-list custom-list">
                     <li>
                       <div class="thumbnail">
-                        <img src="img/avatar.jpg" alt="">
+                        <img src="http://1.gravatar.com/avatar/4f542287a4dbe58227d42cee4bec6299?s=128&d=mm&r=g" alt="">
                       </div>
                       <div class="review-content">
                         <header>
@@ -182,7 +184,7 @@
                             <li><i class="fa fa-star"></i></li>
                           </ul>
                         </header>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quam nihil commodi aperiam quibusdam debitis, fugit reiciendis dolore totam unde. Quod vitae porro dignissimos debitis quibusdam possimus, molestias repudiandae assumenda.</p>
+                        <p>Bello, incredibilmente centrale in un palazzo splendido. Le camere sono meglio di un hotel, e in pochi minuti raggiungi tutta Roma.</p>
                       </div>
                     </li>
                   </ul>
@@ -192,7 +194,7 @@
 
 
             <div class="room-related">
-              <h5 class="title-section">Related Offers</h5>
+              <h5 class="title-section">Altre camere</h5>
               <div class="row">
               <?php
               	wp_reset_query();
@@ -200,14 +202,14 @@
               	  if ( have_posts() ) : while ( have_posts() ) : the_post();
               	  $price = get_post_meta($post->ID, 'min_price', true);
               ?>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="listing-room-grid">
                   <div class="overlay">
                     <?php the_post_thumbnail('homepage-thumb', array('class'=>'img-responsive')); ?>
 
                     <div class="overlay-shadow">
                       <div class="overlay-content">
-                        <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white">Read More</a>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white">Prenota</a>
                       </div>
                     </div>
                   </div>
@@ -221,15 +223,9 @@
                           <ul class="tags custom-list list-inline">
                             <li><a href="#">1 Bed</a></li>
                             <li><a href="#">2 People</a></li>
-                            <li><a href="#">Sea View</a></li>
+                            <li><a href="#">Roma centro</a></li>
                           </ul>
                         </header>
-                        <span class="price">
-                          from $99/day
-                        </span>
-                        <button class="btn btn-transparent-gray">
-                          Read More
-                        </button>
                       </div>
                     </div>
                   </div>
