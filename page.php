@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <!-- Start Header-Section -->
+<?php while(have_posts()): the_post(); ?>
 <section class="header-section listing" style="background:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );?>');">
 	<div class="container">
 		<div class="row">
@@ -57,6 +58,6 @@
     </div>
   </div>
 </section>
-
+<?php endwhile; ?>
 <!-- End Room -->
 <?php get_footer(); ?>
