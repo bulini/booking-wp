@@ -62,10 +62,10 @@
             </div>
             <div class="room-tabs">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#amenities">Amenities</a></li>
-                <li><a data-toggle="tab" href="#prices">Description</a></li>
-                <li><a data-toggle="tab" href="#images">Images</a></li>
-                <li><a data-toggle="tab" href="#reviews">Reviews</a></li>
+                <li class="active"><a data-toggle="tab" href="#amenities">Servizi</a></li>
+                <li><a data-toggle="tab" href="#prices">Prezzi</a></li>
+                <li><a data-toggle="tab" href="#images">Galleria</a></li>
+                <li><a data-toggle="tab" href="#reviews">Recensioni</a></li>
               </ul>
 
               <div class="tab-content">
@@ -155,9 +155,9 @@
                 <div id="images" class="tab-pane fade">
                   <div class="images-gallery">
                     <div class="row">
-                    <?php foreach($attachments as $attachment) { $img=wp_get_attachment_image_src($attachment->ID, 'medium', false); ?>
+                    <?php foreach($attachments as $attachment) { $img=wp_get_attachment_image_src($attachment->ID, 'thumbnail', false); ?>
                       <div class="img-single col-md-3">
-                        <img src="<?php echo $img[0]; ?>" class="img-responsive">
+                        <img src="<?php echo $img[0]; ?>" class="img-responsive img-thumbnail">
                       </div>
                     <?php } ?>
                     </div>
