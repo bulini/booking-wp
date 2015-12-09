@@ -352,9 +352,10 @@ $(document).ready(function () {
 
     // INIT SLIDER
     if ($.fn.owlCarousel) {
-      self.owlCarousel({
-        autoPlay:3000,
-        slideSpeed: 300,
+        self.owlCarousel({
+        autoPlay:5000,
+        transitionStyle : "fade",
+        slideSpeed: 400,
         pagination: true,
         navigation: true,
         paginationSpeed: 800,
