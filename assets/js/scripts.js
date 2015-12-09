@@ -552,6 +552,7 @@ $(document).ready(function () {
   $(".background-slider").owlCarousel({
     autoPlay: 3000,
     slideSpeed: 300,
+    transitionStyle : "fade",
     paginationSpeed: 400,
     singleItem: true,
     navigation: true,
