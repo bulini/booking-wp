@@ -6,11 +6,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="post">
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail('slider-single', array('class'=>'img-responsive')); ?>
 	</div>
 	<div class="post-content">
 		<header class="post-header">
-				<?php the_title( '<h1 class="pull-left title">', '</h1>' ); ?>
+				<?php the_title( '<h2 class="pull-left title">', '</h2>' ); ?>
 			<span class="pull-right date"><?php bootstrapwp_posted_on(); ?></span>
 		</header>
 		<div class="post-meta">

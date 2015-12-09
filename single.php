@@ -6,8 +6,6 @@
  */
 
 get_header(); ?>
-
-
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<!-- Start Header-Section -->
@@ -43,12 +41,7 @@ get_header(); ?>
 			</section>
 			<!-- End News -->
 
-
-			<?php //get_template_part( 'content', 'single' ); ?>
-
 			<?php bootstrapwp_post_nav(); ?>
-
-
 
 		<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
