@@ -32,6 +32,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-md-8">
 							<?php get_template_part('content','single'); ?>
+							<?php bootstrapwp_post_nav(); ?>
 						</div>
 						<div class="col-md-4">
 							<?php get_sidebar(); ?>
@@ -41,7 +42,7 @@ get_header(); ?>
 			</section>
 			<!-- End News -->
 
-			<?php bootstrapwp_post_nav(); ?>
+
 
 		<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

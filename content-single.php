@@ -63,13 +63,8 @@
 				'after'  => '</div>',
 			) );
 		?>
-		<ul class="custom-list tags-list list-inline">
-			<li><a href="#">Lifestyle</a></li>
-			<li><a href="#">Luxury</a></li>
-			<li><a href="#">Money</a></li>
-		</ul>
 		<div class="post-share">
-			<p class="pull-left">Share this story</p>
+			<p class="pull-left">Condividi</p>
 			<ul class="custom-list social list-inline pull-right">
 				<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
