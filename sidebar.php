@@ -11,7 +11,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <div class="sidebar">
-	<div class="sidebar-widget">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+	<!--<div class="sidebar-widget">
 		<form action="index.html" class="default-form search-form">
 			<input placeholder="Search" type="text">
 			<button><i class="fa fa-search"></i></button>
@@ -27,7 +29,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		</ul>
 	</div>
 	<div class="sidebar-widget">
-
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 	<div class="sidebar-widget">
 		<h5 class="widget-title">Tags</h5>
@@ -41,4 +43,5 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<li><a href="#">Top Class</a></li>
 		</ul>
 	</div>
+-->
 </div>

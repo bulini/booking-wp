@@ -7573,20 +7573,21 @@ hr {
 .news .sidebar .sidebar-widget .widget-title {
   margin: 25px 0;
 }
-.news .sidebar .sidebar-widget .list {
+.news .sidebar .sidebar-widget ul {
   padding: 20px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
 }
-.news .sidebar .sidebar-widget .list li:first-child a {
+.news .sidebar .sidebar-widget ul li:first-child a {
   padding-top: 5px;
 }
-.news .sidebar .sidebar-widget .list li a {
+.news .sidebar .sidebar-widget ul li a {
   padding: 15px 0;
   display: block;
   border-bottom: 1px solid #ededed;
 }
-.news .sidebar .sidebar-widget .list li a:before {
+.news .sidebar .sidebar-widget ul li a:before {
   margin-right: 10px;
   font-family: FontAwesome;
   font-size: 14px;

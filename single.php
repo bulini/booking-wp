@@ -19,8 +19,8 @@ get_header(); ?>
 								<?php the_title(); ?>
 							</h3>
 							<ul class="breadcrumbs custom-list list-inline pull-right">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="news.html">News</a></li>
+								<li><a href="<?php bloginfo('siteurl'); ?>">Home</a></li>
+								<li>News</li>
 							</ul>
 						</div>
 					</div>

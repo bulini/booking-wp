@@ -51,28 +51,13 @@ if ( post_password_required() ) {
 
 <div class="post-addcomment">
 	<h5 class="post-addcomment-title">Join This Conversation</h5>
-	<form action="index.html" class="default-form">
-		<div class="row">
-			<div class="col-md-4">
-				<p class="form-row">
-					<input class="required" placeholder="Name" type="text">
-				</p>
-			</div>
-			<div class="col-md-4">
-				<p class="form-row">
-					<input class="required" placeholder="Email" type="text">
-				</p>
-			</div>
-			<div class="col-md-4">
-				<p class="form-row">
-					<input class="required" placeholder="Website" type="text">
-				</p>
-			</div>
-		</div>
-		<p class="form-row">
-			<textarea name="message" placeholder="You message here"></textarea>
-		</p>
-		<button class="btn btn-transparent-gray">Post Message</button>
-	</form>
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'bootstrapwp' ); ?></p>
+	<?php endif; ?>
+
+	<?php comment_form(); ?>
 </div>
 </div>
