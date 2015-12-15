@@ -149,6 +149,10 @@ function get_tabs(){
 	return query_posts( array ( 'post_type' => 'tabs', 'posts_per_page' => -1, 'order' => 'ASC') );
 }
 
+function get_testimonials(){
+	return query_posts( array ( 'post_type' => 'testimonials', 'posts_per_page' => -1, 'order' => 'ASC') );
+}
+
 function get_roomtypes($parent=0){
 	if($parent==0){
 		return query_posts( array ('post_type' => 'properties', 'post_parent' => 0, 'posts_per_page' => -1, 'order' => 'ASC'));

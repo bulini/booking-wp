@@ -8,18 +8,18 @@
 
   <div class="container">
     <div class="row">
-      <div class="preamble light col-md-12">
-        <h3>Testimonials</h3>
-      </div>
+
 
       <div class="col-md-12">
         <div id="owl-testimonials" class="owl-carousel owl-theme">
-
+          <?php get_testimonials();
+          if ( have_posts() ) : while ( have_posts() ) : the_post();
+          ?>
           <!-- Start Container Item -->
           <div class="item">
             <div class="col-lg-12">
               <blockquote class="quote">
-                <cite>John Doe<span class="job">CEO - UOUapps</span></cite>
+                <cite><?php the_title(); ?></cite>
                 <p class="stars">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -27,48 +27,12 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                 </p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui.
+                <?php the_content(); ?>
               </blockquote>
             </div>
           </div>
           <!-- End Container Item -->
-
-          <!-- Start Container Item -->
-          <div class="item">
-            <div class="col-lg-12">
-              <blockquote class="quote">
-                <cite>John Kowalski<span class="job">CEO - UOUapps</span></cite>
-                <p class="stars">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui.
-              </blockquote>
-            </div>
-          </div>
-          <!-- End Container Item -->
-
-          <!-- Start Container Item -->
-          <div class="item">
-            <div class="col-lg-12">
-              <blockquote class="quote">
-                <cite>John Doe<span class="job">CEO - UOUapps</span></cite>
-                <p class="stars">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui.
-              </blockquote>
-            </div>
-          </div>
-          <!-- End Container Item -->
-
+          <?php endwhile; endif; ?>
         </div>
       </div>
     </div>

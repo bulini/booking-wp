@@ -9,11 +9,11 @@ function setup_booking_post_type()
 
 	register_post_type('home-blocks', array(	'label' => 'home-blocks','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'home-blocks'),'query_var' => false,'exclude_from_search' => true,'supports' => array('title','editor','thumbnail'),'labels' => array (
 	  'name' => 'Home Blocks',
-	  'singular_name' => 'home block',
-	  'menu_name' => 'Home blocks',
-	  'add_new' => 'Add Block',
-	  'add_new_item' => 'Add New Block',
-	  'edit' => 'Edit',
+	  'singular_name' =>  __( 'Home Block', 'bookingwp' ),
+	  'menu_name' =>  __( 'Home Blocks', 'bookingwp' ),
+	  'add_new' =>  __( 'Add home Block', 'bookingwp' ),
+	  'add_new_item' =>  __( 'Add home Block', 'bookingwp' ),
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit Block',
 	  'new_item' => 'New Block',
 	  'view' => 'View Block',
@@ -33,10 +33,10 @@ function setup_booking_post_type()
 	register_post_type('tabs', array(	'label' => 'tabs','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'tabs'),'query_var' => false,'exclude_from_search' => true,'supports' => array('title','editor','thumbnail'),'labels' => array (
 	  'name' => 'Tabs',
 	  'singular_name' => 'home tab',
-	  'menu_name' => _( 'Home Tabs', 'bookingwp' ),
+	  'menu_name' => __( 'Home tabs', 'bookingwp' ),
 	  'add_new' => 'Add tab',
 	  'add_new_item' => 'Add New tab',
-	  'edit' => 'Edit',
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit tab',
 	  'new_item' => 'New tab',
 	  'view' => 'View tab',
@@ -47,6 +47,27 @@ function setup_booking_post_type()
 	  'parent' => 'Parent tab',
 	),) );
 
+	/*
+	******* Home Slogan / Reviews (new) ********
+	*/
+
+
+	register_post_type('testimonials', array(	'label' => 'tabs','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'testimonial'),'query_var' => false,'exclude_from_search' => true,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
+	  'name' => 'Testimonials',
+	  'singular_name' => 'testimonial',
+	  'menu_name' => __( 'Testimonial', 'bookingwp' ),
+	  'add_new' => 'Add Testimonial',
+	  'add_new_item' => 'Add New testimonial',
+	  'edit' => __( 'Edit', 'bookingwp' ),
+	  'edit_item' => 'Edit testimonial',
+	  'new_item' => 'New testimonial',
+	  'view' => 'View testimonial',
+	  'view_item' => 'View testimonial',
+	  'search_items' => 'Search testimonial',
+	  'not_found' => 'No testimonial Found',
+	  'not_found_in_trash' => 'No testimonial Found in Trash',
+	  'parent' => 'Parent testimonial',
+	),) );
 
 
 
@@ -61,7 +82,7 @@ function setup_booking_post_type()
 	  'menu_name' => _( 'Slides', 'bookingwp' ),
 	  'add_new' => 'Add Slide',
 	  'add_new_item' => 'Add New Slide',
-	  'edit' => 'Edit',
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit Slide',
 	  'new_item' => 'New Slide',
 	  'view' => 'View Slide',
@@ -81,10 +102,10 @@ function setup_booking_post_type()
 	register_post_type('accommodations', array(	'label' => 'Accommodations','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'show_in_nav_menus' => true, 'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'alloggi'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
 	  'name' => 'Accommodations',
 	  'singular_name' => 'Accommodation',
-	  'menu_name' => _( 'Listing', 'bookingwp' ),
-	  'add_new' => 'Add Properties',
-	  'add_new_item' => 'Add New Properties',
-	  'edit' => 'Edit',
+	  'menu_name' => __( 'Accommodations', 'bookingwp' ),
+	  'add_new' => __( 'Add accommodation', 'bookingwp' ),
+	  'add_new_item' => __( 'Add new accommodation', 'bookingwp' ),
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit Accommodation',
 	  'new_item' => 'New Accommodation',
 	  'view' => 'View Accommodation',
@@ -103,11 +124,11 @@ function setup_booking_post_type()
 
 	register_post_type('properties', array(	'label' => 'Properties','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'prop'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','custom-fields','thumbnail','author','page-attributes'),'labels' => array (
 	  'name' => 'Properties',
-	  'singular_name' => 'Property',
+	  'singular_name' => __('Allotment', 'wpbooking'),
 	  'menu_name' => __('Allotments', 'wpbooking'),
 	  'add_new' => 'Add Property',
 	  'add_new_item' => 'Add New Property',
-	  'edit' => 'Edit',
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit Property',
 	  'new_item' => 'New Property',
 	  'view' => 'View Property',
@@ -127,7 +148,7 @@ function setup_booking_post_type()
 	  'menu_name' => 'booking',
 	  'add_new' => 'Add booking',
 	  'add_new_item' => 'Add New booking',
-	  'edit' => 'Edit',
+	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit booking',
 	  'new_item' => 'New booking',
 	  'view' => 'View booking',

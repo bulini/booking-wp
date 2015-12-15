@@ -1,16 +1,13 @@
-# Loco Gettext template
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Mirko-bookingwp\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Tue Dec 15 2015 23:23:48 GMT+0100 (CET)\n"
-"POT-Revision-Date: Tue Dec 15 2015 23:23:54 GMT+0100 (CET)\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: Tue Dec 15 2015 23:26:34 GMT+0100 (CET)\n"
+"Last-Translator: admin <pinobulini@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Language: English (UK)\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +19,8 @@ msgstr ""
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
 "esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Loco-Target-Locale: en_GB"
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
@@ -176,7 +174,7 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #: ../content-search.php:30 ../content-search.php:40 ../content-single.php:19 ..
-#: /content-single.php:22 ../content.php:32 ../content.php:42
+#: content-single.php:22 ../content.php:32 ../content.php:42
 msgid ", "
 msgstr ""
 
@@ -300,15 +298,15 @@ msgstr ""
 
 #: ../libs/admin-options.php:91 ../libs/admin-options.php:97 ../libs/admin-
 #: options.php:113 ../libs/admin-options.php:132 ../libs/admin-options.php:139 ..
-#: /libs/metaboxes/booking.php:71 ../libs/metaboxes/booking.php:82 ..
-#: /libs/metaboxes/booking.php:106 ../libs/metaboxes/booking.php:114 ..
-#: /libs/metaboxes/home-block.php:38 ../libs/metaboxes/home-block.php:46 ..
-#: /libs/metaboxes/home-tabs.php:38 ../libs/metaboxes/home-tabs.php:46 ..
-#: /libs/metaboxes/property.php:51 ../libs/metaboxes/property.php:59 ..
-#: /libs/metaboxes/property.php:67 ../libs/metaboxes/room.php:71 ..
-#: /libs/metaboxes/room.php:82 ../libs/metaboxes/room.php:106 ..
-#: /libs/metaboxes/slide.php:38 ../libs/metaboxes/slide.php:47 ..
-#: /libs/metaboxes/slide.php:55
+#: libs/metaboxes/booking.php:71 ../libs/metaboxes/booking.php:82 ..
+#: libs/metaboxes/booking.php:106 ../libs/metaboxes/booking.php:114 ..
+#: libs/metaboxes/home-block.php:38 ../libs/metaboxes/home-block.php:46 ..
+#: libs/metaboxes/home-tabs.php:38 ../libs/metaboxes/home-tabs.php:46 ..
+#: libs/metaboxes/property.php:51 ../libs/metaboxes/property.php:59 ..
+#: libs/metaboxes/property.php:67 ../libs/metaboxes/room.php:71 ..
+#: libs/metaboxes/room.php:82 ../libs/metaboxes/room.php:106 ..
+#: libs/metaboxes/slide.php:38 ../libs/metaboxes/slide.php:47 ..
+#: libs/metaboxes/slide.php:55
 msgid "field description (optional)"
 msgstr ""
 
@@ -325,7 +323,7 @@ msgid "es via roma 10, 00100 Roma"
 msgstr ""
 
 #: ../libs/admin-options.php:112 ../libs/metaboxes/booking.php:81 ..
-#: /libs/metaboxes/room.php:81
+#: libs/metaboxes/room.php:81
 msgid "email"
 msgstr ""
 
@@ -338,7 +336,7 @@ msgid "Twitter URL"
 msgstr ""
 
 #: ../libs/admin-options.php:131 ../libs/metaboxes/home-block.php:45 ..
-#: /libs/metaboxes/home-tabs.php:45 ../libs/metaboxes/slide.php:54
+#: libs/metaboxes/home-tabs.php:45 ../libs/metaboxes/slide.php:54
 msgid "Test Color Picker"
 msgstr ""
 
@@ -365,7 +363,7 @@ msgid ""
 msgstr ""
 
 #: ../libs/booking-handler.php:401 ../libs/booking-handler.php:423 ..
-#: /libs/booking-handler.php:438
+#: libs/booking-handler.php:438
 msgid "Your reservation: "
 msgstr ""
 
@@ -787,7 +785,7 @@ msgstr ""
 #: ../libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
 #: master/helpers/cmb_Meta_Box_types.php:306 ../libs/metaboxes/Custom-Metaboxes-
 #: and-Fields-for-WordPress-master/helpers/cmb_Meta_Box_types.php:706 ..
-#: /libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
+#: libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
 #: master/helpers/cmb_Meta_Box_types.php:768
 msgid "Remove"
 msgstr ""
