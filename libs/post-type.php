@@ -33,7 +33,7 @@ function setup_booking_post_type()
 	register_post_type('tabs', array(	'label' => 'tabs','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'tabs'),'query_var' => false,'exclude_from_search' => true,'supports' => array('title','editor','thumbnail'),'labels' => array (
 	  'name' => 'Tabs',
 	  'singular_name' => 'home tab',
-	  'menu_name' => 'Home tabs',
+	  'menu_name' => _( 'Home Tabs', 'bookingwp' ),
 	  'add_new' => 'Add tab',
 	  'add_new_item' => 'Add New tab',
 	  'edit' => 'Edit',
@@ -58,7 +58,7 @@ function setup_booking_post_type()
 	register_post_type('slides', array(	'label' => 'Slides','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','map_meta_cap'=>true,'hierarchical' => false,'rewrite' => array('slug' => 'slides'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
 	  'name' => 'Slides',
 	  'singular_name' => 'Slide',
-	  'menu_name' => 'Slides',
+	  'menu_name' => _( 'Slides', 'bookingwp' ),
 	  'add_new' => 'Add Slide',
 	  'add_new_item' => 'Add New Slide',
 	  'edit' => 'Edit',
@@ -81,9 +81,9 @@ function setup_booking_post_type()
 	register_post_type('accommodations', array(	'label' => 'Accommodations','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'show_in_nav_menus' => true, 'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'alloggi'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
 	  'name' => 'Accommodations',
 	  'singular_name' => 'Accommodation',
-	  'menu_name' => 'Accommodations',
-	  'add_new' => 'Add Accommodation',
-	  'add_new_item' => 'Add New Accommodation',
+	  'menu_name' => _( 'Listing', 'bookingwp' ),
+	  'add_new' => 'Add Properties',
+	  'add_new_item' => 'Add New Properties',
 	  'edit' => 'Edit',
 	  'edit_item' => 'Edit Accommodation',
 	  'new_item' => 'New Accommodation',

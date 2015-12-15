@@ -145,7 +145,7 @@ Template Name: Listing
            <div class="col-sm-12"><?php _e('Sorry, no posts matched your criteria.'); ?></div>
         <?php endif;  ?>
          <div class="listing-pagination footer">
-           <?php bootstrapwp_paging_nav(); wp_reset_query();?>
+           <?php bookingwp_paging_nav(); wp_reset_query();?>
          </div>
 
 

@@ -12,7 +12,7 @@ Template Name: map
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package bootstrapwp
+ * @package bookingwp
  */
 get_header(); ?>
 <!-- Start Header-Section -->

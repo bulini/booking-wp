@@ -4,26 +4,26 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package bootstrapwp
+ * @package bookingwp
  */
 
-if ( ! function_exists( 'bootstrapwp_paging_nav' ) ) :
-function bootstrapwp_paging_nav() {
+if ( ! function_exists( 'bookingwp_paging_nav' ) ) :
+function bookingwp_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="sr-only"><?php _e( 'Posts navigation', 'bootstrapwp' ); ?></h1>
+		<h1 class="sr-only"><?php _e( 'Posts navigation', 'bookingwp' ); ?></h1>
 		<ul class="pager">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Prev', 'bootstrapwp' ) ); ?></li>
+			<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Prev', 'bookingwp' ) ); ?></li>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<li class="next"><?php previous_posts_link( __( 'Next <span class="meta-nav">&rarr;</span>', 'bootstrapwp' ) ); ?></li>
+			<li class="next"><?php previous_posts_link( __( 'Next <span class="meta-nav">&rarr;</span>', 'bookingwp' ) ); ?></li>
 			<?php endif; ?>
 
 		</ul><!-- .nav-links -->
@@ -32,11 +32,11 @@ function bootstrapwp_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'bootstrapwp_post_nav' ) ) :
+if ( ! function_exists( 'bookingwp_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  */
-function bootstrapwp_post_nav() {
+function bookingwp_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -46,11 +46,11 @@ function bootstrapwp_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="sr-only"><?php _e( 'Post navigation', 'bootstrapwp' ); ?></h1>
+		<h1 class="sr-only"><?php _e( 'Post navigation', 'bookingwp' ); ?></h1>
 		<ul class="pager">
 			<?php
-				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'bootstrapwp' ) );
-				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'bootstrapwp' ) );
+				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'bookingwp' ) );
+				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'bookingwp' ) );
 			?>
 		</ul><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -58,11 +58,11 @@ function bootstrapwp_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'bootstrapwp_posted_on' ) ) :
+if ( ! function_exists( 'bookingwp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function bootstrapwp_posted_on() {
+function bookingwp_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -76,12 +76,12 @@ function bootstrapwp_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'bootstrapwp' ),
+		_x( 'Posted on %s', 'post date', 'bookingwp' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'bootstrapwp' ),
+		_x( 'by %s', 'post author', 'bookingwp' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -95,8 +95,8 @@ endif;
  *
  * @return bool
  */
-function bootstrapwp_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'bootstrapwp_categories' ) ) ) {
+function bookingwp_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'bookingwp_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -109,24 +109,24 @@ function bootstrapwp_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'bootstrapwp_categories', $all_the_cool_cats );
+		set_transient( 'bookingwp_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so bootstrapwp_categorized_blog should return true.
+		// This blog has more than 1 category so bookingwp_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so bootstrapwp_categorized_blog should return false.
+		// This blog has only 1 category so bookingwp_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in bootstrapwp_categorized_blog.
+ * Flush out the transients used in bookingwp_categorized_blog.
  */
-function bootstrapwp_category_transient_flusher() {
+function bookingwp_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'bootstrapwp_categories' );
+	delete_transient( 'bookingwp_categories' );
 }
-add_action( 'edit_category', 'bootstrapwp_category_transient_flusher' );
-add_action( 'save_post',     'bootstrapwp_category_transient_flusher' );
+add_action( 'edit_category', 'bookingwp_category_transient_flusher' );
+add_action( 'save_post',     'bookingwp_category_transient_flusher' );

@@ -1,7 +1,7 @@
-bootstrapwp
+bookingwp Luxury Hotel
 ===
 
-Hi. I'm a starter theme called `bootstrapwp`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a starter theme called `bookingwp`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
@@ -18,23 +18,23 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 Getting Started
 ---------------
 
-If you want to keep it simple, head over to http://underscores.me and generate your `bootstrapwp` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+If you want to keep it simple, head over to http://underscores.me and generate your `bookingwp` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
 
-If you want to set things up manually, download `bootstrapwp` from GitHub. The first thing you want to do is copy the `bootstrapwp` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+If you want to set things up manually, download `bookingwp` from GitHub. The first thing you want to do is copy the `bookingwp` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
 
-1. Search for `'bootstrapwp'` (inside single quotations) to capture the text domain.
-2. Search for `bootstrapwp_` to capture all the function names.
-3. Search for `Text Domain: bootstrapwp` in style.css.
-4. Search for <code>&nbsp;bootstrapwp</code> (with a space before it) to capture DocBlocks.
-5. Search for `bootstrapwp-` to capture prefixed handles.
+1. Search for `'bookingwp'` (inside single quotations) to capture the text domain.
+2. Search for `bookingwp_` to capture all the function names.
+3. Search for `Text Domain: bookingwp` in style.css.
+4. Search for <code>&nbsp;bookingwp</code> (with a space before it) to capture DocBlocks.
+5. Search for `bookingwp-` to capture prefixed handles.
 
 OR
 
-* Search for: `'bootstrapwp'` and replace with: `'megatherium'`
-* Search for: `bootstrapwp_` and replace with: `megatherium_`
-* Search for: `Text Domain: bootstrapwp` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;bootstrapwp</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `bootstrapwp-` and replace with: `megatherium-`
+* Search for: `'bookingwp'` and replace with: `'megatherium'`
+* Search for: `bookingwp_` and replace with: `megatherium_`
+* Search for: `Text Domain: bookingwp` and replace with: `Text Domain: megatherium` in style.css.
+* Search for: <code>&nbsp;bookingwp</code> and replace with: <code>&nbsp;Megatherium</code>
+* Search for: `bookingwp-` and replace with: `megatherium-`
 
 Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
 

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package bootstrapwp
+ * @package bookingwp
  */
 
 get_header(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-md-8">
 							<?php get_template_part('content','single'); ?>
-							<?php bootstrapwp_post_nav(); ?>
+							<?php bookingwp_post_nav(); ?>
 						</div>
 						<div class="col-md-4">
 							<?php get_sidebar(); ?>

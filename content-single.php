@@ -1,6 +1,6 @@
 <?php
 /**
- * @package bootstrapwp
+ * @package bookingwp
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -11,30 +11,30 @@
 	<div class="post-content">
 		<header class="post-header">
 				<?php the_title( '<h2 class="pull-left title">', '</h2>' ); ?>
-			<span class="pull-right date"><?php bootstrapwp_posted_on(); ?></span>
+			<span class="pull-right date"><?php bookingwp_posted_on(); ?></span>
 		</header>
 		<div class="post-meta">
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$category_list = get_the_category_list( __( ', ', 'bootstrapwp' ) );
+				$category_list = get_the_category_list( __( ', ', 'bookingwp' ) );
 
 				/* translators: used between list items, there is a space after the comma */
-				$tag_list = get_the_tag_list( '', __( ', ', 'bootstrapwp' ) );
+				$tag_list = get_the_tag_list( '', __( ', ', 'bookingwp' ) );
 
-				if ( ! bootstrapwp_categorized_blog() ) {
+				if ( ! bookingwp_categorized_blog() ) {
 					// This blog only has 1 category so we just need to worry about tags in the meta text
 					if ( '' != $tag_list ) {
-						$meta_text = __( '<span class="category"><i class="fa fa-tags"></i> %2$s</span>', 'bootstrapwp' );
+						$meta_text = __( '<span class="category"><i class="fa fa-tags"></i> %2$s</span>', 'bookingwp' );
 					} else {
-					//	$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bootstrapwp' );
+					//	$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bookingwp' );
 					}
 
 				} else {
 					// But this blog has loads of categories so we should probably display them here
 					if ( '' != $tag_list ) {
-						$meta_text = __( '<span class="category"><i class="fa fa-tags"></i></span> %1$s', 'bootstrapwp' );
+						$meta_text = __( '<span class="category"><i class="fa fa-tags"></i></span> %1$s', 'bookingwp' );
 					} else {
-					//	$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bootstrapwp' );
+					//	$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bookingwp' );
 					}
 
 				} // end check for categories on this blog
@@ -59,7 +59,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'bootstrapwp' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'bookingwp' ),
 				'after'  => '</div>',
 			) );
 		?>

@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package bootstrapwp
+ * @package bookingwp
  */
 
 get_header(); ?>
@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'bootstrapwp' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'bookingwp' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'bootstrapwp' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'bookingwp' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'bootstrapwp' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'bootstrapwp' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'bookingwp' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'bookingwp' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'bootstrapwp' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bootstrapwp' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'bookingwp' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bookingwp' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'bootstrapwp' );
+							_e( 'Asides', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'bootstrapwp' );
+							_e( 'Galleries', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'bootstrapwp' );
+							_e( 'Images', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'bootstrapwp' );
+							_e( 'Videos', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'bootstrapwp' );
+							_e( 'Quotes', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'bootstrapwp' );
+							_e( 'Links', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'bootstrapwp' );
+							_e( 'Statuses', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'bootstrapwp' );
+							_e( 'Audios', 'bookingwp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'bootstrapwp' );
+							_e( 'Chats', 'bookingwp' );
 
 						else :
-							_e( 'Archives', 'bootstrapwp' );
+							_e( 'Archives', 'bookingwp' );
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php bootstrapwp_paging_nav(); ?>
+			<?php bookingwp_paging_nav(); ?>
 
 		<?php else : ?>
 
