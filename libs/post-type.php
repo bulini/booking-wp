@@ -79,7 +79,7 @@ function setup_booking_post_type()
 	register_post_type('slides', array(	'label' => 'Slides','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','map_meta_cap'=>true,'hierarchical' => false,'rewrite' => array('slug' => 'slides'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
 	  'name' => 'Slides',
 	  'singular_name' => 'Slide',
-	  'menu_name' => _( 'Slides', 'bookingwp' ),
+	  'menu_name' => __( 'Slides', 'bookingwp' ),
 	  'add_new' => 'Add Slide',
 	  'add_new_item' => 'Add New Slide',
 	  'edit' => __( 'Edit', 'bookingwp' ),
