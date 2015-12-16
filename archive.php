@@ -9,13 +9,12 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
+<!-- Start Header-Section -->
+<section class="header-section contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="title-section pull-left">
 					<?php
 						if ( is_category() ) :
 							single_cat_title();
@@ -67,16 +66,24 @@ get_header(); ?>
 
 						endif;
 					?>
-				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .page-header -->
+				</h3>
+				<ul class="breadcrumbs custom-list list-inline pull-right">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="news.html">News</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Header-Section -->
 
+
+<!-- Start News -->
+  <section class="news">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+			<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -85,7 +92,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content', 'excerpt');
 				?>
 
 			<?php endwhile; ?>
@@ -97,9 +104,13 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+				</div>
+				<div class="col-md-4">
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
+		</div>
+</section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
