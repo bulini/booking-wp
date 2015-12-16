@@ -78,15 +78,50 @@ add_action( 'after_setup_theme', 'bookingwp_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function bookingwp_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'bookingwp' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'Blog Sidebar', 'bookingwp' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer Left', 'bookingwp' ),
+			'id'            => 'footer-1',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="col-md-4 widget %2$s widget-%2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="title">',
+			'after_title'   => '</h5>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer Center', 'bookingwp' ),
+			'id'            => 'footer-2',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="col-md-4 widget %2$s widget-%2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="title">',
+			'after_title'   => '</h5>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer Right', 'bookingwp' ),
+			'id'            => 'footer-3',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="col-md-4 widget %2$s widget-%2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="title">',
+			'after_title'   => '</h5>',
+		)
+	);
 }
 add_action( 'widgets_init', 'bookingwp_widgets_init' );
 
@@ -96,8 +131,6 @@ add_action( 'widgets_init', 'bookingwp_widgets_init' );
  */
 function bookingwp_scripts() {
 	wp_enqueue_style( 'bootstrap-styles', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '3.2.0', 'all' );
-
-	//wp_enqueue_style( 'bootstrap-cyborg', get_template_directory_uri() . '/assets/css/bs-theme/fico.css', array(), '3.2.0', 'all' );
 	wp_enqueue_style( 'bookingwp-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.2.0', 'all' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.2.0', true );

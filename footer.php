@@ -10,25 +10,14 @@
 					<?php if (LogoImage()) { ?>
 							<a href="#"><img src="<?php echo LogoImage(); ?>" style="max-width:150px;" class="img-responsive center-block" alt="<?php bloginfo('name'); ?>" /></a>
 							<?php } else { ?>
-								<h2><a class="navbar-brand" href="#">Hotel Logo</a></h2>
+								<h2><a href="<?php bloginfo('siteurl'); ?>"><?php bloginfo('name'); ?></a></h2>
 					<?php } ?>
 				</div>
-				<div class="col-md-4 widget widget-about">
-					<h5 class="title">
-						About Us
-					</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Etiam sit amet lectus quis est congue mollis.</p>
-				</div>
-				<div class="col-md-4 widget widget-news">
-					<h5 class="title">
-						Latest News
-					</h5>
-					<ul class="custom-list">
-						<li><a href="#">Lorem ipsum dolor</a></li>
-						<li><a href="#">Proin nibh augue suscipit scelerisque</a></li>
-						<li><a href="#">Etiam pellentesque aliquet tellus</a></li>
-					</ul>
-				</div>
+
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+
 				<div class="col-md-4 widget widget-newsletter">
 					<h5 class="title">
 						Newsletter
