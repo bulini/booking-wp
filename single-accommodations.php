@@ -6,7 +6,7 @@
   <?php
   $attachments=OneGallery($post->ID);
   foreach ($attachments as $attachment) { $img=wp_get_attachment_image_src($attachment->ID, 'full', false); ?>
-    <img src="<?php echo $img[0]; ?>">
+    <div class="banner-bg" style="background:url(<?php echo $img[0]; ?>) no-repeat; background-size:cover;"></div>
 	<?php } ?>
   </div>
 </section>
@@ -28,7 +28,7 @@
                   <ul class="tags pt-0 custom-list list-inline pull-left">
                     <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
                     <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> Roma</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> {Roma}</a></li>
                   </ul>
                 </div>
                 <div class="pull-right">

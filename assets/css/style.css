@@ -6638,6 +6638,10 @@ hr {
   display: block;
 }
 /* ROOM */
+.background-slider .banner-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 #room {
   position: relative;
   padding: 0 0 60px 0;

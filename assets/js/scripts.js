@@ -563,7 +563,7 @@ $(document).ready(function () {
   });
 
   // HEADER BG SLIDER HEIGHT
-  $(".background-slider .owl-item").each(function(){
+  $(".background-slider .banner-bg").each(function(){
     $(this).css("height",  $(".header-slider .background-slider").height());
   });
 
