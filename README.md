@@ -1,10 +1,15 @@
-bookingwp Luxury Hotel
+Booking wp Luxury Hotel
 ===
 
-Hi. I'm a starter theme called `bookingwp`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+This theme if for personal use, based on bootstrap3 with many features for booking as hotel, bed and breakfast and guesthouses:
+My target is to do the final solution to accomplish all booking and reservation features needed. A lot of useful and recurrent post types created.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
-
+* Slides
+* Home Blocks
+* Home Tabs
+* Testimonials
+* Accommodations
+* Allotments
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
 * A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
