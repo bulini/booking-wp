@@ -99,7 +99,7 @@ function setup_booking_post_type()
 	*/
 
 
-	register_post_type('accommodations', array(	'label' => 'Accommodations','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'show_in_nav_menus' => true, 'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'alloggi'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
+	register_post_type('accommodations', array(	'label' => 'Accommodations','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'show_in_nav_menus' => true, 'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'listing'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
 	  'name' => 'Accommodations',
 	  'singular_name' => 'Accommodation',
 	  'menu_name' => __( 'Accommodations', 'bookingwp' ),
