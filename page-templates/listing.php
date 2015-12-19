@@ -55,7 +55,7 @@ Template Name: Listing
            </div>
          <?php else : ?>
            <div class="thumbnail">
-              <?php the_post_thumbnail('homepage-thumb', array('class'=>'img-responsive')); ?>
+              <?php the_post_thumbnail('thumbnail', array('class'=>'img-responsive')); ?>
            </div>
          <?php endif; ?>
 
