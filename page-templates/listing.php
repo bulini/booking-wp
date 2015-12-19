@@ -42,15 +42,23 @@ Template Name: Listing
          ?>
          <!-- room list -->
          <div class="listing-room-list">
+           <?php $attachments=OneGallery($post->ID);
+           if(count($attachments>1)) :
+           ?>
            <div class="thumbnail">
              <div class="thumbnail-slider">
                <?php
-               $attachments=OneGallery($post->ID);
                foreach ($attachments as $attachment) { $img=wp_get_attachment_image_src($attachment->ID, 'thumbnail', false); ?>
                <img src="<?php echo $img[0]; ?>" alt="" class="img-responsive">
                <?php } ?>
              </div>
            </div>
+         <?php else : ?>
+           <div class="thumbnail">
+              <?php the_post_thumbnail('homepage-thumb', array('class'=>'img-responsive')); ?>
+           </div>
+         <?php endif; ?>
+
            <div class="listing-room-content">
              <div class="row">
                <div class="col-md-12">
@@ -62,7 +70,7 @@ Template Name: Listing
                      <ul class="tags custom-list list-inline pull-left">
                        <li><a href="#">1 Bed</a></li>
                        <li><a href="#">2 People</a></li>
-                       <li><a href="#">Rome Center</a></li>
+                       <li><a href="#">{city}</a></li>
                      </ul>
                    </div>
                    <div class="pull-right">

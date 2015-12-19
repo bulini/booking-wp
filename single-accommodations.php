@@ -28,7 +28,7 @@
                   <ul class="tags pt-0 custom-list list-inline pull-left">
                     <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
                     <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> {Roma}</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> {city}</a></li>
                   </ul>
                 </div>
                 <div class="pull-right">
