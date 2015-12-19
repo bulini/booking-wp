@@ -415,7 +415,7 @@ $(document).ready(function () {
   $("#map").gmap3({
     marker: {
       values: [{
-        address: "Viale Carlo Felice, 103, 00185 Roma RM",
+        address: $("#map").data('address'),
         //latLng: [41.88783, 12.5109413,17],
         options: {
             icon: "http://www.google.com/mapfiles/marker.png"

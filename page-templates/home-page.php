@@ -45,7 +45,7 @@ global $options;
   <!-- tabs -->
   <?php get_template_part('template-parts/tabs'); ?>
   <!-- carousel -->
-  <?php get_template_part('template-parts/carousel');?>
+  <?php get_template_part('template-parts/rooms-home');?>
 
 <!-- Footer -->
 <?php get_footer(); ?>

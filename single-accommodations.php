@@ -238,7 +238,7 @@
             </div>
           </div>
           <div class="sidebar col-md-3">
-            <div id="map"></div>
+            <div id="map" data-address="Via Torino, 38, Roma, RM"></div>
 
             <?php get_template_part('template-parts/single-reservation-form'); ?>
 
