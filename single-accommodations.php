@@ -181,7 +181,7 @@
                             <li><i class="fa fa-star"></i></li>
                           </ul>
                         </header>
-                        <p>Bello, incredibilmente centrale in un palazzo splendido. Le camere sono meglio di un hotel, e in pochi minuti raggiungi tutta Roma.</p>
+                        <p>Bello, incredibilmente centrale in un palazzo splendido. Le camere sono meglio di un hotel, e in pochi minuti raggiungi tutta <?php echo mytheme_get_option('city_name'); ?>.</p>
                       </div>
                     </li>
                   </ul>
@@ -220,7 +220,7 @@
                           <ul class="tags custom-list list-inline">
                             <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
                             <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker"></i> Roma</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo mytheme_get_option('city_name'); ?></a></li>
                           </ul>
                         </header>
                       </div>
@@ -238,7 +238,8 @@
             </div>
           </div>
           <div class="sidebar col-md-3">
-            <div id="map" data-address="Via Torino, 38, Roma, RM"></div>
+            <?php $address = get_post_meta($post->ID, 'address',true) ? get_post_meta($post->ID, 'address',true) : mytheme_get_option('place_address'); ?>
+            <div id="map" data-address="<?php echo $address; ?>"></div>
 
             <?php get_template_part('template-parts/single-reservation-form'); ?>
 

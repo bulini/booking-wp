@@ -48,7 +48,7 @@ if ( function_exists( 'add_image_size' ) ) {
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.1.4', true );
 
-		wp_enqueue_script( 'sensor', "http://maps.googleapis.com/maps/api/js?sensor=false", array(), '2.1.4', true );
+		//wp_enqueue_script( 'sensor', "http://maps.googleapis.com/maps/api/js?sensor=false", array(), '2.1.4', true );
 		wp_enqueue_script( 'gmap3', get_template_directory_uri() . '/assets/js/gmap3.min.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui-1.10.4.custom.min.js', array(), '2.1.4', true );
@@ -64,7 +64,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 
 add_action( 'wp_enqueue_scripts', 'theme_setup' );
-//add_action( 'wp_enqueue_scripts', 'custom_scripts' );
+add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 // Register Script for wp-admin
 function custom_scripts() {

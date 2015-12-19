@@ -93,6 +93,14 @@ class ThemeSettings {
                     'type' => 'text_medium',
                 ),
                 array(
+                    'name' => __( 'City', 'wpbooking' ),
+                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'id'   => 'city_name',
+                    'type' => 'text_medium',
+                ),
+
+
+                array(
                     'name' => __( 'Phone number', 'wpbooking' ),
                     'desc' => __( 'field description (optional)', 'wpbooking' ),
                     'id'   => 'phone',

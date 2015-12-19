@@ -126,32 +126,6 @@ jQuery('.button').addClass('btn btn-success');
 });
 
 
-      jQuery(function(){
-        jQuery("#address").geocomplete({
-          map: ".map_canvas",
-          details: "form ",
-          markerOptions: {
-            draggable: true
-          }
-        });
-
-        jQuery("#address").bind("geocode:dragged", function(event, latLng){
-          jQuery("input[name=lat]").val(latLng.lat());
-          jQuery("input[name=lng]").val(latLng.lng());
-          jQuery("#reset").show();
-        });
-
-
-        jQuery("#reset").click(function(){
-          jQuery("#address").geocomplete("resetMarker");
-          jQuery("#reset").hide();
-          return false;
-        });
-
-        jQuery("#find").click(function(){
-          jQuery("#address").trigger("geocode");
-        }).click();
-      });
 
 /*cc validator */
 

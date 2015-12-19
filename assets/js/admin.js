@@ -1,13 +1,13 @@
 jQuery(function(){
-  jQuery("#geocomplete").geocomplete({
-    map: ".map_canvas",
-    details: "form ",
+  jQuery("#address").geocomplete({
+    //map: ".map_canvas",
+    details: "post ",
     markerOptions: {
       draggable: true
     }
   });
 
-  jQuery("#geocomplete").bind("geocode:dragged", function(event, latLng){
+  jQuery("#address").bind("geocode:dragged", function(event, latLng){
     jQuery("input[name=lat]").val(latLng.lat());
     jQuery("input[name=lng]").val(latLng.lng());
     jQuery("#reset").show();

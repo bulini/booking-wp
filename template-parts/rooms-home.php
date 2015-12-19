@@ -1,9 +1,13 @@
 <!-- Start Partners -->
 <section id="room" class="partners">
+
   <div class="container">
-    <div class="preamble col-md-12">
-      <h3>Our Rooms</h3>
+    <div class="row">
+      <div class="preamble col-md-12">
+        <h3>Our Rooms</h3>
+      </div>
     </div>
+
     <div class="row">
     <?php
       wp_reset_query();
@@ -32,7 +36,7 @@
                 <ul class="tags custom-list list-inline">
                   <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
                   <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
-                  <li><a href="#"><i class="fa fa-map-marker"></i> Roma</a></li>
+                  <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo mytheme_get_option('city_name'); ?></a></li>
                 </ul>
               </header>
             </div>
@@ -44,7 +48,7 @@
     <!-- End room -->
    <?php $i++;
     endwhile; else: ?>
-    <div class="col-sm-4"><?php _e('Sorry, no posts matched your criteria.'); ?></div>
+    <div class="col-sm-12"><?php _e('Sorry, no posts matched your criteria.'); ?></div>
   <?php endif; wp_reset_query(); ?>
   </div>
   </div>
