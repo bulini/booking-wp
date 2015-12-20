@@ -18,6 +18,8 @@
 
 				<?php dynamic_sidebar( 'footer-2' ); ?>
 
+				<?php dynamic_sidebar( 'footer-3' ); ?>
+				<!--
 				<div class="col-md-4 widget widget-newsletter">
 					<h5 class="title">
 						Newsletter
@@ -37,6 +39,7 @@
 						</ul>
 					</div>
 				</div>
+			-->
 			</div>
 		</div>
 	</div>
