@@ -18,38 +18,21 @@
 </section>
 <!-- End Header-Section -->
 
-<!-- Start Room -->
-<section id="room">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="room-wrapper negative-margin">
-          <div class="room-content col-md-9">
-            <div class="room-general">
-              <header>
-                <div class="pull-left">
-                  <h5 class="title">
-                    <?php the_title(); ?>
-                  </h5>
-                </div>
-                <div class="pull-right">
-
-                </div>
-              </header>
-            </div>
-            <div class="room-about">
-              <?php the_content(); ?>
-            </div>
-          </div>
-          </div>
-        </div>
-        <div class="sidebar col-md-3">
-					<?php get_sidebar(); ?>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Start News -->
+<section class="news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<?php get_template_part('content','page'); ?>
+				<?php bookingwp_post_nav(); ?>
+			</div>
+			<div class="col-md-4">
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
+	</div>
 </section>
+<!-- End News -->
 <?php endwhile; ?>
 <!-- End Room -->
 <?php get_footer(); ?>
