@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="preamble col-md-12">
-        <h3>Our Rooms</h3>
+        <h3><?php _e( 'Our rooms', 'bookingwp' ); ?></h3>
       </div>
     </div>
 
