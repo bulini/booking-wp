@@ -51,17 +51,17 @@ class AccommodationForm {
 				    'desc' => '',
 				    'id' => $prefix . 'type',
 				    'taxonomy' => 'types', //Enter Taxonomy Slug
-				    'type' => 'taxonomy_select',    
+				    'type' => 'taxonomy_select',
 				),
-                
+
                  array(
 				    'name' => 'Prezzo da mostrare',
 				    'desc' => '',
 				    'id' => $prefix . 'min_price',
-				    'type' => 'text_small',    
+				    'type' => 'text_small',
 				),
- 
- 
+
+
                 array(
                     'name' => __( 'Indirizzo', 'wpbooking' ),
                     'desc' => __( '', 'wpbooking' ),
@@ -110,17 +110,14 @@ class AccommodationForm {
                     'class'=> 'pippo'
                 ),
 
+        				array(
+        				    'name' => 'Immagine',
+        				    'desc' => '',
+        				    'id' => $prefix . 'place_image',
+        				    'type' => 'file',
+        				    'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+        				),
 
-
-				array(
-				    'name' => 'Immagine',
-				    'desc' => '',
-				    'id' => $prefix . 'place_image',
-				    'type' => 'file',
-				    'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
-				),
-								
- 
                 array(
                     'name' => 'Describe your place',
                     'desc' => 'Your notes',
@@ -197,10 +194,10 @@ class AccommodationForm {
                 'post_type'             => 'accommodations',
                 'post_content' => wp_kses( $_POST[ $this->prefix . 'place_notes' ], '<b><strong><i><em><h1><h2><h3><h4><h5><h6><pre><code><span>' ),
             ), true );
-			
-		
-			
-			
+
+
+
+
             // If no errors, save the data into a new post draft
             if ( ! is_wp_error( $this->new_submission ) ) {
 
@@ -213,15 +210,15 @@ class AccommodationForm {
 			update_post_meta( $this->new_submission, 'address', $address );
 			update_post_meta( $this->new_submission, 'lat', $lat );
 			update_post_meta( $this->new_submission, 'lng', $lng );
-			update_post_meta( $this->new_submission, 'formatted_address', $formatted_address );	
-			update_post_meta( $this->new_submission, 'place_image_id', $_POST['place_image_id'] );	
+			update_post_meta( $this->new_submission, 'formatted_address', $formatted_address );
+			update_post_meta( $this->new_submission, 'place_image_id', $_POST['place_image_id'] );
 			//update post parent in place_image_id
 			$image = array(
 		      'ID'           => get_post_meta( $this->new_submission, 'place_image_id', 1 ),
 		      'post_parent' => $this->new_submission
 			  );
 			wp_update_post( $image );
-			
+
 			set_post_thumbnail( $this->new_submission, get_post_meta( $this->new_submission, 'place_image_id', 1 ) );
             return $this->new_submission;
 
