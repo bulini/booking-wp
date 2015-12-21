@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Mirko-bookingwp\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Tue Dec 15 2015 23:23:48 GMT+0100 (CET)\n"
-"PO-Revision-Date: Mon Dec 21 2015 01:03:11 GMT+0100 (CET)\n"
+"PO-Revision-Date: Mon Dec 21 2015 01:10:32 GMT+0100 (CET)\n"
 "Last-Translator: admin <pinobulini@gmail.com>\n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -855,24 +855,24 @@ msgstr ""
 
 #. Name of the template
 msgid "Listing"
-msgstr ""
+msgstr "Strutture"
 
 #. Name of the template
 msgid "map"
-msgstr ""
+msgstr "Mappa"
 
 #: ../template-parts/home-rooms.php:6
 msgid "Our Rooms"
-msgstr ""
+msgstr "Camere"
 
 #: ../template-parts/left-box-reviews.php:5
 msgid "Tripadvisor reviews"
-msgstr ""
+msgstr "Recensioni"
 
 #: ../template-parts/reservation-form.php:30 ../template-parts/single-reservation-
 #: form.php:58
 msgid "How many rooms"
-msgstr "Numero Camere"
+msgstr ""
 
 #. Name of the theme
 msgid "Mikro Booking"
