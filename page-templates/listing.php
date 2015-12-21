@@ -14,7 +14,7 @@ Template Name: Listing
            <?php the_title(); ?>
          </h3>
          <ul class="breadcrumbs custom-list list-inline pull-right">
-           <li><a href="#">Home</a></li>
+           <li><a href="<?php bloginfo('siteurl'); ?>">Home</a></li>
            <li><a href="#"><?php the_title(); ?></a></li>
          </ul>
        </div>
@@ -32,7 +32,7 @@ Template Name: Listing
 
        <div class="listing-content col-md-9">
          <div class="listing-pagination">
-           <h5 class="title pull-left">Available Room</h5>
+           <h5 class="title pull-left"><?php _e( 'Available Rooms', 'bookingwp' ); ?></h5>
          </div>
          <?php
            wp_reset_query();
@@ -68,9 +68,9 @@ Template Name: Listing
                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                      </h5>
                      <ul class="tags custom-list list-inline pull-left">
-                       <li><a href="#">1 Bed</a></li>
-                       <li><a href="#">2 People</a></li>
-                       <li><a href="#">{city}</a></li>
+                       <li><a href="#">1 <i class="fa fa-bed"></i></a></li>
+                       <li><a href="#">2 <i class="fa fa-user"></i></a></li>
+                       <li><a href="#"><?php echo mytheme_get_option('city_name'); ?></a></li>
                      </ul>
                    </div>
                    <div class="pull-right">
@@ -88,11 +88,8 @@ Template Name: Listing
                         $people = ($people>2) ? ($people/$room_number) : $people;
 
                         $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->slug,$people);
-
-
-
-                      if ( ! is_wp_error( $term ) ) { ?>
-                       &euro; <?php echo check_price($checkin, $checkout,$allotment,$room_number);
+                        if ( ! is_wp_error( $term ) ) { ?>
+                          &euro; <?php echo check_price($checkin, $checkout,$allotment,$room_number);
                         } ?>
                      </span>
 
@@ -135,10 +132,6 @@ Template Name: Listing
                        <a href="<?php the_permalink(); ?><?php echo $booking_url; ?>" class="btn btn-transparent-gray">
                          Book now
                        </a>
-                       <!--<button class="btn btn-gray-dark">
-                         Book now
-                       </button>
-                      -->
                      </div>
 
                    </div>

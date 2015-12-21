@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Mirko-bookingwp\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Tue Dec 15 2015 23:23:48 GMT+0100 (CET)\n"
-"POT-Revision-Date: Mon Dec 21 2015 00:58:08 GMT+0100 (CET)\n"
+"POT-Revision-Date: Mon Dec 21 2015 00:57:08 GMT+0100 (CET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -143,8 +143,8 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #: ../content-excerpt.php:19 ../content-excerpt.php:22 ../content-search.php:30 ..
-#: content-search.php:40 ../content-single.php:19 ../content-single.php:22 ..
-#: content.php:32 ../content.php:42
+#: /content-search.php:40 ../content-single.php:19 ../content-single.php:22 ..
+#: /content.php:32 ../content.php:42
 msgid ", "
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "<span class=\"category\"><i class=\"fa fa-tags\"></i></span> %1$s"
 msgstr ""
 
 #: ../content-excerpt.php:62 ../content-page.php:18 ../content-single.php:62 ..
-#: content.php:22
+#: /content.php:22
 msgid "Pages:"
 msgstr ""
 
@@ -313,15 +313,15 @@ msgstr ""
 
 #: ../libs/admin-options.php:91 ../libs/admin-options.php:97 ../libs/admin-
 #: options.php:105 ../libs/admin-options.php:121 ../libs/admin-options.php:140 ..
-#: libs/admin-options.php:147 ../libs/metaboxes/booking.php:71 ..
-#: libs/metaboxes/booking.php:82 ../libs/metaboxes/booking.php:106 ..
-#: libs/metaboxes/booking.php:114 ../libs/metaboxes/home-block.php:38 ..
-#: libs/metaboxes/home-block.php:46 ../libs/metaboxes/home-tabs.php:38 ..
-#: libs/metaboxes/home-tabs.php:46 ../libs/metaboxes/property.php:51 ..
-#: libs/metaboxes/property.php:59 ../libs/metaboxes/property.php:67 ..
-#: libs/metaboxes/room.php:71 ../libs/metaboxes/room.php:82 ..
-#: libs/metaboxes/room.php:106 ../libs/metaboxes/slide.php:38 ..
-#: libs/metaboxes/slide.php:47 ../libs/metaboxes/slide.php:55
+#: /libs/admin-options.php:147 ../libs/metaboxes/booking.php:71 ..
+#: /libs/metaboxes/booking.php:82 ../libs/metaboxes/booking.php:106 ..
+#: /libs/metaboxes/booking.php:114 ../libs/metaboxes/home-block.php:38 ..
+#: /libs/metaboxes/home-block.php:46 ../libs/metaboxes/home-tabs.php:38 ..
+#: /libs/metaboxes/home-tabs.php:46 ../libs/metaboxes/property.php:51 ..
+#: /libs/metaboxes/property.php:59 ../libs/metaboxes/property.php:67 ..
+#: /libs/metaboxes/room.php:71 ../libs/metaboxes/room.php:82 ..
+#: /libs/metaboxes/room.php:106 ../libs/metaboxes/slide.php:38 ..
+#: /libs/metaboxes/slide.php:47 ../libs/metaboxes/slide.php:55
 msgid "field description (optional)"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgid "es via roma 10, 00100 Roma"
 msgstr ""
 
 #: ../libs/admin-options.php:120 ../libs/metaboxes/booking.php:81 ..
-#: libs/metaboxes/room.php:81
+#: /libs/metaboxes/room.php:81
 msgid "email"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgid "Twitter URL"
 msgstr ""
 
 #: ../libs/admin-options.php:139 ../libs/metaboxes/home-block.php:45 ..
-#: libs/metaboxes/home-tabs.php:45 ../libs/metaboxes/slide.php:54
+#: /libs/metaboxes/home-tabs.php:45 ../libs/metaboxes/slide.php:54
 msgid "Test Color Picker"
 msgstr ""
 
@@ -382,7 +382,7 @@ msgid ""
 msgstr ""
 
 #: ../libs/booking-handler.php:401 ../libs/booking-handler.php:423 ..
-#: libs/booking-handler.php:438
+#: /libs/booking-handler.php:438
 msgid "Your reservation: "
 msgstr ""
 
@@ -828,7 +828,7 @@ msgstr ""
 #: ../libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
 #: master/helpers/cmb_Meta_Box_types.php:306 ../libs/metaboxes/Custom-Metaboxes-
 #: and-Fields-for-WordPress-master/helpers/cmb_Meta_Box_types.php:706 ..
-#: libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
+#: /libs/metaboxes/Custom-Metaboxes-and-Fields-for-WordPress-
 #: master/helpers/cmb_Meta_Box_types.php:768
 msgid "Remove"
 msgstr ""
