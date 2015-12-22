@@ -481,7 +481,7 @@ $headers[] = "Bcc: $email_bcc" . PHP_EOL;
 
 
 
-function booking_details($bid,$message)
+function booking_details($bid,$message='')
 {
   $name = get_post_meta($bid,'name',true);
   $email = get_post_meta($bid,'email',true);
