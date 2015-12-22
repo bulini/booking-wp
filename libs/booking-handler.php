@@ -398,15 +398,15 @@ function send_ajax()
   switch ($status) {
 
       case "quoted":
-        $e_subject = __('Your reservation: ','wpbooking').$bid.' - ' . $status;
+        $e_subject = __('Your reservation: ','bookingwp').$bid.' - ' . $status;
         // Configuration option.
 
-        //$intro_text = pll_translate_string(sprintf(booking_get_option('wpbooking_quoted_email'),$name,$payment_url), $request_language);
+        //$intro_text = pll_translate_string(sprintf(booking_get_option('bookingwp_quoted_email'),$name,$payment_url), $request_language);
 
-        $intro_text = sprintf(pll_translate_string(booking_get_option('wpbooking_quoted_email'),$request_language),$name,$payment_url);
+        $intro_text = sprintf(pll_translate_string(booking_get_option('bookingwp_quoted_email'),$request_language),$name,$payment_url);
 
 
-        $confirm_button = pll_translate_string(booking_get_option('wpbooking_confirm_button'), $request_language);
+        $confirm_button = pll_translate_string(booking_get_option('bookingwp_confirm_button'), $request_language);
         $reservation_details = booking_details($bid);
 
         $email_content = "Booking<b>: $status</b><br />
@@ -420,9 +420,9 @@ function send_ajax()
       break;
 
       case "refused":
-        $e_subject = __('Your reservation: ','wpbooking').$bid.' - ' . $status;
+        $e_subject = __('Your reservation: ','bookingwp').$bid.' - ' . $status;
         // Configuration option.
-        $intro_text = sprintf(pll_translate_string(booking_get_option('wpbooking_refused_email'),$request_language),$name,$payment_url);
+        $intro_text = sprintf(pll_translate_string(booking_get_option('bookingwp_refused_email'),$request_language),$name,$payment_url);
 
         $email_content = "$intro_text<b>: $status</b><br />
         $owner_message<hr/>". PHP_EOL . PHP_EOL;
@@ -435,7 +435,7 @@ function send_ajax()
           break;
 
       default:
-      $e_subject = __('Your reservation: ','wpbooking').$bid.' - ' . $status;
+      $e_subject = __('Your reservation: ','bookingwp').$bid.' - ' . $status;
       // Configuration option.
       $e_body = "Richiesta &grave; stata <b>: $status</b><br />
       $owner_message<hr/>
@@ -467,7 +467,7 @@ $headers[] = "Bcc: $email_bcc" . PHP_EOL;
 	echo '<fieldset>';
 	echo '<div id="success_page" class="alert alert-success">';
 
-	echo '<p>'._e('Offer sent correctly','wpbooking').'</p>';
+	echo '<p>'._e('Offer sent correctly','bookingwp').'</p>';
 	echo '</div>';
 	echo '</fieldset>';
 	exit();

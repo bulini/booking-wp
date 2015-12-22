@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mirko-bookingwp\n"
+"Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Tue Dec 15 2015 23:23:48 GMT+0100 (CET)\n"
-"POT-Revision-Date: Mon Dec 21 2015 00:58:08 GMT+0100 (CET)\n"
+"POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
+"POT-Revision-Date: Tue Dec 22 2015 00:25:47 GMT+0100 (CET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -142,6 +142,7 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
 #: ../content-excerpt.php:19 ../content-excerpt.php:22 ../content-search.php:30 ..
 #: content-search.php:40 ../content-single.php:19 ../content-single.php:22 ..
 #: content.php:32 ../content.php:42
@@ -255,9 +256,117 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../single-accommodations.php:235 ../page-templates/listing.php:150 ../template-
+#: ../single-accommodations.php:60
+msgid "Details"
+msgstr ""
+
+#: ../single-accommodations.php:65
+msgid "Amenities"
+msgstr ""
+
+#: ../single-accommodations.php:66
+msgctxt "Prezzi"
+msgid "Prices"
+msgstr ""
+
+#: ../single-accommodations.php:67
+msgid "Gallery"
+msgstr ""
+
+#: ../single-accommodations.php:68
+msgid "Guests reviews"
+msgstr ""
+
+#: ../single-accommodations.php:196 ../template-parts/rooms-home.php:7
+msgid "Our rooms"
+msgstr ""
+
+#: ../single-accommodations.php:211 ../page-templates/listing.php:133 ../template-
+#: parts/reservation-form.php:6 ../template-parts/reservation-form.php:45 ..
+#: template-parts/rooms-home.php:25
+msgid "Book now"
+msgstr ""
+
+#: ../single-accommodations.php:237 ../page-templates/listing.php:146 ../template-
 #: parts/home-rooms.php:40 ../template-parts/rooms-home.php:51
 msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: ../inc/customizer.php:18 ../libs/theme-customization.php:11
+msgid "Layout Settings"
+msgstr ""
+
+#: ../inc/customizer.php:34 ../libs/theme-customization.php:27
+msgid "Jumbotron h1"
+msgstr ""
+
+#: ../inc/customizer.php:48 ../libs/admin-options.php:96 ../libs/theme-
+#: customization.php:41
+msgid "City"
+msgstr ""
+
+#: ../inc/customizer.php:63 ../libs/theme-customization.php:56
+msgid "Jumbotron text"
+msgstr ""
+
+#: ../inc/customizer.php:79 ../libs/theme-customization.php:72
+msgid "Text Test"
+msgstr ""
+
+#: ../inc/customizer.php:108 ../libs/theme-customization.php:101
+msgid "Color Scheme"
+msgstr ""
+
+#: ../inc/customizer.php:125 ../libs/theme-customization.php:118
+msgid "Display Header Text"
+msgstr ""
+
+#: ../inc/customizer.php:214 ../libs/theme-customization.php:207
+msgid "Logo"
+msgstr ""
+
+#: ../inc/customizer.php:231 ../libs/theme-customization.php:224
+msgid "Background Image"
+msgstr ""
+
+#: ../inc/customizer.php:251 ../libs/theme-customization.php:244
+msgid "Background Color"
+msgstr ""
+
+#: ../inc/customizer.php:268 ../libs/theme-customization.php:261
+msgid "Link Color"
+msgstr ""
+
+#: ../inc/customizer.php:285 ../libs/theme-customization.php:278
+msgid "Nav backgound Color"
+msgstr ""
+
+#: ../inc/customizer.php:302 ../libs/theme-customization.php:295
+msgid "Nav backgound bottom Color"
+msgstr ""
+
+#: ../inc/customizer.php:321 ../libs/theme-customization.php:314
+msgid "Button background color"
+msgstr ""
+
+#: ../inc/customizer.php:339 ../libs/theme-customization.php:332
+msgid "Button link color"
+msgstr ""
+
+#: ../inc/customizer.php:358 ../libs/theme-customization.php:351
+msgid "1 Widget"
+msgstr ""
+
+#: ../inc/customizer.php:371 ../libs/theme-customization.php:364
+msgid "2 Widget"
+msgstr ""
+
+#: ../inc/customizer.php:384 ../libs/theme-customization.php:377
+msgid "3 Widget"
+msgstr ""
+
+#: ../inc/customizer.php:401 ../libs/theme-customization.php:394
+msgid "Upload Test"
 msgstr ""
 
 #: ../inc/extras.php:63
@@ -323,10 +432,6 @@ msgstr ""
 #: libs/metaboxes/room.php:106 ../libs/metaboxes/slide.php:38 ..
 #: libs/metaboxes/slide.php:47 ../libs/metaboxes/slide.php:55
 msgid "field description (optional)"
-msgstr ""
-
-#: ../libs/admin-options.php:96 ../libs/theme-customization.php:41
-msgid "City"
 msgstr ""
 
 #: ../libs/admin-options.php:104
@@ -562,78 +667,6 @@ msgid_plural "Confirmed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../libs/theme-customization.php:11
-msgid "Layout Settings"
-msgstr ""
-
-#: ../libs/theme-customization.php:27
-msgid "Jumbotron h1"
-msgstr ""
-
-#: ../libs/theme-customization.php:56
-msgid "Jumbotron text"
-msgstr ""
-
-#: ../libs/theme-customization.php:72
-msgid "Text Test"
-msgstr ""
-
-#: ../libs/theme-customization.php:101
-msgid "Color Scheme"
-msgstr ""
-
-#: ../libs/theme-customization.php:118
-msgid "Display Header Text"
-msgstr ""
-
-#: ../libs/theme-customization.php:207
-msgid "Logo"
-msgstr ""
-
-#: ../libs/theme-customization.php:224
-msgid "Background Image"
-msgstr ""
-
-#: ../libs/theme-customization.php:244
-msgid "Background Color"
-msgstr ""
-
-#: ../libs/theme-customization.php:261
-msgid "Link Color"
-msgstr ""
-
-#: ../libs/theme-customization.php:278
-msgid "Nav backgound Color"
-msgstr ""
-
-#: ../libs/theme-customization.php:295
-msgid "Nav backgound bottom Color"
-msgstr ""
-
-#: ../libs/theme-customization.php:314
-msgid "Button background color"
-msgstr ""
-
-#: ../libs/theme-customization.php:332
-msgid "Button link color"
-msgstr ""
-
-#: ../libs/theme-customization.php:351
-msgid "1 Widget"
-msgstr ""
-
-#: ../libs/theme-customization.php:364
-msgid "2 Widget"
-msgstr ""
-
-#: ../libs/theme-customization.php:377
-msgid "3 Widget"
-msgstr ""
-
-#: ../libs/theme-customization.php:394
-msgid "Upload Test"
-msgstr ""
-
 #: ../libs/theme-init.php:103
 msgid "Thumbnail"
 msgstr ""
@@ -650,31 +683,31 @@ msgstr ""
 msgid "Nome struttura"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:66
+#: ../libs/metaboxes/accommodation.php:78
 msgid "Indirizzo"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:74
+#: ../libs/metaboxes/accommodation.php:86
 msgid "Lat"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:82
+#: ../libs/metaboxes/accommodation.php:94
 msgid "Long"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:90
+#: ../libs/metaboxes/accommodation.php:102
 msgid "Formatted Address"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:98
+#: ../libs/metaboxes/accommodation.php:110
 msgid "country"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:106
+#: ../libs/metaboxes/accommodation.php:118
 msgid "locality"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:152
+#: ../libs/metaboxes/accommodation.php:161
 msgid "A metabox with the specified 'metabox_id' doesn't exist."
 msgstr ""
 
@@ -738,7 +771,7 @@ msgstr ""
 msgid "Base price"
 msgstr ""
 
-#: ../libs/metaboxes/property.php:66
+#: ../libs/metaboxes/property.php:66 ../template-parts/reservation-form.php:22
 msgid "People"
 msgstr ""
 
@@ -872,7 +905,6 @@ msgid "Listing"
 msgstr ""
 
 #: ../page-templates/listing.php:35
-msgctxt "Camere disponibili"
 msgid "Available Rooms"
 msgstr ""
 
@@ -888,7 +920,19 @@ msgstr ""
 msgid "Tripadvisor reviews"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:30 ../template-parts/single-reservation-
+#: ../template-parts/reservation-form.php:14
+msgid "Checkin"
+msgstr ""
+
+#: ../template-parts/reservation-form.php:18
+msgid "Checkout"
+msgstr ""
+
+#: ../template-parts/reservation-form.php:23
+msgid "Please choose"
+msgstr ""
+
+#: ../template-parts/reservation-form.php:32 ../template-parts/single-reservation-
 #: form.php:58
 msgid "How many rooms"
 msgstr ""

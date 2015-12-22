@@ -25,7 +25,7 @@ function cmb_slide_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['slide_metabox'] = array(
 		'id'         => 'slide_metabox',
-		'title'      => __( 'Slide Box', 'wpbooking' ),
+		'title'      => __( 'Slide Box', 'bookingwp' ),
 		'pages'      => array( 'slides'), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -34,8 +34,8 @@ function cmb_slide_metaboxes( array $meta_boxes ) {
 		'fields'     => array(
 
 			array(
-				'name' => __( 'Heading text', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'Heading text', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'heading_text',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
@@ -43,16 +43,16 @@ function cmb_slide_metaboxes( array $meta_boxes ) {
 			
 			
 			array(
-				'name' => __( 'Subheading text', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'Subheading text', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'subheading_text',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
 	
 			array(
-				'name'    => __( 'Test Color Picker', 'wpbooking' ),
-				'desc'    => __( 'field description (optional)', 'wpbooking' ),
+				'name'    => __( 'Test Color Picker', 'bookingwp' ),
+				'desc'    => __( 'field description (optional)', 'bookingwp' ),
 				'id'      => $prefix . 'test_colorpicker',
 				'type'    => 'colorpicker',
 				'default' => '#ffffff'

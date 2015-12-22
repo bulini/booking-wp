@@ -124,8 +124,8 @@ function setup_booking_post_type()
 
 	register_post_type('properties', array(	'label' => 'Properties','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'prop'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','custom-fields','thumbnail','author','page-attributes'),'labels' => array (
 	  'name' => 'Properties',
-	  'singular_name' => __('Allotment', 'wpbooking'),
-	  'menu_name' => __('Allotments', 'wpbooking'),
+	  'singular_name' => __('Allotment', 'bookingwp'),
+	  'menu_name' => __('Allotments', 'bookingwp'),
 	  'add_new' => 'Add Property',
 	  'add_new_item' => 'Add New Property',
 	  'edit' => __( 'Edit', 'bookingwp' ),

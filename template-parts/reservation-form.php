@@ -3,7 +3,7 @@
   <div class="container">
       <div id="hero-tabs" class="banner-search-inner">
         <ul class="custom-list tab-title-list clearfix">
-          <li class="tab-title active"><a href="#yachts">Book now</a></li>
+          <li class="tab-title active"><a href="#"><?php _e('Book now','bookingwp'); ?></a></li>
         </ul>
         <ul class="custom-list tab-content-list">
 
@@ -11,23 +11,25 @@
           <li class="tab-content active">
             <form class="default-form" method="get" action="<?php bloginfo('siteurl');?>/rooms">
               <span class="arrival calendar">
-                <input type="text" name="checkin" id="checkin" placeholder="Arrival" data-dateformat="d/m/y">
+                <input type="text" name="checkin" id="checkin" placeholder="<?php _e('Checkin','bookingwp'); ?>" data-dateformat="d/m/y">
                 <i class="fa fa-calendar"></i>
               </span>
               <span class="departure calendar">
-                <input type="text" name="checkout" id="checkout" placeholder="Departure" data-dateformat="d/m/y">
+                <input type="text" name="checkout" id="checkout" placeholder="<?php _e('Checkout','bookingwp'); ?>" data-dateformat="d/m/y">
                 <i class="fa fa-calendar"></i>
               </span>
               <span class="adults select-box">
-                <select name="people" data-placeholder="Camera">
-                  <option>Room</option>
-                  <option value="1">1 people (single use)</option>
-                  <option value="2">2 people (double)</option>
+                <?php $rooms = get_roomtypes(); ?>
+                <select name="people" data-placeholder="<?php _e('People','bookingwp'); ?>">
+                <?php foreach($rooms as $room): ?>
+                  <?php $people = get_post_meta($room->ID,'people',true)?>
+                  <option value="<?php echo $people; ?>"><?php echo apply_filters('the_title',$room->post_title); ?> - <?php echo $people; ?></option>
+                <?php endforeach; ?>
                 </select>
               </span>
               <span class="room_number select-box">
         				<select name="room_number" id="room_number" data-placeholder="Rooms">
-        					<option selected="selected" disabled="disabled"><?php _e('How many rooms','wpbooking'); ?></option>
+        					<option selected="selected" disabled="disabled"><?php _e('How many rooms','bookingwp'); ?></option>
         									  <?php global $post; get_roomtypes();
         										  $i=1;
         										  if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -40,7 +42,7 @@
         				</select>
         			</span>
               <span class="submit-btn">
-                <button class="btn btn-transparent" id="book-singles-button">Book Now</button>
+                <button class="btn btn-transparent" id="book-singles-button"><?php _e('Book now','bookingwp'); ?></button>
                 <!--<a href="#" class="advanced">Advanced Search</a>-->
               </span>
             </form>

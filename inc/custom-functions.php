@@ -5,7 +5,7 @@ require get_template_directory() . '/libs/admin-options.php';
 require get_template_directory() . '/libs/booking-options.php';
 require get_template_directory() . '/libs/booking-handler.php';
 require get_template_directory() . '/libs/ajax-handler.php';
-require get_template_directory() . '/libs/theme-customization.php';
+//require get_template_directory() . '/libs/theme-customization.php';
 require get_template_directory() . '/libs/metaboxes/accommodation.php';
 require get_template_directory() . '/libs/metaboxes/property.php';
 require get_template_directory() . '/libs/metaboxes/booking.php';
@@ -27,59 +27,59 @@ function poly_languages() {
 	return $languages;
 }
 
-add_action('init', 'wpbooking_email_strings'); // the function is called only when all plugins are loaded
+add_action('init', 'bookingwp_email_strings'); // the function is called only when all plugins are loaded
 
-function wpbooking_email_strings() {
+function bookingwp_email_strings() {
 
-  $name='wpbooking-quoted-subject';
-  $string = booking_get_option('wpbooking_quoted_email_subject');
-  $group = 'wpbooking';
+  $name='bookingwp-quoted-subject';
+  $string = booking_get_option('bookingwp_quoted_email_subject');
+  $group = 'bookingwp';
   $multiline = true;
   pll_register_string($name, $string, $group, $multiline);
 
 
 
-    $name='wpbooking-quoted';
-    $string = booking_get_option('wpbooking_quoted_email');
-    $group = 'wpbooking';
+    $name='bookingwp-quoted';
+    $string = booking_get_option('bookingwp_quoted_email');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
-    $name='wpbooking-refused-subject';
-    $string = booking_get_option('wpbooking_refused_email_subject');
-    $group = 'wpbooking';
+    $name='bookingwp-refused-subject';
+    $string = booking_get_option('bookingwp_refused_email_subject');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
-    $name='wpbooking-refused';
-    $string = booking_get_option('wpbooking_refused_email');
-    $group = 'wpbooking';
+    $name='bookingwp-refused';
+    $string = booking_get_option('bookingwp_refused_email');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
-    $name='wpbooking-confirmed-email-subject';
-    $string = booking_get_option('wpbooking_confirmed_email_subject');
-    $group = 'wpbooking';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
-
-
-    $name='wpbooking-confirmed';
-    $string = booking_get_option('wpbooking_confirmed_email');
-    $group = 'wpbooking';
+    $name='bookingwp-confirmed-email-subject';
+    $string = booking_get_option('bookingwp_confirmed_email_subject');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
 
-    $name='wpbooking-confirm-button';
-    $string = booking_get_option('wpbooking_confirm_button');
-    $group = 'wpbooking';
+    $name='bookingwp-confirmed';
+    $string = booking_get_option('bookingwp_confirmed_email');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
-    $name='wpbooking-cancellation-policy';
-    $string = booking_get_option('wpbooking_cancellation_policy');
-    $group = 'wpbooking';
+
+    $name='bookingwp-confirm-button';
+    $string = booking_get_option('bookingwp_confirm_button');
+    $group = 'bookingwp';
+    $multiline = true;
+    pll_register_string($name, $string, $group, $multiline);
+
+    $name='bookingwp-cancellation-policy';
+    $string = booking_get_option('bookingwp_cancellation_policy');
+    $group = 'bookingwp';
     $multiline = true;
     pll_register_string($name, $string, $group, $multiline);
 
@@ -154,12 +154,8 @@ function get_testimonials(){
 }
 
 function get_roomtypes($parent=0){
-	if($parent==0){
-		return query_posts( array ('post_type' => 'properties', 'post_parent' => 0, 'posts_per_page' => -1, 'order' => 'ASC'));
-	}
-	else {
-		return query_posts( array ( 'post_type' => 'properties', 'posts_per_page' => -1, 'order' => 'ASC', 'post_parent' =>$parent));
-	}
+
+		return query_posts( array ('post_type' => 'properties', 'post_parent' => $parent, 'posts_per_page' => -1, 'order' => 'ASC'));
 
 }
 
@@ -193,7 +189,7 @@ function service_list($lang)
 
 function LogoImage()
 {
-	$options=get_option('wpbooking_theme_options');
+	$options=get_option('bookingwp_theme_options');
 	$uploads = wp_upload_dir();
 	$logo=$options['image_upload_test'];
 	return $logo;
@@ -202,7 +198,7 @@ function LogoImage()
 
 function load_theme_options()
 {
-    $options=get_option('wpbooking_theme_options');
+    $options=get_option('bookingwp_theme_options');
     return $options;
 }
 

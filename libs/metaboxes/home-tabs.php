@@ -25,7 +25,7 @@ function cmb_tabs_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['tabs_metabox'] = array(
 		'id'         => 'icon_metabox',
-		'title'      => __( 'Icon Box', 'wpbooking' ),
+		'title'      => __( 'Icon Box', 'bookingwp' ),
 		'pages'      => array( 'tabs'), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -34,24 +34,24 @@ function cmb_tabs_metaboxes( array $meta_boxes ) {
 		'fields'     => array(
 
 			array(
-				'name' => __( 'Test Text Medium', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'Test Text Medium', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'test_textmedium',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
 
 			array(
-				'name'    => __( 'Test Color Picker', 'wpbooking' ),
-				'desc'    => __( 'field description (optional)', 'wpbooking' ),
+				'name'    => __( 'Test Color Picker', 'bookingwp' ),
+				'desc'    => __( 'field description (optional)', 'bookingwp' ),
 				'id'      => $prefix . 'test_colorpicker',
 				'type'    => 'colorpicker',
 				'default' => '#ffffff'
 			),
 
 			array(
-				'name'    => __( 'Icon', 'wpbooking' ),
-				'desc'    => __( 'Scegli icona ', 'wpbooking' ),
+				'name'    => __( 'Icon', 'bookingwp' ),
+				'desc'    => __( 'Scegli icona ', 'bookingwp' ),
 				'id'      => $prefix . 'fa_icon',
 				'type'    => 'select',
 				'options' => array(

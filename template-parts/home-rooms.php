@@ -3,7 +3,7 @@
 
     <div class="row text-center">
       <div class="col-sm-12">
-        <h2 class="lined-heading"><span><?php _e('Our Rooms','wpbooking'); ?></span></h2>
+        <h2 class="lined-heading"><span><?php _e('Our Rooms','bookingwp'); ?></span></h2>
       </div>
     </div>
 <?php

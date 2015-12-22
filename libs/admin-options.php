@@ -29,7 +29,7 @@ class ThemeSettings {
      */
     public function __construct() {
         // Set our title
-        $this->title = __( 'Site Options', 'wpbooking' );
+        $this->title = __( 'Site Options', 'bookingwp' );
     }
 
     /**
@@ -87,29 +87,29 @@ class ThemeSettings {
             'show_names' => true,
             'fields'     => array(
                 array(
-                    'name' => __( 'Place Name', 'wpbooking' ),
-                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'name' => __( 'Place Name', 'bookingwp' ),
+                    'desc' => __( 'field description (optional)', 'bookingwp' ),
                     'id'   => 'place_name',
                     'type' => 'text_medium',
                 ),
                 array(
-                    'name' => __( 'City', 'wpbooking' ),
-                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'name' => __( 'City', 'bookingwp' ),
+                    'desc' => __( 'field description (optional)', 'bookingwp' ),
                     'id'   => 'city_name',
                     'type' => 'text_medium',
                 ),
 
 
                 array(
-                    'name' => __( 'Phone number', 'wpbooking' ),
-                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'name' => __( 'Phone number', 'bookingwp' ),
+                    'desc' => __( 'field description (optional)', 'bookingwp' ),
                     'id'   => 'phone',
                     'type' => 'text_medium',
                 ),
 
                  array(
-                    'name' => __( 'place address', 'wpbooking' ),
-                    'desc' => __( 'es via roma 10, 00100 Roma', 'wpbooking' ),
+                    'name' => __( 'place address', 'bookingwp' ),
+                    'desc' => __( 'es via roma 10, 00100 Roma', 'bookingwp' ),
                     'id'   => 'place_address',
                     'type' => 'text_medium',
                 ),
@@ -117,8 +117,8 @@ class ThemeSettings {
 
 
                 array(
-                    'name' => __( 'email', 'wpbooking' ),
-                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'name' => __( 'email', 'bookingwp' ),
+                    'desc' => __( 'field description (optional)', 'bookingwp' ),
                     'id'   => 'email',
                     'type' => 'text_email',
                 ),
@@ -136,28 +136,28 @@ class ThemeSettings {
 				    // 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
 				),
                 array(
-                    'name'    => __( 'Test Color Picker', 'wpbooking' ),
-                    'desc'    => __( 'field description (optional)', 'wpbooking' ),
+                    'name'    => __( 'Test Color Picker', 'bookingwp' ),
+                    'desc'    => __( 'field description (optional)', 'bookingwp' ),
                     'id'      => 'test_colorpicker',
                     'type'    => 'colorpicker',
                     'default' => '#ffffff'
                 ),
                  array(
-                    'name' => __( 'Footer Text', 'wpbooking' ),
-                    'desc' => __( 'field description (optional)', 'wpbooking' ),
+                    'name' => __( 'Footer Text', 'bookingwp' ),
+                    'desc' => __( 'field description (optional)', 'bookingwp' ),
                     'id'   => 'footer_text',
                     'type' => 'text',
                 ),
                  array(
-                    'name' => __( 'Amenities IT', 'wpbooking' ),
-                    'desc' => __( 'servizi (separati da virgola)', 'wpbooking' ),
+                    'name' => __( 'Amenities IT', 'bookingwp' ),
+                    'desc' => __( 'servizi (separati da virgola)', 'bookingwp' ),
                     'id'   => 'custom_services_list_it',
                     'type' => 'text',
                 ),
 
                  array(
-                    'name' => __( 'Amenities EN', 'wpbooking' ),
-                    'desc' => __( 'servizi (separati da virgola)', 'wpbooking' ),
+                    'name' => __( 'Amenities EN', 'bookingwp' ),
+                    'desc' => __( 'servizi (separati da virgola)', 'bookingwp' ),
                     'id'   => 'custom_services_list_en',
                     'type' => 'text',
                 ),

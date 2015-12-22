@@ -2,7 +2,7 @@
     <!-- Testimonials -->
     <section class="testimonials mt100">
       <div class="col-md-6">
-        <h2 class="lined-heading bounceInLeft appear" data-start="0"><span><?php _e('Tripadvisor reviews','wpbooking'); ?></span></h2>
+        <h2 class="lined-heading bounceInLeft appear" data-start="0"><span><?php _e('Tripadvisor reviews','bookingwp'); ?></span></h2>
         <div id="owl-reviews" class="owl-carousel">
 		<div class="item">
 			

@@ -26,8 +26,8 @@
                     <?php the_title(); ?>
                   </h5>
                   <ul class="tags pt-0 custom-list list-inline pull-left">
-                    <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
-                    <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
+                    <li><a href="#"><i class="fa fa-bed"></i> <?php echo get_post_meta($post->ID,'beds', true); ?></a> </li>
+                    <li><a href="#"><i class="fa fa-user"></i> <?php echo get_post_meta($post->ID,'max_people', true); ?></a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo mytheme_get_option('city_name'); ?></a></li>
                   </ul>
                 </div>
@@ -57,15 +57,15 @@
               </header>
             </div>
             <div class="room-about">
-              <h5 class="title-section">Dettagli</h5>
+              <h5 class="title-section"><?php _e('Details','bookingwp'); ?></h5>
               <?php the_content(); ?>
             </div>
             <div class="room-tabs">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#amenities">Servizi</a></li>
-                <li><a data-toggle="tab" href="#prices">Prezzi</a></li>
-                <li><a data-toggle="tab" href="#images">Galleria</a></li>
-                <li><a data-toggle="tab" href="#reviews">Recensioni</a></li>
+                <li class="active"><a data-toggle="tab" href="#amenities"><?php _e('Amenities','bookingwp'); ?></a></li>
+                <li><a data-toggle="tab" href="#prices"><?php _e('Prices','bookingwp'); ?></a></li>
+                <li><a data-toggle="tab" href="#images"><?php _e('Gallery','bookingwp'); ?></a></li>
+                <li><a data-toggle="tab" href="#reviews"><?php _e('Guests reviews','bookingwp'); ?></a></li>
               </ul>
 
               <div class="tab-content">
@@ -165,6 +165,7 @@
                 </div>
 
                 <div id="reviews" class="tab-pane fade">
+
                   <ul class="reviews-list custom-list">
                     <li>
                       <div class="thumbnail">
@@ -185,13 +186,14 @@
                       </div>
                     </li>
                   </ul>
+
                 </div>
               </div>
             </div>
 
 
             <div class="room-related">
-              <h5 class="title-section">Altre camere</h5>
+              <h5 class="title-section"><?php _e('Our rooms','bookingwp'); ?></h5>
               <div class="row">
               <?php
               	wp_reset_query();
@@ -206,7 +208,7 @@
 
                     <div class="overlay-shadow">
                       <div class="overlay-content">
-                        <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white">Prenota</a>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white"><?php _e('Book now','bookingwp'); ?></a>
                       </div>
                     </div>
                   </div>
@@ -218,8 +220,8 @@
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                           </h5>
                           <ul class="tags custom-list list-inline">
-                            <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
-                            <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
+                            <li><a href="#"><i class="fa fa-bed"></i> <?php get_post_meta($post->ID,'beds', true); ?></a> </li>
+                            <li><a href="#"><i class="fa fa-user"></i> <?php get_post_meta($post->ID,'max_people', true); ?></a></li>
                             <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo mytheme_get_option('city_name'); ?></a></li>
                           </ul>
                         </header>

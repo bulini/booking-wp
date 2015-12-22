@@ -22,7 +22,7 @@
 
           <div class="overlay-shadow">
             <div class="overlay-content">
-              <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white">Prenota</a>
+              <a href="<?php the_permalink(); ?>" class="btn btn-transparent-white"><?php _e('Book now','bookingwp'); ?></a>
             </div>
           </div>
         </div>
@@ -34,8 +34,8 @@
                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h5>
                 <ul class="tags custom-list list-inline">
-                  <li><a href="#"><i class="fa fa-bed"></i> 1</a> </li>
-                  <li><a href="#"><i class="fa fa-user"></i> 2</a></li>
+                  <li><a href="#"><i class="fa fa-bed"></i> <?php echo get_post_meta($post->ID,'beds', true); ?></a> </li>
+                  <li><a href="#"><i class="fa fa-user"></i> <?php echo get_post_meta($post->ID,'max_people', true); ?></a></li>
                   <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo mytheme_get_option('city_name'); ?></a></li>
                 </ul>
               </header>

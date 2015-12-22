@@ -55,7 +55,7 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 			</span>
 			<span class="room_number select-box">
 				<select name="room_number" id="room_number" data-placeholder="Roomtype">
-					<option selected="selected" disabled="disabled"><?php _e('How many rooms','wpbooking'); ?></option>
+					<option selected="selected" disabled="disabled"><?php _e('How many rooms','bookingwp'); ?></option>
 									  <?php global $post; get_roomtypes();
 										  $i=1;
 										  if ( have_posts() ) : while ( have_posts() ) : the_post();

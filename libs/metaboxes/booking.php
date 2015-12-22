@@ -59,7 +59,7 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['booking_metabox'] = array(
 		'id'         => 'booking_metabox',
-		'title'      => __( 'Booking Box', 'wpbooking' ),
+		'title'      => __( 'Booking Box', 'bookingwp' ),
 		'pages'      => array( 'bookings'), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -67,8 +67,8 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'     => array(
           array(
-                'name'    => __( 'Select Room', 'wpbooking' ),
-                'desc'    => __( 'field description (optional)', 'wpbooking' ),
+                'name'    => __( 'Select Room', 'bookingwp' ),
+                'desc'    => __( 'field description (optional)', 'bookingwp' ),
                 'id'      => $prefix . 'room',
                 'type'    => 'select',
                 'options' => cmb_get_post_options( array( 'post_type' => 'accommodations', 'numberposts' => 5 ) ),
@@ -78,8 +78,8 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 
 
 			array(
-				'name' => __( 'email', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'email', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'email',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
@@ -102,16 +102,16 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 			    'date_format' => 'm/d/Y',
 			),
 			array(
-				'name' => __( 'adults', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'adults', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'adults',
 				'type' => 'text_small',
 				// 'repeatable' => true,
 			),
 
 			array(
-				'name' => __( 'children', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'children', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'children',
 				'type' => 'text_small',
 				// 'repeatable' => true,
@@ -123,10 +123,10 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 			    'id'      => $prefix . 'status',
 			    'type'    => 'select',
 			    'options' => array(
-			        'pending' => __( 'Pending', 'wpbooking' ),
-			        'quoted'   => __( 'Quoted', 'wpbooking' ),
-			        'booked'     => __( 'Booked', 'wpbooking' ),
-			        'refused'     => __( 'Refused', 'wpbooking' ),
+			        'pending' => __( 'Pending', 'bookingwp' ),
+			        'quoted'   => __( 'Quoted', 'bookingwp' ),
+			        'booked'     => __( 'Booked', 'bookingwp' ),
+			        'refused'     => __( 'Refused', 'bookingwp' ),
 			    ),
 			    'default' => 'pending',
 			),

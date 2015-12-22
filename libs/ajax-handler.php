@@ -168,10 +168,10 @@ function home_booking()
 
 		if($price){
 			//stop mostra prezzo per ora..
-			//echo '<b>'._e('Price for your reservation is &euro;','wpbooking').' '.$price.'</b><br />';
+			//echo '<b>'._e('Price for your reservation is &euro;','bookingwp').' '.$price.'</b><br />';
 		}
 
-		echo '<p>'._e('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','wpbooking').'</p>';
+		echo '<p>'._e('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p>';
 		echo '</div>';
 		echo '</fieldset>';
 		exit();

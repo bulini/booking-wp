@@ -31,7 +31,7 @@ function cmb_property_metaboxes( array $meta_boxes ) {
 	 */
 	$meta_boxes['property_metabox'] = array(
 		'id'         => 'property_metabox',
-		'title'      => __( 'Room prices management', 'wpbooking' ),
+		'title'      => __( 'Room prices management', 'bookingwp' ),
 		'pages'      => array( 'properties'), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
@@ -47,24 +47,24 @@ function cmb_property_metaboxes( array $meta_boxes ) {
 			),
 
 			array(
-				'name' => __( 'Heading text', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'Heading text', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'heading_text',
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
 
 			array(
-				'name' => __( 'Base price', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'Base price', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'heading_text',
 				'type' => 'min_price',
 				// 'repeatable' => true,
 			),
 
 			array(
-				'name' => __( 'People', 'wpbooking' ),
-				'desc' => __( 'field description (optional)', 'wpbooking' ),
+				'name' => __( 'People', 'bookingwp' ),
+				'desc' => __( 'field description (optional)', 'bookingwp' ),
 				'id'   => $prefix . 'people',
 				'type' => 'text_medium',
 				// 'repeatable' => true,

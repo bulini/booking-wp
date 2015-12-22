@@ -13,7 +13,7 @@
           <li class="<?php echo $css; ?>">
             <a data-toggle="tab" href="#tab-<?php echo $i; ?>">
               <h5 class="title"><?php the_title(); ?></h5>
-              <h6 class="subtitle">No compromises</h6>
+              <!--<h6 class="subtitle">No compromises</h6>-->
             </a>
           </li>
           <?php $i++; endwhile; endif; ?>
@@ -31,7 +31,7 @@
           <?php the_post_thumbnail('homepage-thumb', array('class'=>'img-responsive')); ?>
           <header>
             <h5 class="title"><?php the_title(); ?></h5>
-            <h6 class="subtitle">We are available</h6>
+            <!--<h6 class="subtitle">We are available</h6>-->
           </header>
           <?php the_content(); ?>
         </div>

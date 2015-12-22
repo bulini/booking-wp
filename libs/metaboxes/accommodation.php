@@ -34,77 +34,89 @@ class AccommodationForm {
          */
         $meta_boxes['accommodations_metabox'] = array(
             'id'         => 'details',
-            'title'      => __( 'Accommodation details', 'wpbooking' ),
+            'title'      => __( 'Accommodation details', 'bookingwp' ),
             'pages'      => array( 'accommodations' ), // Post type
             'context'    => 'normal',
             'priority'   => 'high',
             'show_names' => true, // Show field names on the left
             'fields'     => array(
                 array(
-                    'name' => __( 'Nome struttura', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'Nome struttura', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'place_name',
                     'type' => 'text_medium',
                 ),
                 array(
-				    'name' => 'Tipologia',
-				    'desc' => '',
-				    'id' => $prefix . 'type',
-				    'taxonomy' => 'types', //Enter Taxonomy Slug
-				    'type' => 'taxonomy_select',
-				),
-
-                 array(
-				    'name' => 'Prezzo da mostrare',
-				    'desc' => '',
-				    'id' => $prefix . 'min_price',
-				    'type' => 'text_small',
-				),
-
+      				    'name' => 'Tipologia',
+      				    'desc' => '',
+      				    'id' => $prefix . 'type',
+      				    'taxonomy' => 'types', //Enter Taxonomy Slug
+      				    'type' => 'taxonomy_select',
+				        ),
 
                 array(
-                    'name' => __( 'Indirizzo', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+      				    'name' => 'Prezzo da mostrare',
+      				    'desc' => '',
+      				    'id' => $prefix . 'min_price',
+      				    'type' => 'text_small',
+				        ),
+
+                array(
+                   'name' => 'Max People',
+                   'desc' => '',
+                   'id' => $prefix . 'max_people',
+                   'type' => 'text_small',
+                ),
+
+                array(
+                   'name' => 'Letti',
+                   'desc' => '',
+                   'id' => $prefix . 'beds',
+                   'type' => 'text_small',
+                ),
+                array(
+                    'name' => __( 'Indirizzo', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'address',
                     'type' => 'text_medium',
                     'class'=> 'pippo'
                 ),
 
                 array(
-                    'name' => __( 'Lat', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'Lat', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'lat',
                     'type' => 'text_small',
                     'class'=> 'pippo'
                 ),
 
                 array(
-                    'name' => __( 'Long', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'Long', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'lng',
                     'type' => 'text_small',
                     'class'=> 'pippo'
                 ),
 
                 array(
-                    'name' => __( 'Formatted Address', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'Formatted Address', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'formatted_address',
                     'type' => 'text_medium',
                     'class'=> 'pippo'
                 ),
 
                 array(
-                    'name' => __( 'country', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'country', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'country',
                     'type' => 'text_small',
                     'class'=> 'pippo'
                 ),
 
                 array(
-                    'name' => __( 'locality', 'wpbooking' ),
-                    'desc' => __( '', 'wpbooking' ),
+                    'name' => __( 'locality', 'bookingwp' ),
+                    'desc' => __( '', 'bookingwp' ),
                     'id'   => $this->prefix . 'locality',
                     'type' => 'text_small',
                     'class'=> 'pippo'
@@ -146,7 +158,7 @@ class AccommodationForm {
 
         // If the metabox specified doesn't exist, yell about it.
         if ( ! isset( $meta_boxes[ $metabox_id ] ) ) {
-            return __( "A metabox with the specified 'metabox_id' doesn't exist.", 'wpbooking' );
+            return __( "A metabox with the specified 'metabox_id' doesn't exist.", 'bookingwp' );
         }
 
         // This is the WordPress post ID where the data should be stored/displayed.

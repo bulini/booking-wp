@@ -68,8 +68,8 @@ Template Name: Listing
                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                      </h5>
                      <ul class="tags custom-list list-inline pull-left">
-                       <li><a href="#">1 <i class="fa fa-bed"></i></a></li>
-                       <li><a href="#">2 <i class="fa fa-user"></i></a></li>
+                       <li><a href="#"><?php echo get_post_meta($post->ID,'beds', true); ?> <i class="fa fa-bed"></i></a></li>
+                       <li><a href="#"><?php echo get_post_meta($post->ID,'max_people', true); ?> <i class="fa fa-user"></i></a></li>
                        <li><a href="#"><?php echo mytheme_get_option('city_name'); ?></a></li>
                      </ul>
                    </div>
@@ -130,7 +130,7 @@ Template Name: Listing
                        }
                        ?>
                        <a href="<?php the_permalink(); ?><?php echo $booking_url; ?>" class="btn btn-transparent-gray">
-                         Book now
+                         <?php _e('Book now','bookingwp'); ?>
                        </a>
                      </div>
 

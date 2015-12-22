@@ -35,57 +35,57 @@ class BookingSettings {
      */
     public function __construct() {
         // Set our title
-        $this->title = __( 'Booking Options', 'wpbooking' );
+        $this->title = __( 'Booking Options', 'bookingwp' );
 
         // Set our CMB fields
         $this->fields = array(
           array(
-             'name' => __( 'Subject for Quoted booking', 'wpbooking' ),
-             'desc' => __( 'Subject for quoted booking', 'wpbooking' ),
-             'id'   => 'wpbooking_quoted_email_subject',
+             'name' => __( 'Subject for Quoted booking', 'bookingwp' ),
+             'desc' => __( 'Subject for quoted booking', 'bookingwp' ),
+             'id'   => 'bookingwp_quoted_email_subject',
              'type' => 'text',
          ),
 
          array(
-            'name' => __( 'Email for Quoted booking', 'wpbooking' ),
-            'desc' => __( 'email template for quoted booking', 'wpbooking' ),
-            'id'   => 'wpbooking_quoted_email',
+            'name' => __( 'Email for Quoted booking', 'bookingwp' ),
+            'desc' => __( 'email template for quoted booking', 'bookingwp' ),
+            'id'   => 'bookingwp_quoted_email',
             'type' => 'textarea',
         ),
         array(
-           'name' => __( 'Subject for Refused booking', 'wpbooking' ),
-           'desc' => __( 'Subject for refused booking', 'wpbooking' ),
-           'id'   => 'wpbooking_refused_email_subject',
+           'name' => __( 'Subject for Refused booking', 'bookingwp' ),
+           'desc' => __( 'Subject for refused booking', 'bookingwp' ),
+           'id'   => 'bookingwp_refused_email_subject',
            'type' => 'text',
        ),
         array(
-           'name' => __( 'Email for Refused booking', 'wpbooking' ),
-           'desc' => __( 'email template for refused booking', 'wpbooking' ),
-           'id'   => 'wpbooking_refused_email',
+           'name' => __( 'Email for Refused booking', 'bookingwp' ),
+           'desc' => __( 'email template for refused booking', 'bookingwp' ),
+           'id'   => 'bookingwp_refused_email',
            'type' => 'textarea',
        ),
        array(
-          'name' => __( 'Subject for Confirmed booking', 'wpbooking' ),
-          'desc' => __( 'Subject for confirmed booking', 'wpbooking' ),
-          'id'   => 'wpbooking_confirmed_email_subject',
+          'name' => __( 'Subject for Confirmed booking', 'bookingwp' ),
+          'desc' => __( 'Subject for confirmed booking', 'bookingwp' ),
+          'id'   => 'bookingwp_confirmed_email_subject',
           'type' => 'text',
       ),
        array(
-          'name' => __( 'Email for Confirmed booking', 'wpbooking' ),
-          'desc' => __( 'email template for confirmed booking', 'wpbooking' ),
-          'id'   => 'wpbooking_confirmed_email',
+          'name' => __( 'Email for Confirmed booking', 'bookingwp' ),
+          'desc' => __( 'email template for confirmed booking', 'bookingwp' ),
+          'id'   => 'bookingwp_confirmed_email',
           'type' => 'textarea',
       ),
       array(
-         'name' => __( 'Cancellation Policy', 'wpbooking' ),
-         'desc' => __( 'Cancellation Policy', 'wpbooking' ),
-         'id'   => 'wpbooking_cancellation_policy',
+         'name' => __( 'Cancellation Policy', 'bookingwp' ),
+         'desc' => __( 'Cancellation Policy', 'bookingwp' ),
+         'id'   => 'bookingwp_cancellation_policy',
          'type' => 'textarea',
      ),
       array(
-         'name' => __( 'Confirm Booking button text', 'wpbooking' ),
-         'desc' => __( 'confirm text button', 'wpbooking' ),
-         'id'   => 'wpbooking_confirm_button',
+         'name' => __( 'Confirm Booking button text', 'bookingwp' ),
+         'desc' => __( 'confirm text button', 'bookingwp' ),
+         'id'   => 'bookingwp_confirm_button',
          'type' => 'text_medium',
      ),        );
     }
