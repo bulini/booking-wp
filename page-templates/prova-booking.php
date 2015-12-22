@@ -20,7 +20,7 @@ for ($i = 0; $i < $numDays; $i++) {
   $entries = get_post_meta(245, $prefix . 'occupancy', true );
   if($entries) {
     foreach ( (array) $entries as $key => $entry ) {
-      if(date('d/m/Y',$entry['start_date']>=$jobdate) || date('d/m/Y',$entry['end_date'])<=$jobdate) {
+      if($entry['start_date']>=date_parse_from_format('d/m/Y',$jobdate) && $entry['end_date']<=date_parse_from_format('d/m/Y',$jobdate)) {
         echo esc_html($entry['period_name']).'<br />';
       } else { 'libero<br />'; }
     }
