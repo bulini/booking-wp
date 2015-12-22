@@ -13,7 +13,7 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 ?>
 
 <div class="sidebar-widget reservation">
-	<h5 class="widget-title">Make a reservation</h5>
+	<h5 class="widget-title"><?php _e('Book now','bookingwp'); ?></h5>
 	<aside class="widget-content">
 		<form action="#" class="default-form">
 			<span class="name">
