@@ -103,7 +103,22 @@ function remove_home_filter() {
 }
 add_action('wp', 'remove_home_filter', 99);
 
-
+/*
+function service_list($lang)
+{
+	$service_list=mytheme_get_option('custom_services_list_'.$lang);
+	$services = explode(",", $service_list);
+	$i=0;
+	$html='<table class="table table-striped mt30">
+              <tbody>';
+	foreach($services as $service){
+		$html.='<tr><td><i class="fa fa-check-circle"></i> '.$service.'</td></tr>';
+	}
+	$html.='</tbody>
+		</table>';
+	return $html;
+}
+*/
 
 
 //navbar hack
