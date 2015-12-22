@@ -40,9 +40,7 @@ function home_booking()
 		exit();
 
 	}
-
 */
-
 	 if(trim($email) == '') {
 		echo '<div class="alert alert-danger alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Attention! Please enter a valid email address.</div>';

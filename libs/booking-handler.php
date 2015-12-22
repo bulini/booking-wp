@@ -204,8 +204,17 @@ function check_price($checkin,$checkout,$allotment,$qty=1)
 }
 
 
+function check_availability($room_id,$checkin,$checkout)
+{
+  $checkin_date = date_parse_from_format('d/m/Y', $checkin);
+	$checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
+	$checkout_date = date_parse_from_format('d/m/Y', $checkout);
+	$checkout = mktime(0, 0, 0, $checkout_date['month'], $checkout_date['day'], $checkout_date['year']);
+	$numDays = abs($checkin - $checkout)/60/60/24;
+}
 
-function check_availability($room_id,$checkin,$checkout){
+
+function no_check_availability($room_id,$checkin,$checkout){
 	$checkin_date = date_parse_from_format('d/m/Y', $checkin);
 	$checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
 	$checkout_date = date_parse_from_format('d/m/Y', $checkout);

@@ -136,7 +136,45 @@ class AccommodationForm {
                     'default' => 'standard value (optional)',
                     'id' => $prefix . 'place_notes',
                     'type' => 'textarea_small'
-                )
+                ),
+                array(
+                    'id'          => $prefix . 'occupancy',
+                    'type'        => 'group',
+                    'description' => __( 'Blocca camera', 'cmb2' ),
+                    'options'     => array(
+                        'group_title'   => __( 'Booking {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+                        'add_button'    => __( 'Aggiungi periodo', 'cmb2' ),
+                        'remove_button' => __( 'Rimuovi periodo', 'cmb2' ),
+                        'sortable'      => true, // beta
+                    ),
+                    // Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+                    'fields'      => array(
+
+                        array(
+                            'name' => 'Description',
+                            'description' => 'Write a short description for this entry',
+                            'id'   => 'period_name',
+                            'type' => 'text',
+                        ),
+                    array(
+                        'name' => 'Start',
+                        'id'   => $prefix . 'start_date',
+                        'type' => 'text_date_timestamp',
+                        // 'timezone_meta_key' => $prefix . 'timezone',
+                        'date_format' => 'm/d/Y',
+                    ),
+
+                    array(
+                        'name' => 'End',
+                        'id'   => $prefix . 'end_date',
+                        'type' => 'text_date_timestamp',
+                        // 'timezone_meta_key' => $prefix . 'timezone',
+                        'date_format' => 'm/d/Y',
+                    ),
+                  ),
+
+
+              ),
 
             )
         );
