@@ -16,6 +16,7 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 	<h5 class="widget-title"><?php _e('Book now','bookingwp'); ?></h5>
 	<aside class="widget-content">
 		<form action="#" class="default-form">
+			<input type="hidden" value="<?php echo $post->ID;?>" name="room_id" id="room_id" />
 			<span class="name">
 				<input type="text" name="name" id="name" placeholder="Your name">
 				<i class="fa fa-user"></i>
@@ -25,11 +26,11 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 				<i class="fa fa-envelope"></i>
 			</span>
 			<span class="arrival calendar">
-				<input type="text" name="checkin" id="checkin" placeholder="Arrival" data-dateformat="d/m/y" value="<?php echo $checkin; ?>">
+				<input type="text" name="checkin" id="checkin" placeholder="Arrival" data-dateformat="dd/mm/yy" value="<?php echo $checkin; ?>">
 				<i class="fa fa-calendar"></i>
 			</span>
 			<span class="departure calendar">
-				<input type="text" name="checkout" id="checkout" placeholder="Departure" data-dateformat="d/m/y" value="<?php echo $checkout; ?>">
+				<input type="text" name="checkout" id="checkout" placeholder="Departure" data-dateformat="dd/mm/yy" value="<?php echo $checkout; ?>">
 				<i class="fa fa-calendar"></i>
 			</span>
 			<span class="adults select-box">

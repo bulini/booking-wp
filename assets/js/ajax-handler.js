@@ -5,13 +5,14 @@ jQuery('#book-single-button').click(function(event) {
 	phone = jQuery( "#phone" ).val();
 	checkin = jQuery( "#checkin" ).val();
 	checkout = jQuery( "#checkout" ).val();
+	room_id = jQuery( "#room_id" ).val();
 	room = jQuery( "#room_select" ).val();
 	room_number = jQuery( "#room_number" ).val();
 	adults = jQuery( "#adults" ).val();
 	children = jQuery( "#children" ).val();
 	message = jQuery( "#booking-message" ).val();
 	current_lang = jQuery( "#current_lang" ).val();
-	jQuery.post(ajaxurl, { action: 'home_booking', name: name, email: email,phone: phone,checkin: checkin, checkout: checkout, room: room, room_number: room_number, adults: adults, children: children, message: message, current_lang: current_lang}, function(output) {
+	jQuery.post(ajaxurl, { action: 'home_booking', name: name, email: email,phone: phone,checkin: checkin, checkout: checkout, room_id: room_id, room: room, room_number: room_number, adults: adults, children: children, message: message, current_lang: current_lang}, function(output) {
 	jQuery('#message').fadeIn('slow');
 	jQuery('#message').html(output);
 });

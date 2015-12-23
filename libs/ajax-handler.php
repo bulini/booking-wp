@@ -25,6 +25,7 @@ function home_booking()
 	$phone    = $_POST['phone'];
 	$checkin    = $_POST['checkin'];
 	$checkout    = $_POST['checkout'];
+	$room_id    = $_POST['room_id'];
 	$room    = $_POST['room'];
 	$adults    = $_POST['adults'];
 	$children    = $_POST['children'];
@@ -33,14 +34,14 @@ function home_booking()
 	$lang    = $_POST['current_lang'];
 	//if availability
 
-/*
-	if(!is_available($room,$checkin,$checkout)) {
+
+	if(!check_availability($room_id,$checkin,$checkout)) {
 		echo '<div class="alert alert-danger alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>La camera richiesta risulta occupata nelle date richieste!</div>';
 		exit();
 
 	}
-*/
+
 	 if(trim($email) == '') {
 		echo '<div class="alert alert-danger alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Attention! Please enter a valid email address.</div>';
@@ -156,7 +157,7 @@ function home_booking()
 		// Reset content-type to avoid conflicts -- http://core.trac.wordpress.org/ticket/23578
 		remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
 
-		//$price = check_price($checkin,$checkout,$room);
+		$price = check_price($checkin,$checkout,$room);
 
 
 		// Email has sent successfully, echo a success page.
@@ -166,7 +167,7 @@ function home_booking()
 
 		if($price){
 			//stop mostra prezzo per ora..
-			//echo '<b>'._e('Price for your reservation is &euro;','bookingwp').' '.$price.'</b><br />';
+			echo '<b>'._e('Price for your reservation is &euro;','bookingwp').' '.$price.'</b><br />';
 		}
 
 		echo '<p>'._e('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p>';
