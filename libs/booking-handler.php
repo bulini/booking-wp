@@ -203,8 +203,58 @@ function check_price($checkin,$checkout,$allotment,$qty=1)
   return $price*$qty;
 }
 
-
 function check_availability($room_id,$checkin,$checkout)
+{
+  $checkin_date = date_parse_from_format('d/m/Y', $checkin);
+  $checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
+
+  $checkout_date = date_parse_from_format('d/m/Y', $checkout);
+  $checkout = mktime(0, 0, 0, $checkout_date['month'], $checkout_date['day'], $checkout_date['year']);
+
+  //$entries = get_post_meta($room_id, $prefix . 'occupancy', true );
+  $args = array(
+	'meta_key'         => 'room_id',
+	'meta_value'       => $room_id,
+	'post_type'        => 'bookings',
+);
+
+  $entries = get_posts($args);
+  //print_r($entries);
+  $BookedDates[]='';
+
+  if($entries) {
+    foreach ($entries as $entry ) {
+    $start =  get_post_meta($entry->ID, 'checkin',true);
+    $end = get_post_meta($entry->ID, 'checkout',true);
+    $numBookedDays = abs($start - $end)/60/60/24;
+    for ($i = 0; $i < $numBookedDays; $i++) {
+      $BookedDates[] = date('d/m/Y', strtotime("+{$i} day", $start));
+    	//echo '<b> Booked: '.$BookedDate[$i].'</b>---';
+      }
+    }
+  }
+
+  //print_r($BookedDates);
+  $numDays = abs($checkin - $checkout)/60/60/24;
+
+
+  for ($i = 0; $i < $numDays; $i++) {
+      $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
+      if(in_array($jobdate[$i],$BookedDates)){
+        return false; die();
+        //echo $jobdate[$i].' is booked<br />';
+      } else {
+        return true; //torna true altrimenti va in die() col false
+          //echo $jobdate[$i].' is free<br />';
+      }
+    //echo '<b>'.$jobdate[$i].'</b>---';
+
+    }
+
+}
+
+
+function check_availability_entries($room_id,$checkin,$checkout)
 {
   $checkin_date = date_parse_from_format('d/m/Y', $checkin);
   $checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);

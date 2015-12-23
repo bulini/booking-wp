@@ -35,7 +35,7 @@ function home_booking()
 	//if availability
 
 
-	if(!check_availability($room_id,$checkin,$checkout)) {
+	if(check_availability($room_id,$checkin,$checkout)) {
 		echo '<div class="alert alert-danger alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>La camera richiesta risulta occupata nelle date richieste!</div>';
 		exit();
@@ -98,6 +98,7 @@ function home_booking()
 		update_post_meta($bid, 'email', $email);
 		update_post_meta($bid, 'phone', $phone);
 		update_post_meta($bid, 'room', $room);
+		update_post_meta($bid, 'room_id', $room_id);
 		update_post_meta($bid, 'token', $token);
 		update_post_meta($bid, 'manager_url', $manager_url);
 		update_post_meta($bid, 'checkin', convert_date_to_timestamp($checkin));
