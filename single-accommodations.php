@@ -58,11 +58,11 @@
             </div>
             <div class="room-about">
               <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                   <h5 class="title-section"><?php _e('Details','bookingwp'); ?></h5>
                   <?php the_content(); ?>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                   <h5 class="title-section"><?php _e('Availability','bookingwp'); ?></h5>
               	<!-- Responsive calendar - START -->
                   	    	<div class="responsive-calendar">

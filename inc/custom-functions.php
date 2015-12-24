@@ -27,61 +27,65 @@ function poly_languages() {
 	return $languages;
 }
 
-add_action('init', 'bookingwp_email_strings'); // the function is called only when all plugins are loaded
 
-function bookingwp_email_strings() {
+if(function_exists(pll_register_string)) {
+	add_action('init', 'bookingwp_email_strings'); // the function is called only when all plugins are loaded
 
-  $name='bookingwp-quoted-subject';
-  $string = booking_get_option('bookingwp_quoted_email_subject');
-  $group = 'bookingwp';
-  $multiline = true;
-  pll_register_string($name, $string, $group, $multiline);
+	function bookingwp_email_strings() {
 
-
-
-    $name='bookingwp-quoted';
-    $string = booking_get_option('bookingwp_quoted_email');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
-
-    $name='bookingwp-refused-subject';
-    $string = booking_get_option('bookingwp_refused_email_subject');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
-
-    $name='bookingwp-refused';
-    $string = booking_get_option('bookingwp_refused_email');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
-
-    $name='bookingwp-confirmed-email-subject';
-    $string = booking_get_option('bookingwp_confirmed_email_subject');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
+	$name='bookingwp-quoted-subject';
+	$string = booking_get_option('bookingwp_quoted_email_subject');
+	$group = 'bookingwp';
+	$multiline = true;
+	pll_register_string($name, $string, $group, $multiline);
 
 
-    $name='bookingwp-confirmed';
-    $string = booking_get_option('bookingwp_confirmed_email');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-quoted';
+		$string = booking_get_option('bookingwp_quoted_email');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-refused-subject';
+		$string = booking_get_option('bookingwp_refused_email_subject');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-refused';
+		$string = booking_get_option('bookingwp_refused_email');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-confirmed-email-subject';
+		$string = booking_get_option('bookingwp_confirmed_email_subject');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
 
 
-    $name='bookingwp-confirm-button';
-    $string = booking_get_option('bookingwp_confirm_button');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
+		$name='bookingwp-confirmed';
+		$string = booking_get_option('bookingwp_confirmed_email');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
 
-    $name='bookingwp-cancellation-policy';
-    $string = booking_get_option('bookingwp_cancellation_policy');
-    $group = 'bookingwp';
-    $multiline = true;
-    pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-confirm-button';
+		$string = booking_get_option('bookingwp_confirm_button');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
+
+		$name='bookingwp-cancellation-policy';
+		$string = booking_get_option('bookingwp_cancellation_policy');
+		$group = 'bookingwp';
+		$multiline = true;
+		pll_register_string($name, $string, $group, $multiline);
+
+	}
 
 
 }
