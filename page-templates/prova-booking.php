@@ -1,14 +1,14 @@
 <?php
 /* Template Name: Prova bookings */
 
-function check_entries($checkin,$checkout){
+function check_entries($checkin,$checkout,$room){
   $checkin_date = date_parse_from_format('d/m/Y', $checkin);
   $checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
 
   $checkout_date = date_parse_from_format('d/m/Y', $checkout);
   $checkout = mktime(0, 0, 0, $checkout_date['month'], $checkout_date['day'], $checkout_date['year']);
 
-  $entries = get_post_meta(245, $prefix . 'occupancy', true );
+  $entries = get_post_meta($room, $prefix . 'occupancy', true );
   //print_r($entries);
   $BookedDates[]='';
   if($entries) {
@@ -41,7 +41,7 @@ function check_entries($checkin,$checkout){
 }
 
 
-function check_aval($checkin,$checkout){
+function check_aval($checkin,$checkout,$room){
   $checkin_date = date_parse_from_format('d/m/Y', $_GET['checkin']);
   $checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
 
@@ -50,7 +50,7 @@ function check_aval($checkin,$checkout){
   //$entries = get_post_meta($room_id, $prefix . 'occupancy', true );
   $args = array(
 	'meta_key'         => 'room_id',
-	'meta_value'       => 245,
+	'meta_value'       => $room,
 	'post_type'        => 'bookings',
 );
 
@@ -78,16 +78,18 @@ function check_aval($checkin,$checkout){
   for ($i = 0; $i < $numDays; $i++) {
       $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
       if(in_array($jobdate[$i],$BookedDates)){
-        //return false; //die();
-        echo $jobdate[$i].' is booked<br />'; die();
+        $result = false; die();
+        //echo $jobdate[$i].' is booked<br />'; //die();
       } else {
-        //return true; //torna true altrimenti va in die() col false
-        echo $jobdate[$i].' is free<br />';
+        $result = true;//torna true altrimenti va in die() col false
+        //echo $jobdate[$i].' is free<br />';
+        //return true;
       }
-    //echo '<b>'.$jobdate[$i].'</b>---';
+  //  echo '<b>'.$jobdate[$i].'</b>---';
 
     }
+    return $result;
   }
-  check_aval($_GET['checkin'],$_GET['checkout']);
+  if(check_aval($_GET['checkin'],$_GET['checkout'],$_GET['room'])) {echo 1; };
   //check_entries($_GET['checkin'],$_GET['checkout']);
 ?>
