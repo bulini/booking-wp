@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h3 class="title-section pull-left">
-					<?php the_title(); ?>
+					<i class="fa fa-bolt"></i> <?php the_title(); ?>
 				</h3>
 				<ul class="breadcrumbs custom-list list-inline pull-right">
 					<li><a href="#">Home</a></li>
