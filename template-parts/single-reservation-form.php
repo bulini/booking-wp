@@ -16,6 +16,7 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 	<h5 class="widget-title"><i class="fa fa-bolt"></i> <?php _e('Book now','bookingwp'); ?></h5>
 	<aside class="widget-content">
 		<form action="#" class="default-form">
+			<input type="hidden" value="<?php echo pll_current_language(); ?>" name="current_lang" id="current_lang" />
 			<input type="hidden" value="<?php echo $post->ID;?>" name="room_id" id="room_id" />
 			<span class="name">
 				<input type="text" name="name" id="name" placeholder="<?php _e('Your Name','bookingwp'); ?>">
@@ -70,7 +71,7 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 			<h5>Booking Cost: <span>$0.00</span></h5>
 			<button class="btn btn-transparent-gray" id="book-single-button" data-toggle="modal" data-target="#myModal">Make reservation</button>
 		</form>
-		
+
 
 	</aside>
 </div>
