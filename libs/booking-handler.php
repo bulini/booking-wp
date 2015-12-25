@@ -213,6 +213,7 @@ function get_occupancy($room_id) {
   'meta_key'         => 'room_id',
   'meta_value'       => $room_id,
   'post_type'        => 'bookings',
+  'post_status' => array( 'publish', 'booked'),
 );
 
   $entries = get_posts($args);

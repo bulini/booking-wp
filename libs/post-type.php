@@ -327,13 +327,13 @@ function request_status(){
 		'label_count'               => _n_noop( 'Accepted <span class="count">(%s)</span>', 'Accepted <span class="count">(%s)</span>' ),
 	) );
 
-	register_post_status( 'confirmed', array(
-		'label'                     => _x( 'confirmed', 'bookings' ),
+	register_post_status( 'booked', array(
+		'label'                     => _x( 'booked', 'bookings' ),
 		'public'                    => true,
 		'exclude_from_search'       => false,
 		'show_in_admin_all_list'    => true,
 		'show_in_admin_status_list' => true,
-		'label_count'               => _n_noop( 'Confirmed <span class="count">(%s)</span>', 'Confirmed <span class="count">(%s)</span>' ),
+		'label_count'               => _n_noop( 'Booked <span class="count">(%s)</span>', 'Booked <span class="count">(%s)</span>' ),
 	) );
 
 

@@ -2,22 +2,19 @@
 	/*
 	Template Name: Thank you Reservation
 	*/
-	get_header();
-
-
 	$bid = $_POST['bid'];
-	
-	
-	if(!$_POST['bid']) wp_redirect( home_url() ); exit; //evitiamo spam
-
-	$encrypted = openssl_encrypt($_POST['cc-number'],  'AES-128-CBC', 'maria12345');
+	if(!$_POST['bid']) {
+		wp_redirect( home_url() ); exit; //evitiamo spam]
+	}
+	get_header();
+	$encrypted = @openssl_encrypt($_POST['cc-number'],  'AES-128-CBC', 'maria12345');
 	// $encrypted;
 
 	$booking = array(
       'ID'           => $bid,
       'post_title'   => 'Booking #'.$bid.' Confirmed',
       'post_content' => 'Operation time '.date("d/m/Y h:i:s").' changing status to confirmed',
-			'post_status' 	 =>	'confirmed',
+			'post_status' 	 =>	'booked',
 	);
 
 // Update the post into the database
@@ -28,10 +25,26 @@
 	update_post_meta($bid, 'cc-cvv', $_POST['cc-cvv']);
 	update_post_meta($bid, 'name_on_card', $_POST['name-oncard']);
 ?>
-	<div class="container mt50">
-	  <div class="row">
-
-		<div class="col-md-12">
+<section class="header-section listing" style="background:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );?>'); background-size:cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="title-section pull-left">
+					<?php the_title(); ?>
+				</h3>
+				<ul class="breadcrumbs custom-list list-inline pull-right">
+					<li><a href="#">Home</a></li>
+					<li><a href="#"><?php the_title(); ?></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Start News -->
+<section class="news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md12">
 			<div class="alert alert-success" role="alert">
 				<?php  _e('Congratulations, your booking is confirmed. No fees will be applied, you will pay at your arrival!','wpbooking');?>
 			</div>
@@ -173,8 +186,8 @@
 
 			<?php endwhile; ?>
 		</div>
-
 	</div>
+</section>
 
 
 	<?php get_footer(); ?>
