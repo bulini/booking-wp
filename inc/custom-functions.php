@@ -28,7 +28,7 @@ function poly_languages() {
 }
 
 
-if(function_exists(pll_register_string)) {
+if(function_exists('pll_register_string')) {
 	add_action('init', 'bookingwp_email_strings'); // the function is called only when all plugins are loaded
 
 	function bookingwp_email_strings() {

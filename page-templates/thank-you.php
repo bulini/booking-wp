@@ -71,12 +71,12 @@
 			$address = get_post_meta($bid,'email',true);
 			$from = mytheme_get_option('place_name').' <'.$address.'>';
 			$email_bcc = get_bloginfo('admin_email');
-			$e_subject = sprintf(pll_translate_string(booking_get_option('wpbooking_confirmed_email_subject'),$lang),$name);
+			$e_subject = sprintf(pll_translate_string(booking_get_option('bookingwp_confirmed_email_subject'),$lang),$name);
 			// Configuration option.
 			$request_language=$lang;
-			$intro_text = sprintf(pll_translate_string(booking_get_option('wpbooking_confirmed_email'),$request_language),$name);
+			$intro_text = sprintf(pll_translate_string(booking_get_option('bookingwp_confirmed_email'),$request_language),$name);
 			$reservation_details = booking_details($bid);
-			$cancellation_policy = sprintf(pll_translate_string(booking_get_option('wpbooking_cancellation_policy'),$request_language),$name);
+			$cancellation_policy = sprintf(pll_translate_string(booking_get_option('bookingwp_cancellation_policy'),$request_language),$name);
 
 			$email_content = $intro_text;
 			$email_content.= $reservation_details;
