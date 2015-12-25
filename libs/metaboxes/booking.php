@@ -69,7 +69,7 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
           array(
                 'name'    => __( 'Select Room', 'bookingwp' ),
                 'desc'    => __( 'field description (optional)', 'bookingwp' ),
-                'id'      => $prefix . 'room',
+                'id'      => $prefix . 'room_id',
                 'type'    => 'select',
                 'options' => cmb_get_post_options( array( 'post_type' => 'accommodations', 'numberposts' => 5 ) ),
             ),
@@ -84,8 +84,8 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 				'type' => 'text_medium',
 				// 'repeatable' => true,
 			),
-			
-			
+
+
 			array(
 			    'name' => 'checkin',
 			    'id'   => $prefix . 'checkin',
@@ -116,7 +116,7 @@ function cmb_booking_metaboxes( array $meta_boxes ) {
 				'type' => 'text_small',
 				// 'repeatable' => true,
 			),
-			
+
 			array(
 			    'name'    => 'Status',
 			    'desc'    => 'Seleziona',

@@ -32,11 +32,11 @@
   border-bottom: 1px gray solid;
 }
 .responsive-calendar .day.active a {
-  background-color: #1d86c8;
+  background-color: red;
   color: #ffffff;
 }
 .responsive-calendar .day.active a:hover {
-  background-color: #36a0e2;
+  background-color: red;
 }
 .responsive-calendar .day.active .not-current {
   background-color: #8fcaef;

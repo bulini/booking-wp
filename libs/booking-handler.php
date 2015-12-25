@@ -53,9 +53,9 @@ function bookings_columns($defaults) {
     $defaults['checkin'] = 'checkin';
     $defaults['checkout'] = 'checkout';
     $defaults['adults'] = 'adults';
-    $defaults['children'] = 'children';
+    $defaults['room_id'] = 'Room';
     $defaults['price'] = 'price';
-    $defaults['room'] = 'room';
+    $defaults['room'] = 'allotments';
 
     return $defaults;
 
@@ -100,10 +100,10 @@ function column_page_template($column_name, $post_ID) {
         }
     }
 
-		if ($column_name == 'children') {
-        $children = get_post_meta($post_ID,'children',true);
-        if (!empty($children)) {
-            echo '<p>'.$children.' </p>';
+		if ($column_name == 'room_id') {
+        $room_id = get_post_meta($post_ID,'room_id',true);
+        if (!empty($room_id)) {
+            echo '<p>'.get_the_title($room_id).' </p>';
         }
     }
 

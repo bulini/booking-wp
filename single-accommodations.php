@@ -58,48 +58,9 @@
             </div>
             <div class="room-about">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <h5 class="title-section"><?php _e('Details','bookingwp'); ?></h5>
                   <?php the_content(); ?>
-                </div>
-                <div class="col-md-4">
-                  <h5 class="title-section"><?php _e('Availability','bookingwp'); ?></h5>
-              	<!-- Responsive calendar - START -->
-                  	    	<div class="responsive-calendar">
-                  	        <div class="controls">
-                  	            <a class="pull-left" data-go="prev"><div class="">Prev</div></a>
-                  	            <h4><span data-head-year></span> <span data-head-month></span></h4>
-                  	            <a class="pull-right" data-go="next"><div class="">Next</div></a>
-                  	        </div><hr/>
-                  	        <div class="day-headers">
-                  	          <div class="day header">Mon</div>
-                  	          <div class="day header">Tue</div>
-                  	          <div class="day header">Wed</div>
-                  	          <div class="day header">Thu</div>
-                  	          <div class="day header">Fri</div>
-                  	          <div class="day header">Sat</div>
-                  	          <div class="day header">Sun</div>
-                  	        </div>
-                  	        <div class="days" data-group="days">
-
-                  	        </div>
-                  	      </div>
-                  	      <!-- Responsive calendar - END -->
-
-
-                  		<?php $occupancy = get_occupancy($post->ID); ?>
-
-                  <script type="text/javascript">
-                        jQuery(document).ready(function () {
-                          jQuery(".responsive-calendar").responsiveCalendar({
-                            time: '2015-12',
-                            events: {
-                              <?php foreach($occupancy as $daybooked) { ?>
-                              "<?php echo $daybooked; ?>": {"badgeClass": "badge-error"},
-                              <?php  } ?>}
-                          });
-                        });
-                  </script>
                 </div>
               </div>
 
@@ -287,9 +248,11 @@
             </div>
           </div>
           <div class="sidebar col-md-3">
+
+
             <?php $address = get_post_meta($post->ID, 'address',true) ? get_post_meta($post->ID, 'address',true) : mytheme_get_option('place_address'); ?>
             <div id="map" data-address="<?php echo $address; ?>"></div>
-
+            <?php get_template_part('template-parts/calendar'); ?>
             <?php get_template_part('template-parts/single-reservation-form'); ?>
 
 
