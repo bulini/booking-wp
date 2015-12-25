@@ -11,11 +11,11 @@
           <li class="tab-content active">
             <form class="default-form" method="get" action="<?php bloginfo('siteurl');?>/rooms">
               <span class="arrival calendar">
-                <input type="text" name="checkin" id="checkin" placeholder="<?php _e('Checkin','bookingwp'); ?>" data-dateformat="d/m/y">
+                <input type="text" name="checkin" id="checkin" placeholder="<?php _e('Checkin','bookingwp'); ?>" data-dateformat="dd/mm/yy">
                 <i class="fa fa-calendar"></i>
               </span>
               <span class="departure calendar">
-                <input type="text" name="checkout" id="checkout" placeholder="<?php _e('Checkout','bookingwp'); ?>" data-dateformat="d/m/y">
+                <input type="text" name="checkout" id="checkout" placeholder="<?php _e('Checkout','bookingwp'); ?>" data-dateformat="dd/mm/yy">
                 <i class="fa fa-calendar"></i>
               </span>
               <span class="adults select-box">

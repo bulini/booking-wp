@@ -1,3 +1,6 @@
+.responsive-calendar {
+  margin:5px;
+}
 .responsive-calendar .controls {
   text-align: center;
 }
@@ -32,15 +35,15 @@
   border-bottom: 1px gray solid;
 }
 .responsive-calendar .day.active a {
-  background-color: red;
-  color: #ffffff;
+  background-color: #f2dede;
+  color: #a94442;
 }
 .responsive-calendar .day.active a:hover {
   background-color: red;
 }
 .responsive-calendar .day.active .not-current {
   background-color: #8fcaef;
-  color: #ffffff;
+  color: #a94442;
 }
 .responsive-calendar .day.active .not-current:hover {
   background-color: #bcdff5;

@@ -253,6 +253,7 @@
             <?php $address = get_post_meta($post->ID, 'address',true) ? get_post_meta($post->ID, 'address',true) : mytheme_get_option('place_address'); ?>
             <div id="map" data-address="<?php echo $address; ?>"></div>
             <?php get_template_part('template-parts/calendar'); ?>
+
             <?php get_template_part('template-parts/single-reservation-form'); ?>
 
 

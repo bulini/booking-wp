@@ -167,11 +167,15 @@ function home_booking()
 		echo '<div id="success_page" class="alert alert-success">';
 
 		if($price){
+			$confirmation_url = get_bloginfo('siteurl').'/confirm-reservation?token='.$token;
 			//stop mostra prezzo per ora..
 			echo '<b>'._e('Price for your reservation is &euro;','bookingwp').' '.$price.'</b><br />';
+			echo _e('You can confirm now your reservation by clicking this link and leave your credit card as warranty','bookingwp').'<br />';
+			echo '<a href="'.$confirmation_url.'">Confirm reservation</a>';
+		} else {
+			echo '<p>'._e('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p>';
 		}
 
-		echo '<p>'._e('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p>';
 		echo '</div>';
 		echo '</fieldset>';
 		exit();

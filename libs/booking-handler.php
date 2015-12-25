@@ -203,6 +203,10 @@ function check_price($checkin,$checkout,$allotment,$qty=1)
   return $price*$qty;
 }
 
+function daily_price($room_id,$day) {
+  echo 'dio';
+}
+
 function get_occupancy($room_id) {
   //$entries = get_post_meta($room_id, $prefix . 'occupancy', true );
   $args = array(
@@ -243,6 +247,7 @@ function check_availability($room_id,$checkin,$checkout)
 	'meta_key'         => 'room_id',
 	'meta_value'       => $room_id,
 	'post_type'        => 'bookings',
+  'post_status' => array( 'publish', 'booked'),
 );
 
   $entries = get_posts($args);
