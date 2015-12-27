@@ -9,7 +9,7 @@
 
           <!-- Start Hotel -->
           <li class="tab-content active">
-            <form class="default-form" method="get" action="<?php bloginfo('siteurl');?>/rooms">
+            <form class="default-form" method="get" action="<?php bloginfo('siteurl');?>/search-rooms">
               <span class="arrival calendar">
                 <input type="text" name="checkin" id="checkin" placeholder="<?php _e('Checkin','bookingwp'); ?>" data-dateformat="dd/mm/yy">
                 <i class="fa fa-calendar"></i>

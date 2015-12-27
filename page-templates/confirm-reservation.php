@@ -122,7 +122,7 @@
 					<!-- CREDIT CARD FORM STARTS HERE -->
 					<div class="panel panel-default credit-card-box">
 							<div class="panel-heading display-table" >
-											<h5 class="widget-title" ><?php  _e('Payment Details: ','bookingwp');?></h5>
+											<h5 class="widget-title" ><i class="fa fa-lock"></i> <?php  _e('Payment Details: ','bookingwp');?></h5>
 											<small><?php  _e('Leave your credit card to confirm your reservation. No fees will be applied, you will pay at your arrival.','bookingwp');?></small>
 													<img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/accepted_c22e0.png" />
 							</div>
