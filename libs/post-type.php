@@ -100,7 +100,7 @@ function setup_booking_post_type()
 
 
 	register_post_type('accommodations', array(	'label' => 'Accommodations','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'show_in_nav_menus' => true, 'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'listing'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','revisions','thumbnail','author','page-attributes',),'labels' => array (
-	  'name' => 'Accommodations',
+	  'name' => __( 'Accommodations', 'bookingwp' ),
 	  'singular_name' => 'Accommodation',
 	  'menu_name' => __( 'Accommodations', 'bookingwp' ),
 	  'add_new' => __( 'Add accommodation', 'bookingwp' ),
@@ -123,11 +123,11 @@ function setup_booking_post_type()
 
 
 	register_post_type('properties', array(	'label' => 'Properties','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'prop'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','editor','custom-fields','thumbnail','author','page-attributes'),'labels' => array (
-	  'name' => 'Properties',
+	  'name' => __( 'Allotments', 'bookingwp' ),
 	  'singular_name' => __('Allotment', 'bookingwp'),
 	  'menu_name' => __('Allotments', 'bookingwp'),
-	  'add_new' => 'Add Property',
-	  'add_new_item' => 'Add New Property',
+	  'add_new' => __('Add Allotment', 'bookingwp'),
+	  'add_new_item' => __('Add new Allotment', 'bookingwp'),
 	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit Property',
 	  'new_item' => 'New Property',
@@ -143,11 +143,11 @@ function setup_booking_post_type()
 	+++ Booking ++++++
 	*/
 	register_post_type('bookings', array(	'label' => 'booking','description' => '','public' => false,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => 'bookings'),'query_var' => true,'exclude_from_search' => false,'supports' => array('title','custom-fields'),'labels' => array (
-	  'name' => 'booking',
-	  'singular_name' => 'booking',
-	  'menu_name' => 'booking',
-	  'add_new' => 'Add booking',
-	  'add_new_item' => 'Add New booking',
+	  'name' => __('Bookings', 'bookingwp'),
+	  'singular_name' => __('booking', 'bookingwp'),
+	  'menu_name' => __('booking', 'bookingwp'),
+	  'add_new' => __('Add booking', 'bookingwp'),
+	  'add_new_item' => __('Add booking', 'bookingwp'),
 	  'edit' => __( 'Edit', 'bookingwp' ),
 	  'edit_item' => 'Edit booking',
 	  'new_item' => 'New booking',

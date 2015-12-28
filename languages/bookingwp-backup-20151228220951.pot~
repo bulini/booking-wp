@@ -1,13 +1,16 @@
+# Loco Gettext template
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
-"PO-Revision-Date: Tue Dec 22 2015 00:25:06 GMT+0100 (CET)\n"
-"Last-Translator: admin <pinobulini@gmail.com>\n"
+"POT-Revision-Date: Tue Dec 22 2015 00:25:47 GMT+0100 (CET)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
 "Language-Team: \n"
-"Language: Italian\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,8 +22,7 @@ msgstr ""
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
 "esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/\n"
-"X-Loco-Target-Locale: it_IT"
+"X-Generator: Loco - https://localise.biz/"
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
@@ -78,7 +80,7 @@ msgstr ""
 
 #: ../archive.php:41
 msgid "Galleries"
-msgstr "Gallerie immagini"
+msgstr ""
 
 #: ../archive.php:44
 msgid "Images"
@@ -254,16 +256,35 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: ../single-accommodations.php:60
+msgid "Details"
+msgstr ""
+
+#: ../single-accommodations.php:65
+msgid "Amenities"
+msgstr ""
+
 #: ../single-accommodations.php:66
+msgctxt "Prezzi"
 msgid "Prices"
 msgstr ""
 
 #: ../single-accommodations.php:67
 msgid "Gallery"
-msgstr "Fotografie"
+msgstr ""
 
 #: ../single-accommodations.php:68
 msgid "Guests reviews"
+msgstr ""
+
+#: ../single-accommodations.php:196 ../template-parts/rooms-home.php:7
+msgid "Our rooms"
+msgstr ""
+
+#: ../single-accommodations.php:211 ../page-templates/listing.php:133 ../template-
+#: parts/reservation-form.php:6 ../template-parts/reservation-form.php:45 ..
+#: template-parts/rooms-home.php:25
+msgid "Book now"
 msgstr ""
 
 #: ../single-accommodations.php:237 ../page-templates/listing.php:146 ../template-
@@ -883,8 +904,16 @@ msgstr ""
 msgid "Listing"
 msgstr ""
 
+#: ../page-templates/listing.php:35
+msgid "Available Rooms"
+msgstr ""
+
 #. Name of the template
 msgid "map"
+msgstr ""
+
+#: ../template-parts/home-rooms.php:6
+msgid "Our Rooms"
 msgstr ""
 
 #: ../template-parts/left-box-reviews.php:5
@@ -923,29 +952,3 @@ msgstr ""
 #. Author of the theme
 msgid "Underscores.me"
 msgstr ""
-
-#: ../single-accommodations.php:60
-msgid "Details"
-msgstr "Dettagli"
-
-#: ../single-accommodations.php:65
-msgid "Amenities"
-msgstr "Servizi"
-
-#: ../single-accommodations.php:196 ../template-parts/rooms-home.php:7
-msgid "Our rooms"
-msgstr "Le camere"
-
-#: ../single-accommodations.php:211 ../page-templates/listing.php:133 ../template-
-#: parts/reservation-form.php:6 ../template-parts/reservation-form.php:45 ..
-#: template-parts/rooms-home.php:25
-msgid "Book now"
-msgstr "Prenota"
-
-#: ../page-templates/listing.php:35
-msgid "Available Rooms"
-msgstr "Camere disponibili"
-
-#: ../template-parts/home-rooms.php:6
-msgid "Our Rooms"
-msgstr "Le camere"

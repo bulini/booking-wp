@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
-"PO-Revision-Date: Tue Dec 22 2015 00:26:21 GMT+0100 (CET)\n"
+"PO-Revision-Date: Mon Dec 28 2015 23:10:59 GMT+0100 (CET)\n"
 "Last-Translator: admin <pinobulini@gmail.com>\n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -250,16 +250,17 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../single-accommodations.php:66
+#: ../single-accommodations.php:72
 msgid "Prices"
-msgstr "Prezzi"
+msgstr ""
 
-#: ../single-accommodations.php:68
+#: ../single-accommodations.php:74
 msgid "Guests reviews"
 msgstr ""
 
-#: ../single-accommodations.php:237 ../page-templates/listing.php:146 ../template-
-#: parts/home-rooms.php:40 ../template-parts/rooms-home.php:51
+#: ../single-accommodations.php:245 ../page-templates/listing.php:146 ../page-
+#: templates/search-availability.php:148 ../template-parts/home-rooms.php:40 ..
+#: template-parts/rooms-home.php:51
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -451,18 +452,32 @@ msgstr ""
 msgid "Amenities EN"
 msgstr ""
 
-#: ../libs/ajax-handler.php:174
+#: ../libs/ajax-handler.php:167
+msgid "Confirm Reservation"
+msgstr ""
+
+#: ../libs/ajax-handler.php:172
+msgid "Price for your reservation is &euro;"
+msgstr ""
+
+#: ../libs/ajax-handler.php:173
+msgid ""
+"You can confirm now your reservation by clicking this link and leave your "
+"credit card as warranty"
+msgstr ""
+
+#: ../libs/ajax-handler.php:176
 msgid ""
 "Your reservation has been submitted to us and well contact you as quickly as "
 "possible to complete your booking. Thank you"
 msgstr ""
 
-#: ../libs/booking-handler.php:401 ../libs/booking-handler.php:423 ..
-#: libs/booking-handler.php:438
+#: ../libs/booking-handler.php:525 ../libs/booking-handler.php:547 ..
+#: libs/booking-handler.php:562
 msgid "Your reservation: "
 msgstr ""
 
-#: ../libs/booking-handler.php:470
+#: ../libs/booking-handler.php:594
 msgid "Offer sent correctly"
 msgstr ""
 
@@ -554,24 +569,20 @@ msgstr ""
 msgid "Slides"
 msgstr ""
 
-#: ../libs/post-type.php:105
-msgid "Accommodations"
+#: ../libs/post-type.php:129
+msgid "Add Allotment"
 msgstr ""
 
-#: ../libs/post-type.php:106
-msgid "Add accommodation"
+#: ../libs/post-type.php:130
+msgid "Add new Allotment"
 msgstr ""
 
-#: ../libs/post-type.php:107
-msgid "Add new accommodation"
-msgstr ""
+#: ../libs/post-type.php:147 ../libs/post-type.php:148
+msgid "booking"
+msgstr "Prenotazioni"
 
-#: ../libs/post-type.php:127
-msgid "Allotment"
-msgstr ""
-
-#: ../libs/post-type.php:128
-msgid "Allotments"
+#: ../libs/post-type.php:149 ../libs/post-type.php:150
+msgid "Add booking"
 msgstr ""
 
 #: ../libs/post-type.php:206 ../libs/post-type.php:210
@@ -628,26 +639,22 @@ msgstr[1] ""
 
 #: ../libs/post-type.php:331
 msgctxt "bookings"
-msgid "confirmed"
+msgid "booked"
 msgstr ""
 
 #: ../libs/post-type.php:336
 #, php-format
-msgid "Confirmed <span class=\"count\">(%s)</span>"
-msgid_plural "Confirmed <span class=\"count\">(%s)</span>"
+msgid "Booked <span class=\"count\">(%s)</span>"
+msgid_plural "Booked <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../libs/theme-init.php:103
+#: ../libs/theme-init.php:108
 msgid "Thumbnail"
 msgstr ""
 
-#: ../libs/theme-init.php:127
+#: ../libs/theme-init.php:132
 msgid "None"
-msgstr ""
-
-#: ../libs/metaboxes/accommodation.php:37
-msgid "Accommodation details"
 msgstr ""
 
 #: ../libs/metaboxes/accommodation.php:44
@@ -678,7 +685,23 @@ msgstr ""
 msgid "locality"
 msgstr ""
 
-#: ../libs/metaboxes/accommodation.php:161
+#: ../libs/metaboxes/accommodation.php:143
+msgid "Blocca camera"
+msgstr ""
+
+#: ../libs/metaboxes/accommodation.php:145
+msgid "Booking {#}"
+msgstr ""
+
+#: ../libs/metaboxes/accommodation.php:146 ../libs/metaboxes/property.php:79
+msgid "Aggiungi periodo"
+msgstr ""
+
+#: ../libs/metaboxes/accommodation.php:147 ../libs/metaboxes/property.php:80
+msgid "Rimuovi periodo"
+msgstr ""
+
+#: ../libs/metaboxes/accommodation.php:199
 msgid "A metabox with the specified 'metabox_id' doesn't exist."
 msgstr ""
 
@@ -742,7 +765,8 @@ msgstr ""
 msgid "Base price"
 msgstr ""
 
-#: ../libs/metaboxes/property.php:66 ../template-parts/reservation-form.php:22
+#: ../libs/metaboxes/property.php:66 ../template-parts/reservation-form.php:23 ..
+#: template-parts/single-reservation-form.php:38
 msgid "People"
 msgstr ""
 
@@ -752,14 +776,6 @@ msgstr ""
 
 #: ../libs/metaboxes/property.php:78
 msgid "Stagione {#}"
-msgstr ""
-
-#: ../libs/metaboxes/property.php:79
-msgid "Aggiungi periodo"
-msgstr ""
-
-#: ../libs/metaboxes/property.php:80
-msgid "Rimuovi periodo"
 msgstr ""
 
 #: ../libs/metaboxes/room.php:105
@@ -867,6 +883,36 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
+#: ../page-templates/confirm-reservation.php:125
+msgid "Payment Details: "
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:126
+msgid ""
+"Leave your credit card to confirm your reservation. No fees will be applied, "
+"you will pay at your arrival."
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:132
+msgid "Card Number"
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:140
+msgid "Card expiration"
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:145
+msgid "Card CVV"
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:150
+msgid "Name on card"
+msgstr ""
+
+#: ../page-templates/confirm-reservation.php:155
+msgid "Process booking"
+msgstr ""
+
 #. Name of the template
 msgid "Home"
 msgstr ""
@@ -879,25 +925,73 @@ msgstr ""
 msgid "map"
 msgstr ""
 
+#. Name of the template
+msgid "Prova bookings"
+msgstr ""
+
+#. Name of the template
+msgid "Reservation Handler"
+msgstr ""
+
+#. Name of the template
+msgid "Search availability"
+msgstr ""
+
+#. Name of the template
+msgid "Thank you Reservation"
+msgstr ""
+
+#: ../page-templates/thank-you.php:49
+msgid ""
+"Congratulations, your booking is confirmed. No fees will be applied, you "
+"will pay at your arrival!"
+msgstr ""
+
+#: ../page-templates/thank-you.php:94
+msgid "Conferma Prenotazione #"
+msgstr ""
+
+#: ../page-templates/thank-you.php:138
+msgid "Voucher"
+msgstr ""
+
+#: ../page-templates/thank-you.php:147
+msgid "Price"
+msgstr ""
+
+#: ../page-templates/thank-you.php:148
+msgid "Total"
+msgstr ""
+
+#: ../template-parts/calendar.php:2
+msgid "Availability"
+msgstr ""
+
 #: ../template-parts/left-box-reviews.php:5
 msgid "Tripadvisor reviews"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:14
+#: ../template-parts/reservation-form.php:14 ../template-parts/single-reservation-
+#: form.php:30
 msgid "Checkin"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:18
+#: ../template-parts/reservation-form.php:18 ../template-parts/single-reservation-
+#: form.php:34
 msgid "Checkout"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:23
-msgid "Please choose"
+#: ../template-parts/reservation-form.php:32 ../template-parts/single-reservation-
+#: form.php:57
+msgid "How many rooms"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:32 ../template-parts/single-reservation-
-#: form.php:58
-msgid "How many rooms"
+#: ../template-parts/single-reservation-form.php:22
+msgid "Your Name"
+msgstr ""
+
+#: ../template-parts/single-reservation-form.php:26
+msgid "Your email"
 msgstr ""
 
 #. Name of the theme
@@ -920,29 +1014,58 @@ msgstr ""
 msgid "Galleries"
 msgstr "Gallerie immagini"
 
-#: ../single-accommodations.php:67
-msgid "Gallery"
-msgstr "Fotografie"
-
-#: ../single-accommodations.php:60
+#: ../single-accommodations.php:62
 msgid "Details"
 msgstr "Dettagli"
 
-#: ../single-accommodations.php:65
+#: ../single-accommodations.php:71
 msgid "Amenities"
 msgstr "Servizi"
 
-#: ../single-accommodations.php:196 ../template-parts/rooms-home.php:7
+#: ../single-accommodations.php:73
+msgid "Gallery"
+msgstr "Fotografie"
+
+#: ../single-accommodations.php:204 ../template-parts/rooms-home.php:7
 msgid "Our rooms"
 msgstr "Le camere"
 
-#: ../single-accommodations.php:211 ../page-templates/listing.php:133 ../template-
-#: parts/reservation-form.php:6 ../template-parts/reservation-form.php:45 ..
-#: template-parts/rooms-home.php:25
+#: ../single-accommodations.php:219 ../page-templates/listing.php:133 ../page-
+#: templates/search-availability.php:134 ../template-parts/reservation-form.php:6
+#: ../template-parts/reservation-form.php:45 ../template-parts/rooms-home.php:25 .
+#: ./template-parts/single-reservation-form.php:16
 msgid "Book now"
 msgstr "Prenota"
 
-#: ../page-templates/listing.php:35
+#: ../libs/post-type.php:103 ../libs/post-type.php:105
+msgid "Accommodations"
+msgstr "Camere"
+
+#: ../libs/post-type.php:106
+msgid "Add accommodation"
+msgstr "Nuova Camera"
+
+#: ../libs/post-type.php:107
+msgid "Add new accommodation"
+msgstr "Nuova Camera"
+
+#: ../libs/post-type.php:126 ../libs/post-type.php:128
+msgid "Allotments"
+msgstr "Trattamenti"
+
+#: ../libs/post-type.php:127
+msgid "Allotment"
+msgstr "Trattamento"
+
+#: ../libs/post-type.php:146
+msgid "Bookings"
+msgstr "Prenotazioni"
+
+#: ../libs/metaboxes/accommodation.php:37
+msgid "Accommodation details"
+msgstr "Dettagli"
+
+#: ../page-templates/listing.php:35 ../page-templates/search-availability.php:35
 msgid "Available Rooms"
 msgstr "Camere disponibili"
 
