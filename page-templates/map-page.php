@@ -18,7 +18,7 @@ get_header(); ?>
 <!-- Start Header-Section -->
 <?php while(have_posts()): the_post(); ?>
 	<!-- Start Header-Section -->
-	<section class="header-section contact" style="background:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );?>');">
+	<section class="header-section contact" style="background:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );?>') no-repeat; background-size:cover;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
