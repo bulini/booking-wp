@@ -20,13 +20,17 @@ $result = Ipn();
 
 if($result) {
 
-  //mail('pinobulini@gmail.com', $result['item_number'], print_r($result));
-  $message='code = '.$result['item_number'];
-  $message.='<br />status = '.$result['payment_status'];
-  $message.= '<br />order = '.$result['item_name'];
-  $subject = 'Conferma pagamento numero '.$result['item_number'];
+  $booking = get_posts(array('post_type' => 'bookings','meta_key' => 'token', 'meta_value' => $result['item_number'],'posts_per_page' => 1));
+
+  $id_booking = $booking[0]->ID;
+
+  $message='reservation id = '. $id_booking.' code '.$result['item_number']. "\r\n";
+  $message.='payment status = '.$result['payment_status']. "\r\n";
+  $message.='details = '.$result['item_name']. "\r\n";
+  $subject = 'Conferma pagamento Paypal #'.$result['item_number'];
   $headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
-  mail('pinobulini@gmail.com', $result['item_number'], $message,$headers);
+  mail('pinobulini@gmail.com', $subject, $message,$headers);
+
 } else {
 
   die();
