@@ -203,6 +203,20 @@ function check_price($checkin,$checkout,$allotment,$qty=1)
   return $price*$qty;
 }
 
+function set_booked($bid) {
+  $booking = array(
+    'ID'           => $bid,
+    'post_title'   => 'Instant booking #'.$bid.' Completed - Paypal',
+    'post_content' => 'Operation time '.date("d/m/Y h:i:s").' changing status to '.$status,
+    'post_status' 	 =>	'booked',
+    );
+    // Update the post into the database
+    wp_update_post( $booking );
+    // se non aggiorna... dio porco
+    update_post_meta($bid, 'payment_method', 'paypal');
+}
+
+
 function daily_price($room_id,$day) {
   echo 'dio';
 }
@@ -287,175 +301,6 @@ function check_availability($room_id,$checkin,$checkout)
     return $result;
 }
 
-
-function check_availability_entries($room_id,$checkin,$checkout)
-{
-  $checkin_date = date_parse_from_format('d/m/Y', $checkin);
-  $checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
-
-  $checkout_date = date_parse_from_format('d/m/Y', $checkout);
-  $checkout = mktime(0, 0, 0, $checkout_date['month'], $checkout_date['day'], $checkout_date['year']);
-
-  $entries = get_post_meta($room_id, $prefix . 'occupancy', true );
-  //print_r($entries);
-  $BookedDates[]='';
-  if($entries) {
-    foreach ( (array) $entries as $key => $entry ) {
-    $numBookedDays = abs($entry['start_date'] - $entry['end_date'])/60/60/24;
-    for ($i = 0; $i < $numBookedDays; $i++) {
-      $BookedDates[] = date('d/m/Y', strtotime("+{$i} day", $entry['start_date']));
-    	//echo '<b> Booked: '.$BookedDate[$i].'</b>---';
-      }
-    }
-  }
-
-  //print_r($BookedDates);
-  $numDays = abs($checkin - $checkout)/60/60/24;
-
-
-  for ($i = 0; $i < $numDays; $i++) {
-      $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
-      if(in_array($jobdate[$i],$BookedDates)){
-        return false; die();
-        //echo $jobdate[$i].' is booked<br />';
-      } else {
-        return true; //torna true altrimenti va in die() col false
-          //echo $jobdate[$i].' is free<br />';
-      }
-    //echo '<b>'.$jobdate[$i].'</b>---';
-
-    }
-
-}
-
-
-function no_check_availability($room_id,$checkin,$checkout){
-	$checkin_date = date_parse_from_format('d/m/Y', $checkin);
-	$checkin = mktime(0, 0, 0, $checkin_date['month'], $checkin_date['day'], $checkin_date['year']);
-	$checkout_date = date_parse_from_format('d/m/Y', $checkout);
-	$checkout = mktime(0, 0, 0, $checkout_date['month'], $checkout_date['day'], $checkout_date['year']);
-	$numDays = abs($checkin - $checkout)/60/60/24;
-
-	for ($i = 0; $i < $numDays; $i++) {
-	    $jobdate = date('d/m/Y', strtotime("+{$i} day", $checkin));
-		//date comprese
-		$args= array(
-			'post_type' => 'bookings',
-			'meta_key' => 'room',
-			'meta_value' => $room_id,
-			'post_status' => 'publish',
-			'relation' => 'AND',
-
-			'meta_query' => array(
-				//checkin checkout compreso
-				array(
-					'key' => 'checkin',
-					'value' => convert_date_to_timestamp($jobdate), //'$checkin' <= checkin
-					'compare' => '<=',
-					'type' => 'numeric'
-				),
-
-				array(
-					'key' => 'checkout',
-					'value' => (convert_date_to_timestamp($jobdate)+86400), //checkin< '$checkout'
-					'compare' => '>=',
-					'type' => 'numeric'
-				)
-
-			)
-		);
-
-		$bookings = get_posts($args);
-
-		if(!empty($bookings)) {
-			//echo 'caso 1 orco dio';
-			return false;
-			die();
-		}
-
-		wp_reset_query();
-		wp_reset_postdata();
-		//date superiori o inferiori a checkin e checkout (credo)
-
-		$args= array(
-			'post_type' => 'bookings',
-			'meta_key' => 'room',
-			'meta_value' => $room_id,
-			'post_status' => 'draft',
-			'relation' => 'OR',
-
-			'meta_query' => array(
-				//checkin checkout compreso
-				array(
-					'key' => 'checkin',
-					'value' => convert_date_to_timestamp($jobdate), //'$checkin' <= checkin
-					'compare' => '>='
-
-				),
-
-				array(
-					'key' => 'checkin',
-					'value' => (convert_date_to_timestamp($jobdate)+86400), //checkin< '$checkout'
-					'compare' => '<='
-				)
-
-			)
-		);
-
-		$bookings = get_posts($args);
-		if(!empty($bookings)) {
-			return false;
-			//echo 'caso 2 orco dio';
-			die();
-		}
-
-		wp_reset_query();
-		wp_reset_postdata();
-		//date superiori o inferiori a checkin e checkout (credo)
-
-		$args= array(
-			'post_type' => 'bookings',
-			'meta_key' => 'room',
-			'meta_value' => $room_id,
-			'post_status' => 'draft',
-			'relation' => 'OR',
-
-			'meta_query' => array(
-				//checkin checkout compreso
-				array(
-					'key' => 'checkout',
-					'value' => convert_date_to_timestamp($jobdate), //'$checkin' <= checkin
-					'compare' => '='
-
-				),
-
-				array(
-					'key' => 'checkin',
-					'value' => (convert_date_to_timestamp($jobdate)), //checkin< '$checkout'
-					'compare' => '='
-				)
-
-			)
-		);
-
-		$bookings = get_posts($args);
-		if(!empty($bookings)) {
-			echo 'caso 3 orco dio';
-			return false;
-			die();
-		}
-
-
-
-		//torna true in caso non si blocca prima..
-		return true;
-
-
-	}
-
-
-
-}
 
 function is_available($room_id,$checkin,$checkout)
 {
