@@ -37,8 +37,9 @@ if($result) {
   $message = 'code = '.$result['item_number'];
   $message.= '<br />status = '.$result['payment_status'];
   $message.= '<br />order = '.$result['item_name'];
-  $subject = 'Conferma pagamento numero '.$result['item_number']
-  wp_mail('pinobulini@gmail.com', $subject, $message);
+  $subject = 'Conferma pagamento numero '.$result['item_number'];
+  $headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
+  wp_mail('pinobulini@gmail.com', $subject, $message,$headers);
 } else {
 
   die();
