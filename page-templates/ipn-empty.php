@@ -23,6 +23,7 @@ if($result) {
   $booking = new WP_Query( array('post_type' => 'bookings','meta_key' => 'token', 'meta_value' => $result['item_number'],'posts_per_page' => 1));
     while ($booking->have_posts()) : $booking->the_post();
       $bid = get_the_id();
+      /*
       $status = 'booked';
       $booking_data = array(
         'ID'           => $bid,
@@ -36,7 +37,7 @@ if($result) {
         update_post_meta($bid, 'payment_method', 'Paypal');
         //update_post_meta($bid, 'owner_price', $owner_price);
         //update_post_meta($bid, 'owner_message', $owner_message);
-
+        */
         $message='reservation id = '. get_the_id().' code '.$result['item_number']. "\r\n";
         $message.='payment status = '.$result['payment_status']. "\r\n";
         $message.='details = '.$result['item_name']. "\r\n";
