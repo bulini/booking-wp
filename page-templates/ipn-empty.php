@@ -14,32 +14,19 @@ Template Name: Ipn response
  *
  * @package bookingwp
  */
+
+
 $result = Ipn();
 
 if($result) {
-/*
-  $booking = array(
-      'ID'           => $bid,
-      'post_title'   => 'Richiesta #'.$bid.' processata',
-      'post_content' => 'Operation time '.date("d/m/Y h:i:s").' changing status to '.$status,
-			'post_status' 	 =>	$status,
-	);
 
-// Update the post into the database
-  wp_update_post( $booking );
-	// se non aggiorna... dio porco
-	update_post_meta($bid, 'payment_url', $payment_url);
-	update_post_meta($bid, 'owner_price', $owner_price);
-	update_post_meta($bid, 'owner_message', $owner_message);
-
-*/
   //mail('pinobulini@gmail.com', $result['item_number'], print_r($result));
-  $message = 'code = '.$result['item_number'];
-  $message.= '<br />status = '.$result['payment_status'];
+  $message='code = '.$result['item_number'];
+  $message.='<br />status = '.$result['payment_status'];
   $message.= '<br />order = '.$result['item_name'];
   $subject = 'Conferma pagamento numero '.$result['item_number'];
   $headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
-  wp_mail('pinobulini@gmail.com', $subject, $message,$headers);
+  mail('pinobulini@gmail.com', $result['item_number'], $message,$headers);
 } else {
 
   die();
