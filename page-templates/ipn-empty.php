@@ -14,5 +14,11 @@ Template Name: Ipn response
  *
  * @package bookingwp
  */
-Ipn();
+$result = Ipn();
+
+if($result) {
+  mail('pinobulini@gmail.com', $result['item_name'], $result['item_number'].' '.$result['payment_status']);
+} else {
+  die();
+}
 ?>

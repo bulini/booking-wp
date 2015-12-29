@@ -103,7 +103,7 @@ function Ipn() {
     	$result['receiver_email'] = $_POST['receiver_email'];
     	$result['payer_email'] = $_POST['payer_email'];
 
-      mail('pinobulini@gmail.com', $result['item_name'], $result['payment_status']);
+      //mail('pinobulini@gmail.com', $result['item_name'], $result['payment_status']);
       return $result;
     	if(DEBUG == true) {
     		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
