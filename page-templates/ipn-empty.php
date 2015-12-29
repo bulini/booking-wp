@@ -17,8 +17,26 @@ Template Name: Ipn response
 $result = Ipn();
 
 if($result) {
-  mail('pinobulini@gmail.com', $result['item_name'], $result['item_number'].' '.$result['payment_status']);
+/*
+  $booking = array(
+      'ID'           => $bid,
+      'post_title'   => 'Richiesta #'.$bid.' processata',
+      'post_content' => 'Operation time '.date("d/m/Y h:i:s").' changing status to '.$status,
+			'post_status' 	 =>	$status,
+	);
+
+// Update the post into the database
+  wp_update_post( $booking );
+	// se non aggiorna... dio porco
+	update_post_meta($bid, 'payment_url', $payment_url);
+	update_post_meta($bid, 'owner_price', $owner_price);
+	update_post_meta($bid, 'owner_message', $owner_message);
+
+*/
+  mail('pinobulini@gmail.com', $result['item_number'], print_r($result));
+
 } else {
+
   die();
 }
 ?>
