@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: IPN RESPONSE
+Template Name: Ipn response
 */
 
 /**
