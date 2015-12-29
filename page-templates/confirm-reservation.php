@@ -45,166 +45,89 @@
 			$children = get_post_meta(get_the_id(),'children',true);
 			$message = get_post_meta(get_the_id(),'message',true);
 			$token = get_post_meta(get_the_id(),'token',true);
-
-
-
-			?>
-
-		<div class="well">
-			<div class="row">
-					<div class="col-xs-6 col-sm-6 col-md-6">
-							<address>
-									<strong><?php echo $name; ?></strong>
-									<br>
-									<?php echo $email; ?>
-									<br>
-									<?php echo $phone; ?>
-									<br>
-									<abbr title="Phone">Phone:</abbr> <?php echo $phone; ?>
-							</address>
-					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
-							<p>
-									<em>Date: <?php echo date('d/m/Y');?></em>
-							</p>
-							<p>
-									<em>Booking id#: <?php echo $token; ?></em>
-							</p>
-					</div>
-			</div>
-			<div class="row">
-					<div class="text-center">
-							<h3>Booking Details</h3>
-					</div>
-					</span>
-
-			<table class="table table-hover">
-				<thead>
-						<tr>
-								<th>Room</th>
-								<th>#</th>
-								<th class="text-center">Price</th>
-								<th class="text-center">Total</th>
-						</tr>
-				</thead>
-				<tbody>
-						<tr>
-								<td class="col-md-9"><em><?php echo get_the_title($room); ?> - <?php echo get_the_title($room_id); ?></em> - <?php echo date('d/m/Y',$checkin); ?> - <?php echo date('d/m/Y',$checkout); ?></h4></td>
-								<td class="col-md-1" style="text-align: center"> 2 </td>
-								<td class="col-md-1 text-right"><?php echo $price ?></td>
-								<td class="col-md-1 text-right"><?= number_format($price,2, '.', ' ') ?></td>
-						</tr>
-
-						<tr>
-								<td>   </td>
-								<td>   </td>
-								<td class="text-right"></td>
-								<td class="text-right">
-								<p>
-										<strong><?= number_format($price,2, '.', ' ') ?></strong>
-								</p>
-							</td>
-						</tr>
-
-				</tbody>
-		</table>
-
-		<div class="room-tabs">
-
-		  <!-- Nav tabs -->
-		  <ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="#paypal" aria-controls="paypal" role="tab" data-toggle="tab"><i class="fa fa-cc-paypal"></i> <?php  _e('Pay with Paypal','bookingwp');?></a></li>
-		    <li role="presentation"><a href="#card" aria-controls="card" role="tab" data-toggle="tab"><i class="fa fa-lock"></i> <?php  _e('Credit card','bookingwp');?></a></li>
-
-		  </ul>
-
-		  <!-- Tab panes -->
-		  <div class="tab-content">
-		    <div role="tabpanel" class="tab-pane active" id="paypal">
-					<div class="panel panel-default credit-card-box">
-							<div class="panel-heading display-table" >
-								<h5 class="widget-title" ><i class="fa fa-cc-paypal"></i> <?php  _e('Pay with Paypal','bookingwp');?></h5>
-											<small><?php  _e('Pay the entire amount of your booking using Paypal with your credit card','bookingwp');?></small>
-													<img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/accepted_c22e0.png" />
+		?>
+				<div class="well">
+					<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+									<address>
+											<strong><?php echo $name; ?></strong>
+											<br>
+											<?php echo $email; ?>
+											<br>
+											<?php echo $phone; ?>
+											<br>
+											<abbr title="Phone">Phone:</abbr> <?php echo $phone; ?>
+									</address>
 							</div>
-							<div class="panel-body">
-
-					<!-- CREDIT CARD FORM STARTS HERE -->
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_xclick">
-							<input type="hidden" name="business" value="senditpugin@gmail.com">
-							<input type="hidden" name="item_name" value="booking <?php echo get_the_title($room_id); ?> <?php echo date('d/m/Y',$checkin); ?> - <?php echo date('d/m/Y',$checkout); ?>">
-							<input type="hidden" name="item_number" value="<?php echo $token?>">
-							<input type="hidden" name="amount" value="<?= number_format($price,2, '.', ' ') ?>">
-							<button type="submit" name="submit" class="btn btn-large btn-success"><i class="fa fa-cc-paypal"></i> <?php  _e('Pay Now','bookingwp');?></button>
-						</form>
-					</div>
-				</div>
-				</div>
-
-		    <div role="tabpanel" class="tab-pane" id="card">
-					<!-- CREDIT CARD FORM STARTS HERE -->
-					<div class="panel panel-default credit-card-box">
-							<div class="panel-heading display-table" >
-											<h5 class="widget-title" ><i class="fa fa-lock"></i> <?php  _e('Payment Details: ','bookingwp');?></h5>
-											<small><?php  _e('Leave your credit card to confirm your reservation. No fees will be applied, you will pay at your arrival.','bookingwp');?></small>
-													<img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/accepted_c22e0.png" />
+							<div class="col-xs-6 col-sm-6 col-md-6 text-right">
+									<p>
+											<em>Date: <?php echo date('d/m/Y');?></em>
+									</p>
+									<p>
+											<em>Booking id#: <?php echo $token; ?></em>
+									</p>
 							</div>
-							<div class="panel-body">
-								<form method="post" id="confirmation-form" action="<?php bloginfo('siteurl');?>/thank-you/?token=<?php echo $token; ?>">
-					      <div class="form-group">
-					        <label for="cc-number" class="control-label"><?php  _e('Card Number','bookingwp');?> <small class="text-muted">[<span class="cc-brand"></span>]</small></label>
-									<div class="input-group">
-									<input id="cc-number" type="tel" name="cc-number" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required>
-										<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-									</div>
-								</div>
-
-					      <div class="form-group">
-					        <label for="cc-exp" class="control-label"><?php  _e('Card expiration','bookingwp');?></label>
-					        <input id="cc-exp" type="tel" name="cc-exp" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="•• / ••" required>
-					      </div>
-
-					      <div class="form-group">
-					        <label for="cc-cvv" class="control-label"><?php  _e('Card CVV','bookingwp');?></label>
-					        <input id="cc-cvv" type="tel" name="cc-cvv" class="input-lg form-control cc-cvv" autocomplete="off" placeholder="•••" required>
-					      </div>
-
-					      <div class="form-group">
-					        <label for="nameoncard" class="control-label"><?php  _e('Name on card','bookingwp');?></label>
-					        <input id="nameoncard" name="name-oncard" type="text" class="input-lg form-control">
-					        <input id="numeric" type="hidden" class="input-lg form-control" name="bid" value="<?php echo get_the_ID(); ?>">
-					      </div>
-
-					      <button type="submit" class="btn btn-lg btn-success" id="confirm"><?php  _e('Process booking','bookingwp');?></button>
-
-					      <h2 class="validation"></h2>
-							</form>
-							</div>
-
-
-
 					</div>
-					<!-- CREDIT CARD FORM ENDS HERE -->
+					<div class="row">
+							<div class="text-center">
+									<h3>Booking Details</h3>
+							</div>
+							</span>
+
+					<table class="table table-hover">
+						<thead>
+								<tr>
+										<th>Room</th>
+										<th>#</th>
+										<th class="text-center">Price</th>
+										<th class="text-center">Total</th>
+								</tr>
+						</thead>
+						<tbody>
+								<tr>
+										<td class="col-md-9"><em><?php echo get_the_title($room); ?> - <?php echo get_the_title($room_id); ?></em> - <?php echo date('d/m/Y',$checkin); ?> - <?php echo date('d/m/Y',$checkout); ?></h4></td>
+										<td class="col-md-1" style="text-align: center"> 2 </td>
+										<td class="col-md-1 text-right"><?php echo $price ?></td>
+										<td class="col-md-1 text-right"><?= number_format($price,2, '.', ' ') ?></td>
+								</tr>
+
+								<tr>
+										<td>   </td>
+										<td>   </td>
+										<td class="text-right"></td>
+										<td class="text-right">
+										<p>
+												<strong><?= number_format($price,2, '.', ' ') ?></strong>
+										</p>
+									</td>
+								</tr>
+
+						</tbody>
+				</table>
+
+				<div class="room-tabs">
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs" role="tablist">
+				    <li role="presentation" class="active"><a href="#paypal" aria-controls="paypal" role="tab" data-toggle="tab"><i class="fa fa-cc-paypal"></i> <?php  _e('Pay with Paypal','bookingwp');?></a></li>
+				    <li role="presentation"><a href="#card" aria-controls="card" role="tab" data-toggle="tab"><i class="fa fa-lock"></i> <?php  _e('Credit card','bookingwp');?></a></li>
+				  </ul>
+
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+				    <div role="tabpanel" class="tab-pane active" id="paypal">
+							<?php include(locate_template('template-parts/paypal-form.php')); ?>
+						</div>
+				    <div role="tabpanel" class="tab-pane" id="card">
+							<?php include(locate_template('template-parts/cc-form.php')); ?>
+						</div>
+				  </div>
 				</div>
-
-		  </div>
-
 		</div>
 
 		</div>
-
-		</div>
-
-
-
-
-
-		</div>
+	</div>
 	   		<div class="col-md-4" id="sidebar-wrapper">
-
-
-			</div>
+				</div>
 			<?php endwhile; ?>
 		</div>
 	</div>

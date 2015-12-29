@@ -10,6 +10,7 @@ require get_template_directory() . '/libs/metaboxes/accommodation.php';
 require get_template_directory() . '/libs/metaboxes/property.php';
 require get_template_directory() . '/libs/metaboxes/booking.php';
 require get_template_directory() . '/libs/metaboxes/home-block.php';
+require get_template_directory() . '/libs/paypal-ipn.php';
 /*
 require('../libs/booking-handler.php');
 require('../libs/admin-options.php');

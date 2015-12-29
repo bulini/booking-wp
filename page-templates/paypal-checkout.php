@@ -126,10 +126,10 @@
 					<div class="panel panel-default credit-card-box">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="senditpugin@gmail.com">
+            <input type="hidden" name="business" value="info@mirkobeb.com">
             <input type="hidden" name="item_name" value="booking <?php echo get_the_title($room_id); ?> <?php echo date('d/m/Y',$checkin); ?> - <?php echo date('d/m/Y',$checkout); ?>">
             <input type="hidden" name="item_number" value="<?php echo $token?>">
-            <input type="hidden" name="amount" value="<?= number_format($price,2, '.', ' ') ?>">
+            <input type="hidden" name="amount" value="0.01">
             <button type="submit" name="submit" class="btn btn-block btn-success"><i class="fa fa-cc-paypal"></i> <?php  _e('Pay Now','bookingwp');?></button>
 
             </form>
