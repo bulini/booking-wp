@@ -33,8 +33,12 @@ if($result) {
 	update_post_meta($bid, 'owner_message', $owner_message);
 
 */
-  mail('pinobulini@gmail.com', $result['item_number'], print_r($result));
-
+  //mail('pinobulini@gmail.com', $result['item_number'], print_r($result));
+  $message = 'code = '.$result['item_number'];
+  $message.= '<br />status = '.$result['payment_status'];
+  $message.= '<br />order = '.$result['item_name'];
+  $subject = 'Conferma pagamento numero '.$result['item_number']
+  wp_mail('pinobulini@gmail.com', $subject, $message);
 } else {
 
   die();
