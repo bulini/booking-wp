@@ -74,7 +74,7 @@ get_header(); ?>
                   <div class="col-lg-6 col-md-12">
                     <ul class="location-details custom-list">
                       <li><?php echo mytheme_get_option('place_address'); ?></li>
-                      <li><?php echo mytheme_get_option('cuty'); ?></li>
+                      <li><?php echo mytheme_get_option('city'); ?></li>
                     </ul>
                   </div>
                   <div class="col-lg-6 col-md-6">
@@ -96,7 +96,7 @@ get_header(); ?>
   </section>
   <!-- End Locations -->
 
-  <!-- Start Partners -->
+  <!-- Start Partners
   <section class="partners">
     <div class="container">
       <div class="row">
@@ -118,7 +118,7 @@ get_header(); ?>
       </div>
     </div>
   </section>
-  <!-- End Partners -->
+  End Partners -->
 
 
 
