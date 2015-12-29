@@ -3,7 +3,6 @@
 add_action( 'wp_loaded', 'Ipn' );
 
 function Ipn() {
-  if ( ! empty( $_GET['ipn-payment'] ) && current_user_can( 'manage_options' ) ) {
     // CONFIG: Enable debug mode. This means we'll log requests into 'ipn.log' in the same directory.
     // Especially useful if you encounter network errors or other intermittent problems with IPN (validation).
     // Set this to 0 once you go live or don't require logging.
@@ -116,7 +115,6 @@ function Ipn() {
     		error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, LOG_FILE);
     	}
     }
-  }
 }
 
 ?>
