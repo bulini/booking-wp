@@ -12,7 +12,7 @@
         <input type="hidden" name="item_name" value="booking <?php echo get_the_title($room_id); ?> <?php echo date('d/m/Y',$checkin); ?> - <?php echo date('d/m/Y',$checkout); ?>">
         <input type="hidden" name="item_number" value="<?php echo $token?>">
         <input type="hidden" name="amount" value="0.01">
-        <input type="hidden" name="ipn_notification_url" value="<?php bloginfo('siteurl');?>?ipn-payment=1">
+        <input type="hidden" name="ipn_notification_url" value="<?php bloginfo('siteurl');?>/ipn">
         <input type="hidden" name="return_url" value="<?php bloginfo('siteurl');?>/thank-you?token=<?php echo $token; ?>">
 
         <button type="submit" name="submit" class="btn btn-large btn-success"><i class="fa fa-cc-paypal"></i> <?php  _e('Pay Now','bookingwp');?></button>
