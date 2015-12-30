@@ -34,16 +34,12 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 				<input type="text" name="checkout" id="checkout" placeholder="<?php _e('Checkout','bookingwp'); ?>" data-dateformat="dd/mm/yy" value="<?php echo $checkout; ?>">
 				<i class="fa fa-calendar"></i>
 			</span>
-			<span class="adults select-box">
-				<select name="adults" id="adults" data-placeholder="<?php _e('People','bookingwp'); ?>">
-					<option>People</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-				</select>
+			<span class="adults">
+				<input type="text" name="adults" id="adults" placeholder="<?php _e('People','bookingwp'); ?>" value="<?php echo $people; ?>">
+				<i class="fa fa-user"></i>
 			</span>
 			<span class="room select-box">
-				<select name="room" id="room_select" data-placeholder="Roomtype">
-					<option>Choose</option>
+				<select name="room" id="room_select" data-placeholder="<?php _e('Allotment','bookingwp'); ?>">
 					<?php global $post; get_roomtypes();
 						if ( have_posts() ) : while ( have_posts() ) : the_post();
 					?>
@@ -54,12 +50,12 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 				</select>
 			</span>
 			<span class="room_number select-box">
-				<select name="room_number" id="room_number" data-placeholder="<?php _e('How many rooms','bookingwp'); ?>">
+				<select name="room_number" id="room_number">
 									  <?php global $post; get_roomtypes();
 										  $i=1;
 										  if ( have_posts() ) : while ( have_posts() ) : the_post();
 									   ?>
-					                  <option value="<?php echo $i; ?>" selected="selected"><?php echo $i; ?></option>
+					                  <option value="<?php echo $i; ?>" selected="selected"><?php echo $i; ?> <?php _e('room','bookingwp'); ?></option>
 									<?php $i++; endwhile; else: ?>
 										<option value="0">No room</option>
 									<?php endif; wp_reset_query(); ?>
@@ -67,9 +63,10 @@ $allotment = (isset($_GET['room'])) ? $_GET['room'] : default_allotment($term->s
 				</select>
 			</span>
 
-
-			<h5>Booking Cost: <span>$0.00</span></h5>
-			<button class="btn btn-transparent-gray" id="book-single-button" data-toggle="modal" data-target="#myModal">Make reservation</button>
+			<?php if($_GET['checkin']) : ?>
+				<h5><?php _e('Price','bookingwp'); ?> <span> &euro; <?php echo check_price($_GET['checkin'],$_GET['checkout'], default_allotment('superior',$people),1); ?></span></h5>
+			<?php endif; ?>
+			<button class="btn btn-transparent-gray" id="book-single-button" data-toggle="modal" data-target="#myModal"><?php _e('Book now','bookingwp'); ?></button>
 		</form>
 
 

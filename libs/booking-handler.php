@@ -497,6 +497,7 @@ function booking_details($bid,$message='')
   $checkin = get_post_meta($bid,'checkin',true);
   $checkout = get_post_meta($bid,'checkout',true);
   $price = get_post_meta($bid,'price',true);
+  $room_id = get_post_meta($bid,'room_id',true);
   $room = get_post_meta($bid,'room',true);
   $room_number = get_post_meta($bid,'room_number',true);
   $adults = get_post_meta($bid,'adults',true);
@@ -516,7 +517,7 @@ function booking_details($bid,$message='')
   </thead>
   <tbody>
       <tr>
-          <td style="border:1px solid #efefef; background:#ffffff; padding:3px;" class="col-md-9"><em>'.get_the_title($room).'</em> - '.date("d/m/Y",$checkin).' - '.date("d/m/Y",$checkout).'</h4></td>
+          <td style="border:1px solid #efefef; background:#ffffff; padding:3px;" class="col-md-9"><em>'.get_the_title($room_id).' - '.get_the_title($room).'</em> - '.date("d/m/Y",$checkin).' - '.date("d/m/Y",$checkout).'</h4></td>
           <td style="border:1px solid #efefef; background:#ffffff; padding:3px;" class="col-md-1" style="text-align: center"> 2 </td>
           <td style="border:1px solid #efefef; background:#ffffff; padding:3px;" class="col-md-1 text-right">'.$price.'</td>
           <td style="border:1px solid #efefef; background:#ffffff; padding:3px;" class="col-md-1 text-right">'.$price.'</td>
