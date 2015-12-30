@@ -23,6 +23,7 @@ if($result) {
   $booking = new WP_Query( array('post_type' => 'bookings','meta_key' => 'token', 'meta_value' => $result['item_number'],'posts_per_page' => 1));
   while ($booking->have_posts()) : $booking->the_post();
     set_booked(get_the_id());
+    send_confirmation(get_the_id());
     $message='reservation id = '. get_the_id().' code '.$result['item_number']. "\r\n";
     $message.='payment status = '.$result['payment_status']. "\r\n";
     $message.='details = '.$result['item_name']. "\r\n";

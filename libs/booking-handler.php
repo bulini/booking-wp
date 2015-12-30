@@ -448,6 +448,45 @@ $headers[] = "Bcc: $email_bcc" . PHP_EOL;
 	die();
 }
 
+function send_confirmation($bid)
+{
+  $name = get_post_meta($bid,'name',true);
+  $email = get_post_meta($bid,'email',true);
+  $phone = get_post_meta($bid,'phone',true);
+  $checkin = get_post_meta($bid,'checkin',true);
+  $checkout = get_post_meta($bid,'checkout',true);
+  $price = get_post_meta($bid,'price',true);
+  $room = get_post_meta($bid,'room',true);
+  $adults = get_post_meta($bid,'adults',true);
+  $children = get_post_meta($bid,'children',true);
+  $message = get_post_meta($bid,'message',true);
+  $token = get_post_meta($bid,'token',true);
+  $lang = get_post_meta($bid,'lang',true);
+
+  $address = get_post_meta($bid,'email',true);
+  $from = mytheme_get_option('place_name').' <'.$address.'>';
+  $email_bcc = get_bloginfo('admin_email');
+  $e_subject = sprintf(pll_translate_string(booking_get_option('bookingwp_confirmed_email_subject'),$lang),$name);
+  // Configuration option.
+  $request_language=$lang;
+  $intro_text = sprintf(pll_translate_string(booking_get_option('bookingwp_confirmed_email'),$request_language),$name);
+  $reservation_details = booking_details($bid);
+  $cancellation_policy = sprintf(pll_translate_string(booking_get_option('bookingwp_cancellation_policy'),$request_language),$name);
+
+  $email_content = $intro_text;
+  $email_content.= $reservation_details;
+
+  $email_content.="<hr/>". PHP_EOL . PHP_EOL;
+  $email_content.="<h5>Cancellation Policy</h5><small>".$cancellation_policy."</small>";
+  $msg = wordwrap( $e_body, 70 );
+  $e_body = build_email($email_content);
+  $headers[] = "From: $from" . PHP_EOL;
+  $headers[] = "Bcc: $email_bcc" . PHP_EOL;
+  //customer voucher
+  wp_mail( $address, $e_subject, $e_body, $headers);
+}
+
+
 
 
 function booking_details($bid,$message='')
