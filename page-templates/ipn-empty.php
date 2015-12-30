@@ -28,7 +28,7 @@ if($result) {
     $message.='payment status = '.$result['payment_status']. "\r\n";
     $message.='details = '.$result['item_name']. "\r\n";
     $subject = 'Conferma pagamento Paypal #'.$result['item_number'];
-    $headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
+    //$headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
 
     $headers[] = 'From: IPN Notification <booking@mirkobeb.com>';
     $headers[] = 'Bcc: info@mirkobeb.com <info@mirkobeb.com>';
