@@ -440,7 +440,8 @@ $(document).ready(function () {
   $("#location-map").gmap3({
     marker: {
       values: [{
-        latLng: [41.88783, 12.5109413,17],
+        //latLng: [41.88783, 12.5109413,17],
+        address: $("#location-map").data('address'),
         options: {
             icon: "http://www.google.com/mapfiles/marker.png"
         }

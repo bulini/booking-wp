@@ -40,7 +40,7 @@ get_header(); ?>
 
     <!-- Start Locations-Top -->
     <div class="locations-top">
-      <div id="location-map"></div>
+      <div id="location-map" data-address="<?php echo mytheme_get_option('place_address'); ?>"></div>
     </div>
     <!-- End Locations-Top -->
 

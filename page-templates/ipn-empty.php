@@ -32,6 +32,7 @@ if($result) {
   endwhile;
 
 } else {
-  die();
+    wp_redirect(get_bloginfo('siteurl'),  '301');
+  exit;
 }
 ?>

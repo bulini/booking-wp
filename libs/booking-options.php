@@ -40,6 +40,12 @@ class BookingSettings {
         // Set our CMB fields
         $this->fields = array(
           array(
+             'name' => __( 'Paypal Business email', 'bookingwp' ),
+             'desc' => __( 'Email for Paypal payments', 'bookingwp' ),
+             'id'   => 'bookingwp_paypal_email',
+             'type' => 'text',
+         ),
+          array(
              'name' => __( 'Subject for Quoted booking', 'bookingwp' ),
              'desc' => __( 'Subject for quoted booking', 'bookingwp' ),
              'id'   => 'bookingwp_quoted_email_subject',
