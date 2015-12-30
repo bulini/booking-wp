@@ -30,8 +30,8 @@ if($result) {
     $subject = 'Conferma pagamento Paypal #'.$result['item_number'];
     //$headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
 
-    $headers[] = 'From: IPN Notification <booking@mirkobeb.com>';
-    $headers[] = 'Bcc: info@mirkobeb.com <info@mirkobeb.com>';
+    $headers[] = 'From: IPN Notification <'.booking_get_option('bookingwp_paypal_email').'>';
+    $headers[] = 'Bcc: IPN <'.booking_get_option('bookingwp_paypal_email').'>';
     //$headers[] = 'Cc: iluvwp@wordpress.org'; // note you can just use a simple email address
 
     wp_mail('pinobulini@gmail.com', $subject, $message,$headers);
