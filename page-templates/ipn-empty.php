@@ -29,7 +29,12 @@ if($result) {
     $message.='details = '.$result['item_name']. "\r\n";
     $subject = 'Conferma pagamento Paypal #'.$result['item_number'];
     $headers = 'From: IPN Notification <info@mirkobeb.com>' . "\r\n";
-    mail('pinobulini@gmail.com', $subject, $message,$headers);
+
+    $headers[] = 'From: IPN Notification <booking@mirkobeb.com>';
+    $headers[] = 'Bcc: info@mirkobeb.com <info@mirkobeb.com>';
+    //$headers[] = 'Cc: iluvwp@wordpress.org'; // note you can just use a simple email address
+
+    wp_mail('pinobulini@gmail.com', $subject, $message,$headers);
   endwhile;
 
 } else {
