@@ -288,17 +288,17 @@ function check_availability($room_id,$checkin,$checkout)
   for ($i = 0; $i < $numDays; $i++) {
       $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
       if(in_array($jobdate[$i],$BookedDates)){
-        $result = false; die();
+        return false die();
         //echo $jobdate[$i].' is booked<br />';
       } else {
-        $result = true;
+        return true;
         //return true; //torna true altrimenti va in die() col false
           //echo $jobdate[$i].' is free<br />';
       }
     //echo '<b>'.$jobdate[$i].'</b>---';
 
     }
-    return $result;
+    //return $result;
 }
 
 
