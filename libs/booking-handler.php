@@ -300,18 +300,14 @@ function check_availability($room_id,$checkin,$checkout)
     //echo '<b>'.$jobdate[$i].'</b>---';
 
     }
-    if($occupancy_day>0) {
-      return false;
-    } else {
-      return true; 
-    }
-    //return $result;
+
+    return $occupancy_day;
 }
 
 
 function is_available($room_id,$checkin,$checkout)
 {
-	if(check_availability($room_id,$checkin,$checkout)):
+	if(check_availability($room_id,$checkin,$checkout)==0):
 		return true;
 	else:
 		return false;

@@ -35,7 +35,7 @@ function home_booking()
 	//if availability
 
 
-	if(!check_availability($room_id,$checkin,$checkout)) {
+	if(!is_available($room_id,$checkin,$checkout)) {
 		echo '<div class="alert alert-danger alert-dismissable">
 	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>La camera richiesta risulta occupata nelle date richieste!</div>';
 		exit();
