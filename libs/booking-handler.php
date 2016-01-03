@@ -284,10 +284,9 @@ function check_availability($room_id,$checkin,$checkout)
   //print_r($BookedDates);
   $numDays = abs($checkin - $checkout)/60/60/24;
 
-
+  $occupancy_day=0;
   for ($i = 0; $i < $numDays; $i++) {
       $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
-      $occupancy_day=0;
       if(in_array($jobdate[$i],$BookedDates)){
         $occupancy_day++;
         //return false; die();

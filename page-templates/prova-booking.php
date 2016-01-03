@@ -52,6 +52,7 @@ function check_aval($checkin,$checkout,$room){
 	'meta_key'         => 'room_id',
 	'meta_value'       => $room,
 	'post_type'        => 'bookings',
+  'post_status' => array( 'publish', 'booked'),
 );
 
   $entries = get_posts($args);
@@ -74,22 +75,25 @@ function check_aval($checkin,$checkout,$room){
   //print_r($BookedDates);
   $numDays = abs($checkin - $checkout)/60/60/24;
 
-
+  $occupancy_day=0;
   for ($i = 0; $i < $numDays; $i++) {
       $jobdate[] = date('d/m/Y', strtotime("+{$i} day", $checkin));
+
       if(in_array($jobdate[$i],$BookedDates)){
-        $result = false; die();
-        //echo $jobdate[$i].' is booked<br />'; //die();
+        $occupancy_day++;
+        //$result = false; die();
+        echo $jobdate[$i].' is booked<br />'; //die();
       } else {
-        $result = true;//torna true altrimenti va in die() col false
-        //echo $jobdate[$i].' is free<br />';
+        //$result = true;//torna true altrimenti va in die() col false
+        echo $jobdate[$i].' is free<br />';
         //return true;
       }
   //  echo '<b>'.$jobdate[$i].'</b>---';
 
     }
-    return $result;
+    echo $occupancy_day;
   }
-  if(check_aval($_GET['checkin'],$_GET['checkout'],$_GET['room'])) {echo 1; };
+  echo check_aval($_GET['checkin'],$_GET['checkout'],$_GET['room']);
+  //if(check_aval($_GET['checkin'],$_GET['checkout'],$_GET['room'])) {echo 1; };
   //check_entries($_GET['checkin'],$_GET['checkout']);
 ?>
