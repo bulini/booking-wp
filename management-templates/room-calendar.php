@@ -58,6 +58,7 @@ jQuery(document).ready(function() {
 <div class="container manager">
   <div class="row">
     <div class="col-md-12">
+      <h3>Calendario <?php echo get_the_title($_GET['room_id']); ?></h3>
       <div id="room-calendar">
       </div>
     </div>
