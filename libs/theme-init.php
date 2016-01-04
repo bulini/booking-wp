@@ -38,6 +38,8 @@ if ( function_exists( 'add_image_size' ) ) {
 		//wp_enqueue_style( 'ihover', get_template_directory_uri().'/assets/css/ihover.css');
 		//wp_enqueue_style( 'responsive', get_template_directory_uri().'/assets/css/responsive.css');
 		wp_enqueue_style( 'responsive-calendar', get_template_directory_uri().'/assets/css/responsive-calendar.css');
+		wp_enqueue_style( 'fullcalendar', get_template_directory_uri().'/assets/css/fullcalendar.min.css');
+		//wp_enqueue_style( 'fullcalendar-print', get_template_directory_uri().'/assets/css/fullcalendar.print.css');
 
 		/*
 		wp_enqueue_style( 'calendar', get_template_directory_uri().'/css/fullcalendar.css');
@@ -45,8 +47,12 @@ if ( function_exists( 'add_image_size' ) ) {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 		//js
-		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.4.min.js', array(), '2.1.4', true );
+		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.4.min.js', array(), '2.1.4', false );
 		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js', array(), '1.11.0', true );
+
+		wp_enqueue_script( 'moment', get_template_directory_uri() . '/assets/js/moment.js', array(), '2.1.4', false );
+		wp_enqueue_script( 'fullcalendar-js', get_template_directory_uri() . '/assets/js/fullcalendar.min.js', array(), '2.1.4', false );
+
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.1.4', true );
 
@@ -69,7 +75,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 
 add_action( 'wp_enqueue_scripts', 'theme_setup' );
-add_action( 'wp_enqueue_scripts', 'custom_scripts' );
+
 
 // Register Script for wp-admin
 function custom_scripts() {
@@ -77,16 +83,15 @@ function custom_scripts() {
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.2.0', 'all' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.2.0', true );
-
 	wp_enqueue_style( 'fontawesome-iconpicker-css', get_template_directory_uri().'/assets/css/fontawesome-iconpicker.css');
-
-
 	wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places', array(), '1.0.0', true );
 	wp_enqueue_script( 'geocomplete', get_template_directory_uri() . '/assets/js/jquery.geocomplete.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'fontawesome-iconpicker', get_template_directory_uri() . '/assets/js/fontawesome-iconpicker.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'admin', get_template_directory_uri() . '/assets/js/admin.js', array(), '1.0.0', true );
 }
 
+
+add_action( 'admin_head', 'custom_scripts' );
 
 
 /* enable contributors upload */

@@ -221,6 +221,19 @@ function daily_price($room_id,$day) {
   echo 'dio';
 }
 
+function get_bookings($room_id) {
+    //$entries = get_post_meta($room_id, $prefix . 'occupancy', true );
+    $args = array(
+    'meta_key'         => 'room_id',
+    'meta_value'       => $room_id,
+    'post_type'        => 'bookings',
+    'post_status' => array( 'publish', 'booked'),
+  );
+  $bookings = get_posts($args);
+  return $bookings;
+}
+
+
 function get_occupancy($room_id) {
   //$entries = get_post_meta($room_id, $prefix . 'occupancy', true );
   $args = array(

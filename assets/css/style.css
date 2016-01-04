@@ -4461,6 +4461,12 @@ body {
   color: #333333;
   background-color: #fff;
 }
+.body-logged-in .navbar-fixed-top {
+  top: 32px !important;
+}
+.body-logged-in .manager {
+  margin-top: 92px;
+}
 p {
   line-height: 30px;
 }
