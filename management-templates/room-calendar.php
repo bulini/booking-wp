@@ -87,8 +87,8 @@ jQuery(document).ready(function() {
                 block: true,
               },
           ]);
-          alert('inizio on: ' + start.format());
-          alert('fine on: ' + end.format());
+          //alert('inizio on: ' + start.format());
+          //alert('fine on: ' + end.format());
           jQuery('#checkin').val(start.format("DD/MM/YYYY"));
           jQuery('#checkout').val(end.format("DD/MM/YYYY"));
           jQuery('#addbooking').modal();

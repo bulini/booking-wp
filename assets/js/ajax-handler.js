@@ -1,3 +1,24 @@
+jQuery('#insert-booking').click(function(event) {
+	event.preventDefault();
+	//alert('porco iddio');
+	room_id = jQuery( "#room_id" ).val();
+	checkin = jQuery( "#checkin" ).val();
+	checkout = jQuery( "#checkout" ).val()
+	status = 'booked';
+	booking = jQuery( "#booking-name" ).val();
+
+	//alert(room_id);
+	//alert(checkin);
+	//alert(checkout);
+	//alert(booking);
+
+	jQuery.post(ajaxurl, { action: 'owner_booking', status: status, checkin: checkin, checkout: checkout, room_id: room_id, name:booking}, function(output) {
+		jQuery('#booking-response').fadeIn('slow');
+		jQuery('#booking-response').html(output);
+		return false;
+	});
+});
+
 jQuery('#book-single-button').click(function(event) {
 	event.preventDefault();
 	name = jQuery( "#name" ).val();

@@ -9,6 +9,44 @@ var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
 </script>
 <?php
 }
+add_action('wp_ajax_owner_booking', 'owner_booking');
+add_action('wp_ajax_nopriv_owner_booking', 'owner_booking');
+
+function owner_booking()
+{
+	$checkin    = $_POST['checkin'];
+	$checkout    = $_POST['checkout'];
+	$room_id    = $_POST['room_id'];
+	$booking_title    = $_POST['name'];
+	$new_booking = array(
+	'post_title'	=>	$booking_title,
+	'post_type'	=>	'bookings',  //'post',page' or use a custom post type if you want to
+	'post_status' => 'booked'
+	);
+
+	$bid = wp_insert_post($new_booking);
+	$token = uniqid();
+
+	$manager_url = get_bloginfo('siteurl').'/reservations-system/?token='.$token;
+	//update_post_meta($bid, 'name', $name);
+	//update_post_meta($bid, 'email', $email);
+	//update_post_meta($bid, 'phone', $phone);
+	//update_post_meta($bid, 'room', $room);
+	update_post_meta($bid, 'room_id', $room_id);
+	update_post_meta($bid, 'token', $token);
+	update_post_meta($bid, 'manager_url', $manager_url);
+	update_post_meta($bid, 'checkin', convert_date_to_timestamp($checkin));
+	update_post_meta($bid, 'checkout', convert_date_to_timestamp($checkout));
+	//update_post_meta($bid, 'adults', $adults);
+	//update_post_meta($bid, 'children', $children);
+	//update_post_meta($bid, 'room_number', $room_number);
+	//update_post_meta($bid, 'message', $message);
+	//update_post_meta($bid, 'lang', $lang);
+
+	echo 'Booking inserito';
+
+}
+
 
 add_action('wp_ajax_home_booking', 'home_booking');
 add_action('wp_ajax_nopriv_home_booking', 'home_booking');

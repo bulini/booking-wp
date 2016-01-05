@@ -47,11 +47,11 @@ if ( function_exists( 'add_image_size' ) ) {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 		//js
-		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.4.min.js', array(), '2.1.4', false );
+		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.4.min.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/jquery.prettyPhoto.js', array(), '1.11.0', true );
 
-		wp_enqueue_script( 'moment', get_template_directory_uri() . '/assets/js/moment.js', array(), '2.1.4', false );
-		wp_enqueue_script( 'fullcalendar-js', get_template_directory_uri() . '/assets/js/fullcalendar.min.js', array(), '2.1.4', false );
+		wp_enqueue_script( 'moment', get_template_directory_uri() . '/assets/js/moment.js', array(), '2.1.4', true );
+		wp_enqueue_script( 'fullcalendar-js', get_template_directory_uri() . '/assets/js/fullcalendar.min.js', array(), '2.1.4', true );
 
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '2.1.4', true );
 		wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.1.4', true );
