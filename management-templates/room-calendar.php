@@ -15,6 +15,13 @@ $occupancy = get_bookings($_GET['room_id']);
 ?>
 <div class="container manager">
   <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h2><i class="fa fa-calendar"></i> Visual Calendar <small>Availability management</small></h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-3">
       <div class="thumbnail">
         <?php echo get_the_post_thumbnail($_GET['room_id'],'homepage-thumb'); ?>
@@ -36,8 +43,11 @@ $occupancy = get_bookings($_GET['room_id']);
       </div>
     </div>
     <div class="col-md-9">
-      <div id="room-calendar">
+      <div class="well">
+        <div id="room-calendar">
+        </div>
       </div>
+
     </div>
   </div>
 <hr />
