@@ -28,6 +28,16 @@ function poly_languages() {
 	return $languages;
 }
 
+add_action( 'template_redirect', 'redirect_to_home' );
+
+function redirect_to_home() {
+
+if ( is_page('visual-calendar') && ! is_user_logged_in() ) {
+
+wp_redirect(get_bloginfo('siteurl'), 301 );
+  exit;
+    }
+}
 
 if(function_exists('pll_register_string')) {
 	add_action('init', 'bookingwp_email_strings'); // the function is called only when all plugins are loaded
