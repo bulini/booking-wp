@@ -20,7 +20,7 @@
               </span>
               <span class="adults select-box">
                 <?php $rooms = get_roomtypes(); ?>
-                <select name="people" data-placeholder="<?php _e('People','bookingwp'); ?>">
+                <select name="people" data-placeholder="<?php _e('Room','bookingwp'); ?>">
                 <?php foreach($rooms as $room): ?>
                   <?php $people = get_post_meta($room->ID,'people',true)?>
                   <option value="<?php echo $people; ?>"><?php echo apply_filters('the_title',$room->post_title); ?> - <?php echo $people; ?></option>
@@ -28,13 +28,12 @@
                 </select>
               </span>
               <span class="room_number select-box">
-        				<select name="room_number" id="room_number" data-placeholder="Rooms">
-        					<option selected="selected" disabled="disabled"><?php _e('How many rooms','bookingwp'); ?></option>
+        				<select name="room_number" id="room_number" data-placeholder="<?php _e('Q.ty','bookingwp'); ?>">
         									  <?php global $post; get_roomtypes();
         										  $i=1;
         										  if ( have_posts() ) : while ( have_posts() ) : the_post();
         									   ?>
-        					                  <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+        					                  <option value="<?php echo $i; ?>"><?php echo $i; ?> <?php _e('Rooms','bookingwp'); ?></option>
         									<?php $i++; endwhile; else: ?>
         										<option value="0">No room</option>
         									<?php endif; wp_reset_query(); ?>

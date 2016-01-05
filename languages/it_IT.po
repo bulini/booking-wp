@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
-"PO-Revision-Date: Mon Dec 28 2015 23:10:59 GMT+0100 (CET)\n"
+"PO-Revision-Date: Tue Jan 05 2016 14:42:12 GMT+0100 (CET)\n"
 "Last-Translator: admin <pinobulini@gmail.com>\n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -452,32 +452,32 @@ msgstr ""
 msgid "Amenities EN"
 msgstr ""
 
-#: ../libs/ajax-handler.php:167
+#: ../libs/ajax-handler.php:205
 msgid "Confirm Reservation"
 msgstr ""
 
-#: ../libs/ajax-handler.php:172
+#: ../libs/ajax-handler.php:210
 msgid "Price for your reservation is &euro;"
 msgstr ""
 
-#: ../libs/ajax-handler.php:173
+#: ../libs/ajax-handler.php:211
 msgid ""
 "You can confirm now your reservation by clicking this link and leave your "
 "credit card as warranty"
 msgstr ""
 
-#: ../libs/ajax-handler.php:176
+#: ../libs/ajax-handler.php:214
 msgid ""
 "Your reservation has been submitted to us and well contact you as quickly as "
 "possible to complete your booking. Thank you"
 msgstr ""
 
-#: ../libs/booking-handler.php:525 ../libs/booking-handler.php:547 ..
-#: libs/booking-handler.php:562
+#: ../libs/booking-handler.php:385 ../libs/booking-handler.php:407 ..
+#: libs/booking-handler.php:422
 msgid "Your reservation: "
 msgstr ""
 
-#: ../libs/booking-handler.php:594
+#: ../libs/booking-handler.php:454
 msgid "Offer sent correctly"
 msgstr ""
 
@@ -486,62 +486,70 @@ msgid "Booking Options"
 msgstr ""
 
 #: ../libs/booking-options.php:43
-msgid "Subject for Quoted booking"
+msgid "Paypal Business email"
 msgstr ""
 
 #: ../libs/booking-options.php:44
-msgid "Subject for quoted booking"
+msgid "Email for Paypal payments"
+msgstr ""
+
+#: ../libs/booking-options.php:49
+msgid "Subject for Quoted booking"
 msgstr ""
 
 #: ../libs/booking-options.php:50
-msgid "Email for Quoted booking"
-msgstr ""
-
-#: ../libs/booking-options.php:51
-msgid "email template for quoted booking"
+msgid "Subject for quoted booking"
 msgstr ""
 
 #: ../libs/booking-options.php:56
-msgid "Subject for Refused booking"
+msgid "Email for Quoted booking"
 msgstr ""
 
 #: ../libs/booking-options.php:57
-msgid "Subject for refused booking"
+msgid "email template for quoted booking"
 msgstr ""
 
 #: ../libs/booking-options.php:62
-msgid "Email for Refused booking"
+msgid "Subject for Refused booking"
 msgstr ""
 
 #: ../libs/booking-options.php:63
-msgid "email template for refused booking"
+msgid "Subject for refused booking"
 msgstr ""
 
 #: ../libs/booking-options.php:68
-msgid "Subject for Confirmed booking"
+msgid "Email for Refused booking"
 msgstr ""
 
 #: ../libs/booking-options.php:69
-msgid "Subject for confirmed booking"
+msgid "email template for refused booking"
 msgstr ""
 
 #: ../libs/booking-options.php:74
-msgid "Email for Confirmed booking"
+msgid "Subject for Confirmed booking"
 msgstr ""
 
 #: ../libs/booking-options.php:75
+msgid "Subject for confirmed booking"
+msgstr ""
+
+#: ../libs/booking-options.php:80
+msgid "Email for Confirmed booking"
+msgstr ""
+
+#: ../libs/booking-options.php:81
 msgid "email template for confirmed booking"
 msgstr ""
 
-#: ../libs/booking-options.php:80 ../libs/booking-options.php:81
+#: ../libs/booking-options.php:86 ../libs/booking-options.php:87
 msgid "Cancellation Policy"
 msgstr ""
 
-#: ../libs/booking-options.php:86
+#: ../libs/booking-options.php:92
 msgid "Confirm Booking button text"
 msgstr ""
 
-#: ../libs/booking-options.php:87
+#: ../libs/booking-options.php:93
 msgid "confirm text button"
 msgstr ""
 
@@ -576,10 +584,6 @@ msgstr ""
 #: ../libs/post-type.php:130
 msgid "Add new Allotment"
 msgstr ""
-
-#: ../libs/post-type.php:147 ../libs/post-type.php:148
-msgid "booking"
-msgstr "Prenotazioni"
 
 #: ../libs/post-type.php:149 ../libs/post-type.php:150
 msgid "Add booking"
@@ -649,11 +653,11 @@ msgid_plural "Booked <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../libs/theme-init.php:108
+#: ../libs/theme-init.php:111
 msgid "Thumbnail"
 msgstr ""
 
-#: ../libs/theme-init.php:132
+#: ../libs/theme-init.php:135
 msgid "None"
 msgstr ""
 
@@ -765,8 +769,8 @@ msgstr ""
 msgid "Base price"
 msgstr ""
 
-#: ../libs/metaboxes/property.php:66 ../template-parts/reservation-form.php:23 ..
-#: template-parts/single-reservation-form.php:38
+#: ../libs/metaboxes/property.php:66 ../template-parts/single-reservation-form.
+#: php:38
 msgid "People"
 msgstr ""
 
@@ -883,38 +887,25 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: ../page-templates/confirm-reservation.php:125
-msgid "Payment Details: "
+#. Name of the template
+msgid "Room Calendar"
 msgstr ""
 
-#: ../page-templates/confirm-reservation.php:126
-msgid ""
-"Leave your credit card to confirm your reservation. No fees will be applied, "
-"you will pay at your arrival."
+#: ../page-templates/confirm-reservation.php:111 ../page-templates/paypal-
+#: checkout.php:123 ../template-parts/paypal-form.php:6
+msgid "Pay with Paypal"
 msgstr ""
 
-#: ../page-templates/confirm-reservation.php:132
-msgid "Card Number"
-msgstr ""
-
-#: ../page-templates/confirm-reservation.php:140
-msgid "Card expiration"
-msgstr ""
-
-#: ../page-templates/confirm-reservation.php:145
-msgid "Card CVV"
-msgstr ""
-
-#: ../page-templates/confirm-reservation.php:150
-msgid "Name on card"
-msgstr ""
-
-#: ../page-templates/confirm-reservation.php:155
-msgid "Process booking"
+#: ../page-templates/confirm-reservation.php:112
+msgid "Credit card"
 msgstr ""
 
 #. Name of the template
 msgid "Home"
+msgstr ""
+
+#. Name of the template
+msgid "Ipn response"
 msgstr ""
 
 #. Name of the template
@@ -923,6 +914,14 @@ msgstr ""
 
 #. Name of the template
 msgid "map"
+msgstr ""
+
+#. Name of the template
+msgid "Paypal checkout"
+msgstr ""
+
+#: ../page-templates/paypal-checkout.php:133 ../template-parts/paypal-form.php:21
+msgid "Pay Now"
 msgstr ""
 
 #. Name of the template
@@ -955,7 +954,8 @@ msgstr ""
 msgid "Voucher"
 msgstr ""
 
-#: ../page-templates/thank-you.php:147
+#: ../page-templates/thank-you.php:147 ../template-parts/single-reservation-form.
+#: php:67
 msgid "Price"
 msgstr ""
 
@@ -967,8 +967,44 @@ msgstr ""
 msgid "Availability"
 msgstr ""
 
+#: ../template-parts/cc-form.php:4
+msgid "Payment Details: "
+msgstr ""
+
+#: ../template-parts/cc-form.php:5
+msgid ""
+"Leave your credit card to confirm your reservation. No fees will be applied, "
+"you will pay at your arrival."
+msgstr ""
+
+#: ../template-parts/cc-form.php:11
+msgid "Card Number"
+msgstr ""
+
+#: ../template-parts/cc-form.php:19
+msgid "Card expiration"
+msgstr ""
+
+#: ../template-parts/cc-form.php:24
+msgid "Card CVV"
+msgstr ""
+
+#: ../template-parts/cc-form.php:29
+msgid "Name on card"
+msgstr ""
+
+#: ../template-parts/cc-form.php:34
+msgid "Process booking"
+msgstr ""
+
 #: ../template-parts/left-box-reviews.php:5
 msgid "Tripadvisor reviews"
+msgstr ""
+
+#: ../template-parts/paypal-form.php:7
+msgid ""
+"Pay the entire amount of your booking using Paypal with your credit card. "
+"The room wil be instantly booked and a voucher will be sent to you."
 msgstr ""
 
 #: ../template-parts/reservation-form.php:14 ../template-parts/single-reservation-
@@ -981,10 +1017,13 @@ msgstr ""
 msgid "Checkout"
 msgstr ""
 
-#: ../template-parts/reservation-form.php:32 ../template-parts/single-reservation-
-#: form.php:57
-msgid "How many rooms"
+#: ../template-parts/reservation-form.php:31
+msgid "Q.ty"
 msgstr ""
+
+#: ../template-parts/reservation-form.php:36
+msgid "Rooms"
+msgstr "Camere"
 
 #: ../template-parts/single-reservation-form.php:22
 msgid "Your Name"
@@ -992,6 +1031,10 @@ msgstr ""
 
 #: ../template-parts/single-reservation-form.php:26
 msgid "Your email"
+msgstr ""
+
+#: ../template-parts/single-reservation-form.php:58
+msgid "room"
 msgstr ""
 
 #. Name of the theme
@@ -1009,6 +1052,10 @@ msgstr ""
 #. Author of the theme
 msgid "Underscores.me"
 msgstr ""
+
+#: ../template-parts/reservation-form.php:23
+msgid "Room"
+msgstr "Camera"
 
 #: ../archive.php:41
 msgid "Galleries"
@@ -1032,8 +1079,9 @@ msgstr "Le camere"
 
 #: ../single-accommodations.php:219 ../page-templates/listing.php:133 ../page-
 #: templates/search-availability.php:134 ../template-parts/reservation-form.php:6
-#: ../template-parts/reservation-form.php:45 ../template-parts/rooms-home.php:25 .
-#: ./template-parts/single-reservation-form.php:16
+#: ../template-parts/reservation-form.php:44 ../template-parts/rooms-home.php:25 .
+#: ./template-parts/single-reservation-form.php:16 ../template-parts/single-
+#: reservation-form.php:69
 msgid "Book now"
 msgstr "Prenota"
 
@@ -1053,12 +1101,16 @@ msgstr "Nuova Camera"
 msgid "Allotments"
 msgstr "Trattamenti"
 
-#: ../libs/post-type.php:127
+#: ../libs/post-type.php:127 ../template-parts/single-reservation-form.php:42
 msgid "Allotment"
 msgstr "Trattamento"
 
 #: ../libs/post-type.php:146
 msgid "Bookings"
+msgstr "Prenotazioni"
+
+#: ../libs/post-type.php:147 ../libs/post-type.php:148
+msgid "booking"
 msgstr "Prenotazioni"
 
 #: ../libs/metaboxes/accommodation.php:37

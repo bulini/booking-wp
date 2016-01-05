@@ -43,7 +43,7 @@ function owner_booking()
 	//update_post_meta($bid, 'message', $message);
 	//update_post_meta($bid, 'lang', $lang);
 
-	echo 'Booking inserito';
+	echo '<div class="alert alert-success">Booking inserito</div>'; exit();
 
 }
 
