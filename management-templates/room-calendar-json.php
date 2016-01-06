@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Room Calendar
+Template Name: Json Room Calendar
 */
 /**
  * The header for our user logged theme.
@@ -63,6 +63,7 @@ $occupancy = get_bookings($_GET['room_id']);
 </div> <!-- /container -->
 <script>
 jQuery(document).ready(function() {
+    var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
     jQuery('#room-calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -76,13 +77,7 @@ jQuery(document).ready(function() {
       jQuery('#eventUrl').attr('href',event.url);
       jQuery('#fullCalModal').modal();
     },
-    //dayClick: function(date, jsEvent, view) {
-            //alert('Clicked on: ' + date.format());
-            //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-            //alert('Current view: ' + view.name);
-            // change the day's background color just for fun
-            //jQuery(this).css('background-color', 'blue');
-  //      },
+
         selectable: true,
         select: function (start, end, jsEvent, view) {
             jQuery("#calendar").fullCalendar('addEventSource', [{
@@ -105,33 +100,26 @@ jQuery(document).ready(function() {
         },
 
 
-      eventSources: [
+        eventSources: [
 
-      // your event source
-      {
-          events: [ // put the array in the `events` property
-            <?php foreach($occupancy as $daybooked) {
-              //echo $daybooked->ID;
-              $checkin = get_post_meta($daybooked->ID,'checkin',true);
-              $checkout = get_post_meta($daybooked->ID,'checkout',true);
-              $checkin = date_parse_from_format("Y-m-d", $checkin);
-              $checkout = date_parse_from_format("Y-m-d", $checkout);
+        // your event source
+        {
+            url: ajaxurl,
+            type: 'GET',
+            data: {
+                action: 'get_booked_days',
+                room_id: '<?php echo $_GET['room_id']; ?>'
+            },
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            //color: 'yellow',   // a non-ajax option
+            //textColor: 'black' // a non-ajax option
+        }
 
-              ?>
-              {
-                  title  : '<?php echo $daybooked->post_title; ?> <?php echo date("d/m/Y",get_post_meta($daybooked->ID,'checkin',true)); ?> <?php echo date("d/m/Y",get_post_meta($daybooked->ID,'checkout',true)); ?>',
-                  start  : '<?php echo date("Y-m-d",get_post_meta($daybooked->ID,'checkin',true)); ?>',
-                  end    : '<?php echo date("Y-m-d",get_post_meta($daybooked->ID,'checkout',true)); ?>',
-                  textColor: 'white',
-              },
-            <?php } ?>
-          ],
-          color: 'red',     // an option!
-          textColor: 'red' // an option!
-      },
-    // any other event sources...
+        // any other sources...
 
-  ]
+    ]
 
 });
 });

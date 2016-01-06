@@ -15,6 +15,8 @@ jQuery('#insert-booking').click(function(event) {
 	jQuery.post(ajaxurl, { action: 'owner_booking', status: status, checkin: checkin, checkout: checkout, room_id: room_id, name:booking}, function(output) {
 		jQuery('#booking-response').fadeIn('slow');
 		jQuery('#booking-response').html(output);
+		jQuery("#room-calendar").fullCalendar( 'refetchEvents' );
+		jQuery('#addbooking').modal('toggle');
 		return false;
 	});
 });

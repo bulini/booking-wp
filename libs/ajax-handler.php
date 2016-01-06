@@ -47,9 +47,73 @@ function owner_booking()
 
 }
 
+add_action('wp_ajax_get_booked_days', 'get_booked_days');
+add_action('wp_ajax_nopriv_get_booked_days', 'get_booked_days');
+
+function get_booked_daysaa()
+{
+	?>
+	[
+
+	    {
+	        "title": "Test event",
+	        "id": "821",
+	        "end": "2016-01-08",
+	        "start": "2016-01-06",
+					"allDay": true
+	    },
+
+	    {
+	        "title": "Test event 2",
+	        "id": "822",
+	        "end": "2016-01-10",
+	        "start": "2016-01-09",
+					"allDay": true
+	    },
+	]
+<?php exit(); }
+
+
+function get_booked_dayss() {
+	$room_id = $_GET['room_id'];
+  $bookings = get_bookings($_GET['room_id']);
+	$i=0;
+	foreach($bookings as $daybooked) {
+		$i++;
+		$booking[$i]['id']=$daybooked->ID;
+		$booking[$i]['title']=$daybooked->post_title;
+		$booking[$i]['start']=date("Y-m-d",get_post_meta($daybooked->ID,'checkin',true));
+		$booking[$i]['end']=date("Y-m-d",get_post_meta($daybooked->ID,'checkout',true));
+		$booking[$i]['allDay']="true";
+
+	}
+	echo json_encode($booking); exit();
+	//echo '['.preg_replace('/"([^"]+)"\s*:\s*/', '$1:', $result).']'; exit();
+}
+
+function get_booked_days() {
+	$room_id = $_GET['room_id'];
+  $bookings = get_bookings($_GET['room_id']);
+	$n_booking = count($bookings);
+	$i=0;
+	echo '[';
+	foreach($bookings as $daybooked) { $i++; ?>
+		{
+				"id": "<?php echo $daybooked->ID; ?>",
+				"title"  : "<?php echo $daybooked->post_title; ?> <?php echo date("d/m/Y",get_post_meta($daybooked->ID,'checkin',true)); ?> <?php echo date("d/m/Y",get_post_meta($daybooked->ID,'checkout',true)); ?>",
+				"start"  : "<?php echo date("Y-m-d",get_post_meta($daybooked->ID,'checkin',true)); ?>",
+				"end"    : "<?php echo date("Y-m-d",get_post_meta($daybooked->ID,'checkout',true)); ?>",
+				"allDay" : true
+		}<?php if($i<$n_booking) { echo ','; } ?><?php } echo ']'; exit();
+}
+
+
 
 add_action('wp_ajax_home_booking', 'home_booking');
 add_action('wp_ajax_nopriv_home_booking', 'home_booking');
+
+
+
 
 function home_booking()
 {
