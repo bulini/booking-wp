@@ -113,8 +113,8 @@ jQuery(document).ready(function() {
             error: function() {
                 alert('there was an error while fetching events!');
             },
-            //color: 'yellow',   // a non-ajax option
-            //textColor: 'black' // a non-ajax option
+            color: 'red',   // a non-ajax option
+            textColor: 'white' // a non-ajax option
         }
 
         // any other sources...
