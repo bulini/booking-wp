@@ -163,9 +163,9 @@
 			      <div class="css-table">
 			        <div class="css-table-cell">
 								<?php if (LogoImage()) { ?>
-										<a href="#"><img src="<?php echo LogoImage(); ?>" style="max-width:150px;" class="img-responsive center-block" alt="<?php bloginfo('name'); ?>" /></a>
+										<a href="<?php bloginfo('siteurl'); ?>"><img src="<?php echo LogoImage(); ?>" style="max-width:150px;" class="img-responsive center-block" alt="<?php bloginfo('name'); ?>" /></a>
 										<?php } else { ?>
-											<h2><a class="navbar-brand" href="#">Hotel Logo</a></h2>
+											<h2><a class="navbar-brand" href="<?php bloginfo('siteurl'); ?>">Your Logo</a></h2>
 											<?php } ?>
 			        </div>
 			      </div>
