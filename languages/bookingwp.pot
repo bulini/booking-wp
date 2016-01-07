@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
-"POT-Revision-Date: Thu Jan 07 2016 10:23:24 GMT+0100 (CET)\n"
+"POT-Revision-Date: Thu Jan 07 2016 10:42:47 GMT+0100 (CET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1038,37 +1038,30 @@ msgid "Availability"
 msgstr ""
 
 #: ../template-parts/calendar.php:11
-msgctxt "Lun"
 msgid "Mon"
 msgstr ""
 
 #: ../template-parts/calendar.php:12
-msgctxt "Mar"
 msgid "Tue"
 msgstr ""
 
 #: ../template-parts/calendar.php:13
-msgctxt "Mer"
 msgid "Wed"
 msgstr ""
 
 #: ../template-parts/calendar.php:14
-msgctxt "Gio"
 msgid "Thu"
 msgstr ""
 
 #: ../template-parts/calendar.php:15
-msgctxt "Ven"
 msgid "Fri"
 msgstr ""
 
 #: ../template-parts/calendar.php:16
-msgctxt "Sab"
 msgid "Sat"
 msgstr ""
 
 #: ../template-parts/calendar.php:17
-msgctxt "Dom"
 msgid "Sun"
 msgstr ""
 
