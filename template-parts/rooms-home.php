@@ -12,10 +12,11 @@
     <?php
       wp_reset_query();
       get_accommodations();
+      $col = (count(get_accommodations()) % 3 == 0) ? '4' : '3';
         if ( have_posts() ) : while ( have_posts() ) : the_post();
         $price = get_post_meta($post->ID, 'min_price', true);
     ?>
-    <div class="col-md-3">
+    <div class="col-md-<?php echo $col; ?>">
       <div class="listing-room-grid">
         <div class="overlay">
           <?php the_post_thumbnail('homepage-thumb', array('class'=>'img-responsive')); ?>
