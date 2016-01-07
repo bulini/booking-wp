@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Mikro Booking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 21 2015 23:51:13 GMT+0100 (CET)\n"
-"POT-Revision-Date: Tue Jan 05 2016 14:39:09 GMT+0100 (CET)\n"
+"POT-Revision-Date: Thu Jan 07 2016 10:23:24 GMT+0100 (CET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -482,21 +482,21 @@ msgstr ""
 msgid "Amenities EN"
 msgstr ""
 
-#: ../libs/ajax-handler.php:205
+#: ../libs/ajax-handler.php:269
 msgid "Confirm Reservation"
 msgstr ""
 
-#: ../libs/ajax-handler.php:210
+#: ../libs/ajax-handler.php:274
 msgid "Price for your reservation is &euro;"
 msgstr ""
 
-#: ../libs/ajax-handler.php:211
+#: ../libs/ajax-handler.php:275
 msgid ""
 "You can confirm now your reservation by clicking this link and leave your "
 "credit card as warranty"
 msgstr ""
 
-#: ../libs/ajax-handler.php:214
+#: ../libs/ajax-handler.php:278
 msgid ""
 "Your reservation has been submitted to us and well contact you as quickly as "
 "possible to complete your booking. Thank you"
@@ -950,6 +950,10 @@ msgid "Download"
 msgstr ""
 
 #. Name of the template
+msgid "Json Room Calendar"
+msgstr ""
+
+#. Name of the template
 msgid "Room Calendar"
 msgstr ""
 
@@ -1031,6 +1035,41 @@ msgstr ""
 
 #: ../template-parts/calendar.php:2
 msgid "Availability"
+msgstr ""
+
+#: ../template-parts/calendar.php:11
+msgctxt "Lun"
+msgid "Mon"
+msgstr ""
+
+#: ../template-parts/calendar.php:12
+msgctxt "Mar"
+msgid "Tue"
+msgstr ""
+
+#: ../template-parts/calendar.php:13
+msgctxt "Mer"
+msgid "Wed"
+msgstr ""
+
+#: ../template-parts/calendar.php:14
+msgctxt "Gio"
+msgid "Thu"
+msgstr ""
+
+#: ../template-parts/calendar.php:15
+msgctxt "Ven"
+msgid "Fri"
+msgstr ""
+
+#: ../template-parts/calendar.php:16
+msgctxt "Sab"
+msgid "Sat"
+msgstr ""
+
+#: ../template-parts/calendar.php:17
+msgctxt "Dom"
+msgid "Sun"
 msgstr ""
 
 #: ../template-parts/cc-form.php:4

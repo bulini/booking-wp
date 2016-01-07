@@ -8,13 +8,13 @@
                 <a class="pull-right" data-go="next"><div class="">>></div></a>
             </div><hr/>
             <div class="day-headers">
-              <div class="day header">Mon</div>
-              <div class="day header">Tue</div>
-              <div class="day header">Wed</div>
-              <div class="day header">Thu</div>
-              <div class="day header">Fri</div>
-              <div class="day header">Sat</div>
-              <div class="day header">Sun</div>
+              <div class="day header"><?php _e('Mon','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Tue','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Wed','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Thu','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Fri','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Sat','bookingwp'); ?></div>
+              <div class="day header"><?php _e('Sun','bookingwp'); ?></div>
             </div>
             <div class="days" data-group="days">
 
@@ -28,7 +28,7 @@
   <script type="text/javascript">
         jQuery(document).ready(function () {
           jQuery(".responsive-calendar").responsiveCalendar({
-            time: '2015-12',
+            time: '<?php echo date('Y'); ?>-<?php echo date('m');?>',
             events: {
               <?php foreach($occupancy as $daybooked) { ?>
               "<?php echo $daybooked; ?>": {"badgeClass": "badge-error"},
