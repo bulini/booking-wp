@@ -72,13 +72,10 @@
 	              </div>
 							-->
 	              <div class="header-language">
-	                <button class="header-btn"><i class="fa fa-globe"></i>EN</button>
+	                <button class="header-btn"><i class="fa fa-globe"></i><?php echo pll_current_language(); ?></button>
 	                <nav class="header-nav">
 	                  <ul class="custom-list">
-	                    <li class="active"><a href="#">EN</a></li>
-	                    <li><a href="#">DE</a></li>
-	                    <li><a href="#">FR</a></li>
-	                    <li><a href="#">IT</a></li>
+											<?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?>
 	                  </ul>
 	                </nav>
 	              </div>
