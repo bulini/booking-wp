@@ -9,11 +9,16 @@ var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
 </script>
 <?php
 }
+
 add_action('wp_ajax_owner_booking', 'owner_booking');
 add_action('wp_ajax_nopriv_owner_booking', 'owner_booking');
 
 function owner_booking()
 {
+	/**
+	 * used by visual-calendar?room_id via ajax
+	 *
+	 */
 	$checkin    = $_POST['checkin'];
 	$checkout    = $_POST['checkout'];
 	$room_id    = $_POST['room_id'];
@@ -50,46 +55,6 @@ function owner_booking()
 add_action('wp_ajax_get_booked_days', 'get_booked_days');
 add_action('wp_ajax_nopriv_get_booked_days', 'get_booked_days');
 
-function get_booked_daysaa()
-{
-	?>
-	[
-
-	    {
-	        "title": "Test event",
-	        "id": "821",
-	        "end": "2016-01-08",
-	        "start": "2016-01-06",
-					"allDay": true
-	    },
-
-	    {
-	        "title": "Test event 2",
-	        "id": "822",
-	        "end": "2016-01-10",
-	        "start": "2016-01-09",
-					"allDay": true
-	    },
-	]
-<?php exit(); }
-
-
-function get_booked_dayss() {
-	$room_id = $_GET['room_id'];
-  $bookings = get_bookings($_GET['room_id']);
-	$i=0;
-	foreach($bookings as $daybooked) {
-		$i++;
-		$booking[$i]['id']=$daybooked->ID;
-		$booking[$i]['title']=$daybooked->post_title;
-		$booking[$i]['start']=date("Y-m-d",get_post_meta($daybooked->ID,'checkin',true));
-		$booking[$i]['end']=date("Y-m-d",get_post_meta($daybooked->ID,'checkout',true));
-		$booking[$i]['allDay']="true";
-
-	}
-	echo json_encode($booking); exit();
-	//echo '['.preg_replace('/"([^"]+)"\s*:\s*/', '$1:', $result).']'; exit();
-}
 
 function get_booked_days() {
 	$room_id = $_GET['room_id'];
@@ -216,7 +181,6 @@ function home_booking()
 		}
 
 		$room_type = get_the_title($room);
-
 		//$address = "example@themeforest.net";
 		$address = mytheme_get_option('email');
 		$from = mytheme_get_option('place_name').' <'.$address.'>';
@@ -227,13 +191,10 @@ function home_booking()
 		$e_subject = 'Booking n # '.$bid.' da ' . $email;
 		$e_body = "Richiesta di prenotazione da <b>: $name $email tel. $phone</b>
 
-
-
 		Richiesta prenotazione per le seguenti date<br />
 		Checkin: <b>: $checkin </b><br />
 		Check-out <b>: $checkout </b><br />
 		messaggio <b>: $message </b><br />
-
 
 		La richiesta &egrave; di n, <b>$room_number</b>  <b>$room_type</b> per <b>$adults Adulti</b> e <b>$children bambini</b>.<br />
 		Il prezzo proposto dal sistema in base alle tue impostazioni &egrave; di &euro; <b>$price</b> .<br />
@@ -242,9 +203,6 @@ function home_booking()
 		<hr />
 		<a href='$manager_url'>Gestisci</a>". PHP_EOL . PHP_EOL;
 
-
-
-
 		$e_reply = "<br />You can contact the customer via email, $email or hit 'reply' in your email browser to make the reservation complete.";
 
 		$msg = wordwrap( $e_body . $e_reply, 70 );
@@ -252,7 +210,7 @@ function home_booking()
 		$headers[] = "From: $from" . PHP_EOL;
 		$headers[] = "Bcc: $email_bcc" . PHP_EOL;
 
-	//if(mail($address, $e_subject, $msg, $headers)) {
+		//if(mail($address, $e_subject, $msg, $headers)) {
 	  if(wp_mail( $address, $e_subject, $e_body, $headers)) {
 		//email to customer
 
@@ -265,17 +223,17 @@ function home_booking()
 
 		// Email has sent successfully, echo a success page.
 
-
-		echo '<div id="success_page" class="alert alert-success">'.__('Confirm Reservation', 'bookingwp').'</div>';
-
-		if($price){
+		//try to understand what kind of booking: instant on-request
+		$booking_type = booking_get_option('booking_type');
+		if($booking_type=='instant'){
 			$confirmation_url = get_bloginfo('siteurl').'/confirm-reservation?token='.$token;
 			//stop mostra prezzo per ora..
-			echo __('Price for your reservation is &euro;','bookingwp').' <b>'.$price.'</b><br />';
-			echo __('You can confirm now your reservation by clicking this link and leave your credit card as warranty','bookingwp').'<br /><hr />';
+			echo '<div id="success_page" class="alert alert-warning"><h4><i class="fa fa-bolt"></i> '.__('Secure instant booking', 'bookingwp').'</h4></div>';
+			echo '<h5>'.__('Price for your reservation is &euro;','bookingwp').' <b>'.$price.'</b></h5><br />';
+			echo __('You can confirm now your reservation by clicking this link and leave your credit card as warranty or paying the entire fee of your booking with Paypal and instantly book the room!','bookingwp').'<br /><hr />';
 			echo '<a href="'.$confirmation_url.'" class="btn btn-success btn-block">Confirm reservation</a></p>';
 		} else {
-			echo '<p>'.__('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p>';
+			echo '<div id="success_page" class="alert alert-success"><p>'.__('Your reservation has been submitted to us and well contact you as quickly as possible to complete your booking. Thank you','bookingwp').'</p></div>';
 		}
 
 		exit();

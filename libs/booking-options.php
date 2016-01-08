@@ -40,6 +40,18 @@ class BookingSettings {
         // Set our CMB fields
         $this->fields = array(
           array(
+            'name'    => 'Booking type',
+            'desc'    => 'Select how do you want to handle your bookings',
+            'id'      => $prefix . 'booking_type',
+            'type'    => 'select',
+            'options' => array(
+                'on-request' => __( 'On request', 'cmb2' ),
+                'instant'   => __( 'Instant booking', 'cmb2' ),
+            ),
+            'default' => 'custom',
+         ),
+
+          array(
              'name' => __( 'Paypal Business email', 'bookingwp' ),
              'desc' => __( 'Email for Paypal payments', 'bookingwp' ),
              'id'   => 'bookingwp_paypal_email',
