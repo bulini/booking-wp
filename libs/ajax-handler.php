@@ -1,5 +1,5 @@
 <?php
-//procedure e chiamate ajax de dio
+//procedure e chiamate ajax de dio ok
 add_action('wp_head','ajaxurl');
 
 function ajaxurl() {
